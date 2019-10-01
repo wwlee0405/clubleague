@@ -1,2 +1,0 @@
-# clubleague
-Sports App
