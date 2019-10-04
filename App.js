@@ -1,80 +1,81 @@
-import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  StatusBar
-} from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import Home from "./src/screens/Home";
+import Feed from "./src/screens/Feed";
+import Notice from "./src/screens/Notice";
 
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar
-        backgroundColor="#1e90ff"
-        barStyle="light-content"
-      />
-      <Text style={styles.welcome}>Login to My App</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Username"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry
-      />
-      <View style={styles.btnContainer}>
-        <TouchableOpacity
-          style={styles.userBtn}
-          onPress={() => alert("Login works")}
-        >
-          <Text style={styles.btnText}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.userBtn}
-          onPress={() => alert("Signup works")}
-        >
-          <Text style={styles.btnText}>Signup</Text>
-        </TouchableOpacity>
+class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Open up App.js to start working on your app!</Text>
       </View>
-    </View>
-  );
+    );
+  }
 }
+
+const TabNavigator = createBottomTabNavigator({
+  Home:{
+    screen: Home,
+    navigationOptions:{
+      tabBarLabel: 'HOME',
+      tabBarIcon: ({tintColor}) => (
+        <Feather name="home" color={tintColor} size={24} />
+      )
+    }
+  },
+  Feed:{
+    screen: Feed,
+    navigationOptions:{
+      tabBarLabel: 'FEED',
+      tabBarIcon: ({tintColor}) => (
+        <MaterialCommunityIcons name="soccer-field" color={tintColor} size={24} />
+      )
+    }
+  },
+  Notice:{
+    screen: Notice,
+    navigationOptions:{
+      tabBarLabel: 'NOTICE',
+      tabBarIcon: ({tintColor}) => (
+        <Feather name="bell" color={tintColor} size={24} />
+      )
+    }
+  }
+},{
+  tabBarOptions:{
+    activeTintColor: 'green',
+    inactiveTintColor: 'grey',
+    style:{
+      backgroundColor: 'white',
+      borderTopWidth: 0,
+      shadowOffset:{width:5,height:3},
+      shadowColor: 'black',
+      shadowOpacity: 0.5,
+      elevation: 5
+    }
+
+  }
+});
+
+export default createAppContainer(TabNavigator);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#1e90ff'
+    //backgroundColor: '#fff',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    justifyContent: "flex-end",
+    paddingHorizontal: 30,
+    paddingVertical: 100,
+    backgroundColor: "#FDF6AA"
   },
-  welcome: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 10,
-    color: "#fff"
-  },
-  input: {
-    width: "90%",
-    backgroundColor: "#fff",
-    padding: 15,
-    marginBottom: 10
-  },
-  btnContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "90%"
-  },
-  userBtn: {
-    backgroundColor: "#FFD700",
-    padding: 15,
-    width: "45%"
-  },
-  btnText: {
-    fontSize: 18,
-    textAlign: "center"
+  text: {
+    color: "#2C2C2C",
+    fontSize: 30
   }
-})
+});

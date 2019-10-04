@@ -1,13 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Home() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+class Feed extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Open up App. this is Feed!</Text>
+      </View>
+    );
+  }
 }
+
+export default Feed;
 
 const styles = StyleSheet.create({
   container: {
