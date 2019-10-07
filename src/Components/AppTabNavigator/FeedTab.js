@@ -14,7 +14,7 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 class FeedTab extends React.Component {
 
   static navigationOptions = {
-    
+
     tabBarIcon: ({tintColor}) => (
       <MaterialCommunityIcons name="soccer-field" color={tintColor} size={24} />
     )

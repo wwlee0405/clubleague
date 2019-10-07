@@ -4,9 +4,9 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import HomeTab from "./HomeTab";
-import FeedTab from "./FeedTab";
-import NoticeTab from "./NoticeTab";
+import HomeTab from "../AppTabNavigator/HomeTab";
+import FeedTab from "../AppTabNavigator/FeedTab";
+import NoticeTab from "../AppTabNavigator/NoticeTab";
 
 class MainScreen extends React.Component {
 

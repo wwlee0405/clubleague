@@ -4,7 +4,7 @@ import {
   createSwitchNavigator,
   createAppContainer
 } from "react-navigation";
-import AppRoutes from "./src/screens/AppRoutes";
+import AppRoutes from "./src/Components/screens/AppRoutes";
 
 class App extends React.Component {
   render() {

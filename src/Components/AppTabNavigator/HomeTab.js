@@ -2,11 +2,12 @@ import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
 import { Feather } from '@expo/vector-icons';
+import ClubComponent from "../ClubComponent";
 
 class HomeTab extends React.Component {
 
   static navigationOptions = {
-    
+
     tabBarIcon: ({tintColor}) => (
       <Feather name="home" color={tintColor} size={24} />
     )
@@ -17,6 +18,7 @@ class HomeTab extends React.Component {
       <View style={styles.container}>
         <View style={styles.clubContainer}>
           <Text>Club league</Text>
+          <ClubComponent />
         </View>
         <View style={styles.scheduleContainer}>
           <Text>Schedule!!</Text>
