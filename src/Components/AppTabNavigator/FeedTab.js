@@ -2,14 +2,12 @@ import React from "react";
 import {
   StyleSheet,
   Text,
-  View,
-  SafeAreaView,
-  TextInput,
-  Platform,
-  StatusBar,
-  ScrollView
+  View
 } from "react-native";
+
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Container, Content, Item ,Input, Button } from "native-base";
+import FeedCardComponent from "../FeedCardComponent";
 
 class FeedTab extends React.Component {
 
@@ -20,39 +18,31 @@ class FeedTab extends React.Component {
     )
   }
 
-  componentWillMount(){
-    this.startHeaderHeight = 80
-    if(Platform.OS == 'android') {
-      this.startHeaderHeight = 100 + StatusBar.currentHeight
-    }
-  }
-
   render() {
     return (
-      <SafeAreaView style={{ flex:1 }}>
-        <View style={{ flex:1 }}>
-          <View style={{ height: this.startHeaderHeight, backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
-            <View style={{
-              flexDrection: 'row', padding: 10,
-              backgroundColor: 'white', marginHorizontal: 30,
-              shadowOffset: { width: 0, height: 0 },
-              shadowColor: 'black',
-              shadowOpacity: 0.2,
-              elevation: 1,
-              marginTop: Platform.OS== 'android' ?30 : null
-            }}>
-              <Feather name="search" size={20} style={{ marginRight: 10 }} />
-              <TextInput
-                underlineColorAndroid="transparant"
-                placeholder="Try New Delhi"
-                placeholderTextColor="grey"
-                style={{ flex: 1, fontWeight: '700', backgroundColor: 'white' }}
-              />
+      <Container>
+
+        <Content>
+          <View style={{ paddingTop: 10, paddingBottom: 10 }}>
+            <View style={{ flex: 1, paddingTop: 10, paddingLeft: 20, paddingRight: 20 }}>
+              <Item searchBar rounded style={{ paddingLeft: 20, paddingRight: 20 }}>
+                <Feather name="search" size={20} style={{ marginRight: 10 }} />
+                <Input placeholder="도시명, 클럽명, 경기일자" />
+                <Button transparent>
+                  <Text>Search</Text>
+                </Button>
+              </Item>
             </View>
           </View>
 
-        </View>
-      </SafeAreaView>
+
+          <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
+          <FeedCardComponent profileImage="2" user="Yuna" address="Seoul, Korea" imageSource="2" hits="200"/>
+          <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
+          <FeedCardComponent profileImage="4" user="Seulgi" address="Seongnam, Korea" imageSource="4" hits="400"/>
+
+        </Content>
+      </Container>
     );
   }
 }
