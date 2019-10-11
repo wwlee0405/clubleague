@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView ,Button } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Thumbnail } from "native-base";
+
+import HeaderComponent from "./HeaderComponent";
 import FeedCardComponent from "../FeedCardComponent";
 
 class HomeTab extends React.Component {
@@ -16,6 +18,8 @@ class HomeTab extends React.Component {
   render() {
     return (
       <Container style={styles.container}>
+        <HeaderComponent />
+
         <Content>
 
           <View style={{ height: 140 }}>
@@ -65,16 +69,16 @@ class HomeTab extends React.Component {
                 />
                 <Thumbnail
                   style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                  source={require('../../../assets/ImgTest/2bar.jpg')}
+                  large source={require('../../../assets/ImgTest/2bar.jpg')}
                 />
               </ScrollView>
             </View>
           </View>
+
           <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
           <FeedCardComponent profileImage="2" user="Yuna" address="Seoul, Korea" imageSource="2" hits="200"/>
           <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
           <FeedCardComponent profileImage="4" user="Seulgi" address="Seongnam, Korea" imageSource="4" hits="400"/>
-
 
         </Content>
       </Container>

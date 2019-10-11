@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 class NoticeTab extends React.Component {
 
   static navigationOptions = {
-    
+
     tabBarIcon: ({tintColor}) => (
       <Feather name="bell" color={tintColor} size={24} />
     )
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
-    },
+  },
   text: {
     color: "#2C2C2C",
     fontSize: 30

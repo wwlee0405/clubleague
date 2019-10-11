@@ -6,9 +6,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import Home from "./Home";
-import Feed from "./Feed";
-import Notice from "./Notice";
+
+import HomeTab from "../AppTabNavigator/HomeTab";
+import FeedTab from "../AppTabNavigator/FeedTab";
+import NoticeTab from "../AppTabNavigator/NoticeTab";
+import ProfileTab from "../AppTabNavigator/ProfileTab";
 
 class DetailsScreen extends React.Component {
   render() {
@@ -49,17 +51,17 @@ class SettingsScreen extends React.Component {
 }
 
 const HomeStack = createStackNavigator({
-  Home: Home,
+  Home: HomeTab,
   Details: DetailsScreen,
 });
 
 const FeedStack = createStackNavigator({
-  Feed: Feed,
+  Feed: FeedTab,
   Details: DetailsScreen,
 });
 
 const NoticeStack = createStackNavigator({
-  Notice: Notice,
+  Notice: NoticeTab,
   Details: DetailsScreen,
 });
 

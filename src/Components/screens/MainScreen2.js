@@ -6,14 +6,14 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeTab from "../AppTabNavigator/HomeTab";
 import FeedTab from "../AppTabNavigator/FeedTab";
 import NoticeTab from "../AppTabNavigator/NoticeTab";
-
 import ProfileTab from "../AppTabNavigator/ProfileTab";
-import EditProfileTab from "../AppTabNavigator/EditProfileTab";
 
 class MainScreen extends React.Component {
 
   static navigationOptions = {
-    header: null
+    headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
+    title: "Club League",
+    headerRight: <Feather name="user" size={30} style={{ paddingRight: 10 }} />
   }
 
   render() {
@@ -37,9 +37,6 @@ const AppTabNavigator = createBottomTabNavigator({
   },
   Profile:{
     screen: ProfileTab
-  },
-  EditProfile:{
-    screen: EditProfileTab
   }
 },{
   animationEnabled: true,

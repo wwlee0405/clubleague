@@ -15,8 +15,8 @@ class FeedCardComponent extends React.Component {
     }
 
     const images = {
-      "1": require('../../assets/ImgTest/1ars.jpg'),
-      "2": require('../../assets/ImgTest/2bar.jpg'),
+      "1": require('../../assets/ImgTest/aaaa.jpg'),
+      "2": require('../../assets/ImgTest/bbbb.jpg'),
       "3": require('../../assets/ImgTest/1ars.jpg'),
       "4": require('../../assets/ImgTest/2bar.jpg')
     }
@@ -82,12 +82,3 @@ class FeedCardComponent extends React.Component {
 }
 
 export default FeedCardComponent;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});

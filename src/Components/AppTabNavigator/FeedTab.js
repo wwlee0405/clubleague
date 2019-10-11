@@ -1,12 +1,8 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
-
+import { StyleSheet, Text, View } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Item ,Input, Button } from "native-base";
+import HeaderComponent from "./HeaderComponent";
 import FeedCardComponent from "../FeedCardComponent";
 
 class FeedTab extends React.Component {
@@ -21,7 +17,7 @@ class FeedTab extends React.Component {
   render() {
     return (
       <Container>
-
+        <HeaderComponent />
         <Content>
           <View style={{ paddingTop: 10, paddingBottom: 10 }}>
             <View style={{ flex: 1, paddingTop: 10, paddingLeft: 20, paddingRight: 20 }}>
@@ -48,16 +44,3 @@ class FeedTab extends React.Component {
 }
 
 export default FeedTab;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    //backgroundColor: '#fff',
-    //alignItems: 'center',
-    //justifyContent: 'center',
-    justifyContent: "flex-end",
-    paddingHorizontal: 30,
-    paddingVertical: 100,
-    backgroundColor: "#FDF6AA"
-  }
-});
