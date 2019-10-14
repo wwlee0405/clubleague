@@ -4,7 +4,7 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Button, Header, Left, Right, Body } from "native-base";
 
 
-class EditProfileTab extends React.Component {
+class EditProfileScreen extends React.Component {
 
   render() {
     return (
@@ -24,17 +24,17 @@ class EditProfileTab extends React.Component {
 
           <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
             <Image
-              source={require('../../../assets/ImgTest/cccc.jpg')}
+              source={require('../../assets/ImgTest/cccc.jpg')}
               style={{ width: 200, height: 200, borderRadius: 100 }}
             />
           </View>
-      
+
 
           <View style={{ paddingTop: 10 }}>
             <View style={{ flexDirection: 'row' }}>
               <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
                 <Image
-                  source={require('../../../assets/ImgTest/cccc.jpg')}
+                  source={require('../../assets/ImgTest/cccc.jpg')}
                   style={{ width: 150, height: 150, borderRadius: 100 }}
                 />
               </View>
@@ -87,7 +87,7 @@ class EditProfileTab extends React.Component {
   }
 }
 
-export default EditProfileTab;
+export default EditProfileScreen;
 
 const styles = StyleSheet.create({
   container: {

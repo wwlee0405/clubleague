@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Item ,Input, Button } from "native-base";
-import HeaderComponent from "./HeaderComponent";
-import FeedCardComponent from "../FeedCardComponent";
+import colors from '../styles/colors';
+import FeedCardComponent from "../components/FeedCardComponent";
 
-class FeedTab extends React.Component {
+class FeedScreen extends React.Component {
 
   static navigationOptions = {
 
@@ -17,7 +17,6 @@ class FeedTab extends React.Component {
   render() {
     return (
       <Container>
-        <HeaderComponent />
         <Content>
           <View style={{ paddingTop: 10, paddingBottom: 10 }}>
             <View style={{ flex: 1, paddingTop: 10, paddingLeft: 20, paddingRight: 20 }}>
@@ -33,9 +32,9 @@ class FeedTab extends React.Component {
 
 
           <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
-          <FeedCardComponent profileImage="2" user="Yuna" address="Seoul, Korea" imageSource="2" hits="200"/>
+          <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
           <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
-          <FeedCardComponent profileImage="4" user="Seulgi" address="Seongnam, Korea" imageSource="4" hits="400"/>
+          <FeedCardComponent profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
 
         </Content>
       </Container>
@@ -43,4 +42,4 @@ class FeedTab extends React.Component {
   }
 }
 
-export default FeedTab;
+export default FeedScreen;

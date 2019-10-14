@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Button } from "native-base";
 
-import HeaderComponent from "./HeaderComponent";
+import HeaderComponent from "../components/HeaderComponent";
 
-class ProfileTab extends React.Component {
+class ProfileScreen extends React.Component {
 
   render() {
     return (
@@ -18,7 +18,7 @@ class ProfileTab extends React.Component {
             <View style={{ flexDirection: 'row' }}>
               <View style={{ flex: 1, alignItems: 'center' }}>
                 <Image
-                  source={require('../../../assets/ImgTest/cccc.jpg')}
+                  source={require('../../assets/ImgTest/cccc.jpg')}
                   style={{ width: 150, height: 150, borderRadius: 100 }}
                 />
               </View>
@@ -70,7 +70,7 @@ class ProfileTab extends React.Component {
   }
 }
 
-export default ProfileTab;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {

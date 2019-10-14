@@ -3,17 +3,17 @@ import { StyleSheet, Text, View, Platform } from "react-native";
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import HomeTab from "../AppTabNavigator/HomeTab";
-import FeedTab from "../AppTabNavigator/FeedTab";
-import NoticeTab from "../AppTabNavigator/NoticeTab";
-
-import ProfileTab from "../AppTabNavigator/ProfileTab";
-import EditProfileTab from "../AppTabNavigator/EditProfileTab";
+import HomeScreen from "../screens/HomeScreen";
+import FeedScreen from "../screens/FeedScreen";
+import NoticeScreen from "../screens/NoticeScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
 class MainScreen extends React.Component {
 
   static navigationOptions = {
-    header: null
+    headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
+    title: "Club League",
+    headerRight: <Feather name="user" size={30} style={{ paddingRight: 10 }} />
   }
 
   render() {
@@ -27,19 +27,16 @@ export default MainScreen;
 
 const AppTabNavigator = createBottomTabNavigator({
   Home:{
-    screen: HomeTab
+    screen: HomeScreen
   },
   Feed:{
-    screen: FeedTab
+    screen: FeedScreen
   },
   Notice:{
-    screen: NoticeTab
+    screen: NoticeScreen
   },
   Profile:{
-    screen: ProfileTab
-  },
-  EditProfile:{
-    screen: EditProfileTab
+    screen: ProfileScreen
   }
 },{
   animationEnabled: true,

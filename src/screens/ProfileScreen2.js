@@ -3,26 +3,26 @@ import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Header, Left, Right, Body, Button } from "native-base";
 
-import FeedCardComponent from "../FeedCardComponent";
+import FeedCardComponent from "../components/FeedCardComponent";
 
 var images = [
-  require('../../../assets/ImgTest/aaaa.jpg'),
-  require('../../../assets/ImgTest/bbbb.jpg'),
-  require('../../../assets/ImgTest/cccc.jpg'),
-  require('../../../assets/ImgTest/dddd.jpg'),
-  require('../../../assets/ImgTest/eeee.png'),
-  require('../../../assets/ImgTest/ffff.jpg'),
-  require('../../../assets/ImgTest/gggg.jpg'),
-  require('../../../assets/ImgTest/aaaa.jpg'),
-  require('../../../assets/ImgTest/bbbb.jpg'),
-  require('../../../assets/ImgTest/cccc.jpg'),
-  require('../../../assets/ImgTest/dddd.jpg'),
-  require('../../../assets/ImgTest/cccc.jpg')
+  require('../../assets/ImgTest/aaaa.jpg'),
+  require('../../assets/ImgTest/bbbb.jpg'),
+  require('../../assets/ImgTest/cccc.jpg'),
+  require('../../assets/ImgTest/dddd.jpg'),
+  require('../../assets/ImgTest/eeee.png'),
+  require('../../assets/ImgTest/ffff.jpg'),
+  require('../../assets/ImgTest/gggg.jpg'),
+  require('../../assets/ImgTest/aaaa.jpg'),
+  require('../../assets/ImgTest/bbbb.jpg'),
+  require('../../assets/ImgTest/cccc.jpg'),
+  require('../../assets/ImgTest/dddd.jpg'),
+  require('../../assets/ImgTest/cccc.jpg')
 ]
 
 var {width,height} = Dimensions.get('window')
 
-class ProfileTab extends React.Component {
+class ProfileScreen extends React.Component {
 
   static navigationOptions = {
 
@@ -98,7 +98,7 @@ class ProfileTab extends React.Component {
             <View style={{ flexDirection: 'row' }}>
               <View style={{ flex: 1, alignItems: 'center' }}>
                 <Image
-                  source={require('../../../assets/ImgTest/cccc.jpg')}
+                  source={require('../../assets/ImgTest/cccc.jpg')}
                   style={{ width: 75, height: 75, borderRadius: 37.5 }}
                 />
               </View>
@@ -189,7 +189,7 @@ class ProfileTab extends React.Component {
   }
 }
 
-export default ProfileTab;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {

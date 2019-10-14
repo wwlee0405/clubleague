@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { Feather } from '@expo/vector-icons';
 
-class NoticeTab extends React.Component {
+class NoticeScreen extends React.Component {
 
   static navigationOptions = {
 
@@ -23,7 +23,7 @@ class NoticeTab extends React.Component {
   }
 }
 
-export default NoticeTab;
+export default NoticeScreen;
 
 const styles = StyleSheet.create({
   container: {
