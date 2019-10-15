@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { Feather } from '@expo/vector-icons';
 
+import HeaderComponent from "../components/HeaderComponent";
+
 class NoticeScreen extends React.Component {
 
   static navigationOptions = {
@@ -13,6 +15,7 @@ class NoticeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <HeaderComponent />
         {/* other code from before here */}
         <Button
           title="Go to Details"

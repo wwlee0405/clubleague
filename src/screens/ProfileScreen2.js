@@ -6,18 +6,18 @@ import { Container, Content, Header, Left, Right, Body, Button } from "native-ba
 import FeedCardComponent from "../components/FeedCardComponent";
 
 var images = [
-  require('../../assets/ImgTest/aaaa.jpg'),
-  require('../../assets/ImgTest/bbbb.jpg'),
-  require('../../assets/ImgTest/cccc.jpg'),
-  require('../../assets/ImgTest/dddd.jpg'),
-  require('../../assets/ImgTest/eeee.png'),
-  require('../../assets/ImgTest/ffff.jpg'),
-  require('../../assets/ImgTest/gggg.jpg'),
-  require('../../assets/ImgTest/aaaa.jpg'),
-  require('../../assets/ImgTest/bbbb.jpg'),
-  require('../../assets/ImgTest/cccc.jpg'),
-  require('../../assets/ImgTest/dddd.jpg'),
-  require('../../assets/ImgTest/cccc.jpg')
+  require('../data/ImgTest/aaaa.jpg'),
+  require('../data/ImgTest/bbbb.jpg'),
+  require('../data/ImgTest/cccc.jpg'),
+  require('../data/ImgTest/dddd.jpg'),
+  require('../data/ImgTest/eeee.png'),
+  require('../data/ImgTest/ffff.jpg'),
+  require('../data/ImgTest/gggg.jpg'),
+  require('../data/ImgTest/aaaa.jpg'),
+  require('../data/ImgTest/bbbb.jpg'),
+  require('../data/ImgTest/cccc.jpg'),
+  require('../data/ImgTest/dddd.jpg'),
+  require('../data/ImgTest/cccc.jpg')
 ]
 
 var {width,height} = Dimensions.get('window')
@@ -98,7 +98,7 @@ class ProfileScreen extends React.Component {
             <View style={{ flexDirection: 'row' }}>
               <View style={{ flex: 1, alignItems: 'center' }}>
                 <Image
-                  source={require('../../assets/ImgTest/cccc.jpg')}
+                  source={require('../data/ImgTest/cccc.jpg')}
                   style={{ width: 75, height: 75, borderRadius: 37.5 }}
                 />
               </View>

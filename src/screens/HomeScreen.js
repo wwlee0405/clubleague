@@ -1,8 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView ,Button } from "react-native";
+import { StyleSheet, Text, View, ScrollView , TouchableOpacity, Button } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Thumbnail } from "native-base";
 import colors from '../styles/colors';
+
+import ProfileScreen from "../screens/ProfileScreen";
 import FeedCardComponent from "../components/FeedCardComponent";
 
 class HomeScreen extends React.Component {
@@ -10,13 +12,14 @@ class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
-      headerTitle: <Text>Clubleague</Text>,
+      headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Clubleague</Text>,
       headerRight: (
-        <Button
-          onPress={navigation.getParam('increaseCount')}
-          title="+1"
-          color="#fff"
-        />
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Profile')}
+          title="profile"
+        >
+          <Feather name="user" size={30} style={{ paddingRight: 10 }} />
+        </TouchableOpacity>
       ),
     };
   };
@@ -37,9 +40,14 @@ class HomeScreen extends React.Component {
               }}
             >
               <Text style={{ fontWeight: 'bold' }}>Club</Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Feather name="plus-circle" style={{ fontSize: 14 }} />
-                <Text style={{ fontWeight: 'bold' }}>New Club</Text>
+              <View>
+                <TouchableOpacity
+                  onPress={() => alert("New Club")}
+                  style={{ flexDirection: 'row', alignItems: 'center' }}
+                >
+                  <Feather name="plus-circle" style={{ fontSize: 14 }} />
+                  <Text style={{ fontWeight: 'bold' }}>New Club</Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={{ flex: 3 }}>
@@ -52,30 +60,54 @@ class HomeScreen extends React.Component {
                   paddingEnd: 5
                 }}
               >
-                <Thumbnail
-                  style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
-                  large source={require('../../assets/ImgTest/1ars.jpg')}
-                />
-                <Thumbnail
-                  style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
-                  large source={require('../../assets/ImgTest/2bar.jpg')}
-                />
-                <Thumbnail
-                  style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
-                  large source={require('../../assets/ImgTest/1ars.jpg')}
-                />
-                <Thumbnail
-                  style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
-                  large source={require('../../assets/ImgTest/2bar.jpg')}
-                />
-                <Thumbnail
-                  style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
-                  large source={require('../../assets/ImgTest/1ars.jpg')}
-                />
-                <Thumbnail
-                  style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
-                  large source={require('../../assets/ImgTest/2bar.jpg')}
-                />
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('Details')}
+                >
+                  <Thumbnail
+                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    large source={require('../data/ImgTest/1ars.jpg')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('Details')}
+                >
+                  <Thumbnail
+                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    large source={require('../data/ImgTest/2bar.jpg')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('Details')}
+                >
+                  <Thumbnail
+                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    large source={require('../data/ImgTest/1ars.jpg')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('Details')}
+                >
+                  <Thumbnail
+                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    large source={require('../data/ImgTest/2bar.jpg')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('Details')}
+                >
+                  <Thumbnail
+                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    large source={require('../data/ImgTest/1ars.jpg')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('Details')}
+                >
+                  <Thumbnail
+                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    large source={require('../data/ImgTest/2bar.jpg')}
+                  />
+                </TouchableOpacity>
               </ScrollView>
             </View>
           </View>

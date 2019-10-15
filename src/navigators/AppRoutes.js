@@ -3,12 +3,14 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+
 import HomeScreen from "../screens/HomeScreen";
 import FeedScreen from "../screens/FeedScreen";
 import NoticeScreen from "../screens/NoticeScreen";
 
 import ProfileScreen from "../screens/ProfileScreen";
 import EditProfileScreen from "../screens/EditProfileScreen";
+import DetailsScreen from "../screens/DetailsScreen";
 
 class AppRoutes extends React.Component {
   render() {
@@ -18,10 +20,14 @@ class AppRoutes extends React.Component {
   }
 }
 
-
-
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
+  Details: {
+    screen: DetailsScreen,
+    navigationOptions: () => ({
+      title: "Detail for clubhouse",
+    }),
+  },
 });
 
 const FeedStack = createStackNavigator({
@@ -33,58 +39,51 @@ const NoticeStack = createStackNavigator({
 });
 
 const ProfileStack = createStackNavigator({
-  Notice: ProfileScreen,
-});
-
-const EditProfileStack = createStackNavigator({
-  Notice: EditProfileScreen,
+  Prifile: ProfileScreen,
+  EditProfile: {
+    screen: EditProfileScreen,
+    navigationOptions: () => ({
+      title: "EditProfile",
+    }),
+  },
 });
 
 export default createAppContainer(
   createBottomTabNavigator(
     {
-      Home:{
+      Home: {
         screen: HomeStack,
         navigationOptions:{
-          tabBarLabel: 'HOME',
+          tabBarLabel: 'Home',
           tabBarIcon: ({tintColor}) => (
             <Feather name="home" color={tintColor} size={24} />
           )
         }
       },
-      Feed:{
+      Feed: {
         screen: FeedStack,
-        navigationOptions:{
-          tabBarLabel: 'FEED',
+        navigationOptions: {
+          tabBarLabel: 'Feed',
           tabBarIcon: ({tintColor}) => (
             <MaterialCommunityIcons name="soccer-field" color={tintColor} size={24} />
           )
         }
       },
-      Notice:{
+      Notice: {
         screen: NoticeStack,
-        navigationOptions:{
-          tabBarLabel: 'NOTICE',
+        navigationOptions: {
+          tabBarLabel: 'Notice',
           tabBarIcon: ({tintColor}) => (
             <Feather name="bell" color={tintColor} size={24} />
           )
         }
       },
-      Profile:{
+      Profile: {
         screen: ProfileStack,
-        navigationOptions:{
+        navigationOptions: {
           tabBarLabel: 'Profile',
           tabBarIcon: ({tintColor}) => (
-            <Feather name="bell" color={tintColor} size={24} />
-          )
-        }
-      },
-      Edit:{
-        screen: EditProfileStack,
-        navigationOptions:{
-          tabBarLabel: 'Edit',
-          tabBarIcon: ({tintColor}) => (
-            <Feather name="bell" color={tintColor} size={24} />
+            <Feather name="user" color={tintColor} size={24} />
           )
         }
       },
@@ -94,10 +93,10 @@ export default createAppContainer(
       tabBarOptions: {
         activeTintColor: '#34A853',
         inactiveTintColor: 'grey',
-        style:{
+        style: {
           backgroundColor: '#FAFAFA',
           borderTopWidth: 0,
-          shadowOffset:{width:5,height:3},
+          shadowOffset: {width:5,height:3},
           shadowColor: 'black',
           shadowOpacity: 0.5,
           elevation: 5

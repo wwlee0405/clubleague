@@ -17,14 +17,8 @@ export default App;
 class WelcomeScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>WelcomeScreen</Text>
-        <Button
-          title="Login"
-          onPress={() => this.props.navigation.navigate('Main')}
-        />
-        <Button title="Sign Up" onPress={() => alart('button pressed')} />
-
+      <View style={styles.container}>
+        <Text style={styles.titleText}>Clubleague</Text>
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.userBtn}
@@ -58,6 +52,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  titleText: {
+    fontSize: 30,
+    fontWeight: "700",
+    marginBottom: 30,
   },
   btnContainer: {
     flexDirection: "row",

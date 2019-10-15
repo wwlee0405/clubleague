@@ -18,7 +18,7 @@ class ProfileScreen extends React.Component {
             <View style={{ flexDirection: 'row' }}>
               <View style={{ flex: 1, alignItems: 'center' }}>
                 <Image
-                  source={require('../../assets/ImgTest/cccc.jpg')}
+                  source={require('../data/ImgTest/cccc.jpg')}
                   style={{ width: 150, height: 150, borderRadius: 100 }}
                 />
               </View>

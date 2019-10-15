@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Badge } from "native-base";
 import { Feather } from '@expo/vector-icons';
 
@@ -8,26 +8,28 @@ class FeedCardComponent extends React.Component {
   render() {
 
     const profileImages = {
-      "1": require('../../assets/ImgTest/eeee.png'),
-      "2": require('../../assets/ImgTest/ffff.jpg'),
-      "3": require('../../assets/ImgTest/cccc.jpg'),
-      "4": require('../../assets/ImgTest/dddd.jpg')
+      "1": require('../data/ImgTest/eeee.png'),
+      "2": require('../data/ImgTest/ffff.jpg'),
+      "3": require('../data/ImgTest/cccc.jpg'),
+      "4": require('../data/ImgTest/dddd.jpg')
     }
 
     const images = {
-      "1": require('../../assets/ImgTest/aaaa.jpg'),
-      "2": require('../../assets/ImgTest/bbbb.jpg'),
-      "3": require('../../assets/ImgTest/1ars.jpg'),
-      "4": require('../../assets/ImgTest/2bar.jpg')
+      "1": require('../data/ImgTest/aaaa.jpg'),
+      "2": require('../data/ImgTest/bbbb.jpg'),
+      "3": require('../data/ImgTest/1ars.jpg'),
+      "4": require('../data/ImgTest/2bar.jpg')
     }
 
     return (
       <Card>
         <CardItem>
           <Left>
-            <Thumbnail
-              source={profileImages[this.props.profileImage]}
-            />
+            <TouchableOpacity
+              onPress={() => alert("Profole")}
+            >
+              <Thumbnail source={profileImages[this.props.profileImage]} />
+            </TouchableOpacity>
             <Body>
               <Text>{this.props.user}</Text>
               <Text>{this.props.address}</Text>
