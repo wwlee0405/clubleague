@@ -21,12 +21,12 @@ class EditProfileScreen extends React.Component {
           </View>
 
 
-          <View style={{ padding: 20 }}>
-            <TextInputField labelText="Username" />
-            <TextInputField labelText="Name" />
-            <TextInputField labelText="Area" />
-            <TextInputField labelText="Position" />
-            <TextInputField labelText="Mainclub" />
+          <View style={styles.textWrap}>
+            <TextInputField labelText="Username" placeholder="Username" />
+            <TextInputField labelText="Name" placeholder="Name" />
+            <TextInputField labelText="Area" placeholder="Area" />
+            <TextInputField labelText="Position" placeholder="Position" />
+            <TextInputField labelText="Mainclub" placeholder="Mainclub" />
 
             <View style={{ paddingTop: 20 }}>
               <Button
@@ -62,6 +62,8 @@ const styles = StyleSheet.create({
     width: 180,
     height: 180,
     borderRadius: 100,
+  },
+  textWrap: {
+    padding: 20,
   }
-
 });

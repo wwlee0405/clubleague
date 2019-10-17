@@ -36,6 +36,7 @@ const FeedStack = createStackNavigator({
 
 const NoticeStack = createStackNavigator({
   Notice: NoticeScreen,
+  Details: DetailsScreen,
 });
 
 const ProfileStack = createStackNavigator({
@@ -43,7 +44,7 @@ const ProfileStack = createStackNavigator({
   EditProfile: {
     screen: EditProfileScreen,
     navigationOptions: () => ({
-      title: "EditProfile",
+      title: "Edit Profile",
     }),
   },
 });

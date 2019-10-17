@@ -27,30 +27,21 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <Container style={styles.container}>
-
         <Content>
 
-          <View style={{ height: 140 }}>
-            <View style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                paddingHorizontal: 7
-              }}
-            >
-              <Text style={{ fontWeight: 'bold' }}>Club</Text>
+          <View style={styles.clubContainer}>
+            <View style={styles.clubContainerTopWrap}>
+              <Text style={styles.clubContainerRightText}>Club</Text>
               <View>
                 <TouchableOpacity
                   onPress={() => alert("New Club")}
-                  style={{ flexDirection: 'row', alignItems: 'center' }}
-                >
-                  <Feather name="plus-circle" style={{ fontSize: 14 }} />
-                  <Text style={{ fontWeight: 'bold' }}>New Club</Text>
+                  style={styles.clubContainerLeftButton}>
+                  <Feather name="plus-circle" style={styles.clubContainerLeftButtonIcon} />
+                  <Text style={styles.clubContainerLeftText}>New Club</Text>
                 </TouchableOpacity>
               </View>
             </View>
-            <View style={{ flex: 3 }}>
+            <View style={styles.clubContainerBottomWrap}>
               <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -64,7 +55,7 @@ class HomeScreen extends React.Component {
                   onPress={() => this.props.navigation.navigate('Details')}
                 >
                   <Thumbnail
-                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    style={styles.largeThumbnail}
                     large source={require('../data/ImgTest/1ars.jpg')}
                   />
                 </TouchableOpacity>
@@ -72,7 +63,7 @@ class HomeScreen extends React.Component {
                   onPress={() => this.props.navigation.navigate('Details')}
                 >
                   <Thumbnail
-                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    style={styles.largeThumbnail}
                     large source={require('../data/ImgTest/2bar.jpg')}
                   />
                 </TouchableOpacity>
@@ -80,7 +71,7 @@ class HomeScreen extends React.Component {
                   onPress={() => this.props.navigation.navigate('Details')}
                 >
                   <Thumbnail
-                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    style={styles.largeThumbnail}
                     large source={require('../data/ImgTest/1ars.jpg')}
                   />
                 </TouchableOpacity>
@@ -88,7 +79,7 @@ class HomeScreen extends React.Component {
                   onPress={() => this.props.navigation.navigate('Details')}
                 >
                   <Thumbnail
-                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    style={styles.largeThumbnail}
                     large source={require('../data/ImgTest/2bar.jpg')}
                   />
                 </TouchableOpacity>
@@ -96,7 +87,7 @@ class HomeScreen extends React.Component {
                   onPress={() => this.props.navigation.navigate('Details')}
                 >
                   <Thumbnail
-                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    style={styles.largeThumbnail}
                     large source={require('../data/ImgTest/1ars.jpg')}
                   />
                 </TouchableOpacity>
@@ -104,13 +95,15 @@ class HomeScreen extends React.Component {
                   onPress={() => this.props.navigation.navigate('Details')}
                 >
                   <Thumbnail
-                    style={{ marginHorizontal: 5, borderColor: colors.pink, borderWidth: 2 }}
+                    style={styles.largeThumbnail}
                     large source={require('../data/ImgTest/2bar.jpg')}
                   />
                 </TouchableOpacity>
               </ScrollView>
             </View>
           </View>
+
+
 
           <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
           <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
@@ -130,5 +123,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+  },
+  clubContainer: {
+    height: 140,
+  },
+  clubContainerTopWrap: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 7,
+  },
+  clubContainerRightText: {
+    fontWeight: 'bold',
+  },
+  clubContainerLeftButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  clubContainerLeftButtonIcon: {
+    fontSize: 14,
+  },
+  clubContainerLeftText: {
+    fontWeight: 'bold',
+  },
+  clubContainerBottomWrap: {
+    flex: 3,
+  },
+  largeThumbnail: {
+    marginHorizontal: 5,
+    borderColor: colors.pink,
+    borderWidth: 2,
   }
 });
