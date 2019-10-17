@@ -3,7 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-
+import colors from '../styles/colors';
 import HomeScreen from "../screens/HomeScreen";
 import FeedScreen from "../screens/FeedScreen";
 import NoticeScreen from "../screens/NoticeScreen";
@@ -92,13 +92,15 @@ export default createAppContainer(
     },
     {
       tabBarOptions: {
-        activeTintColor: '#34A853',
-        inactiveTintColor: 'grey',
+        activeTintColor: colors.green01,
+        inactiveTintColor: colors.lightGrey,
         style: {
-          backgroundColor: '#FAFAFA',
+          showLabel: false,
+          showIcon: true,
+          backgroundColor: colors.white,
           borderTopWidth: 0,
-          shadowOffset: {width:5,height:3},
-          shadowColor: 'black',
+          shadowOffset: {width:5, height:3},
+          shadowColor: colors.black,
           shadowOpacity: 0.5,
           elevation: 5
         }

@@ -8,6 +8,8 @@ import FeedScreen from "../screens/FeedScreen";
 import NoticeScreen from "../screens/NoticeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
+//AppRouters.js => MainScreen.js (Navigator part backup)
+
 class MainScreen extends React.Component {
 
   static navigationOptions = {

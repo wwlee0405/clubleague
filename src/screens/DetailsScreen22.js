@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Header, Left, Right, Body, Button } from "native-base";
+import { Container, Content, Header, Left, Right, Body } from "native-base";
 import colors from '../styles/colors';
 
 import FeedCardComponent from "../components/FeedCardComponent";
@@ -92,13 +92,7 @@ class DetailsScreen extends React.Component {
 
       return (
         <View>
-          <Button
-            bordered dark
-            style={styles.editProfileButton}
-            onPress={() => this.props.navigation.navigate('EditProfile')}
-          >
-            <Text>Edit Profile</Text>
-          </Button>
+          <Text>this is the forth section</Text>
         </View>
       )
     }
