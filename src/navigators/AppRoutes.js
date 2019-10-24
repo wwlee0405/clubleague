@@ -7,10 +7,10 @@ import colors from '../styles/colors';
 import HomeScreen from "../screens/HomeScreen";
 import FeedScreen from "../screens/FeedScreen";
 import NoticeScreen from "../screens/NoticeScreen";
-
 import ProfileScreen from "../screens/ProfileScreen";
 import EditProfileScreen from "../screens/EditProfileScreen";
 import DetailsScreen from "../screens/DetailsScreen";
+import WritingScreen from "../screens/WritingScreen";
 
 class AppRoutes extends React.Component {
   render() {
@@ -28,19 +28,12 @@ const HomeStack = createStackNavigator({
       title: "Detail for clubhouse",
     }),
   },
-});
-
-const FeedStack = createStackNavigator({
-  Feed: FeedScreen,
-});
-
-const NoticeStack = createStackNavigator({
-  Notice: NoticeScreen,
-  Details: DetailsScreen,
-});
-
-const ProfileStack = createStackNavigator({
-  Prifile: ProfileScreen,
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: "Profile"
+    }),
+  },
   EditProfile: {
     screen: EditProfileScreen,
     navigationOptions: () => ({
@@ -48,6 +41,33 @@ const ProfileStack = createStackNavigator({
     }),
   },
 });
+
+const FeedStack = createStackNavigator({
+  Feed: FeedScreen,
+  Writing: {
+    screen: WritingScreen,
+    navigationOptions: () => ({
+      title: "Writing",
+    }),
+  },
+});
+
+const NoticeStack = createStackNavigator({
+  Notice: NoticeScreen,
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: "Profile"
+    }),
+  },
+  EditProfile: {
+    screen: EditProfileScreen,
+    navigationOptions: () => ({
+      title: "Edit Profile",
+    }),
+  },
+});
+
 
 export default createAppContainer(
   createBottomTabNavigator(
@@ -76,15 +96,6 @@ export default createAppContainer(
           tabBarLabel: 'Notice',
           tabBarIcon: ({tintColor}) => (
             <Feather name="bell" color={tintColor} size={24} />
-          )
-        }
-      },
-      Profile: {
-        screen: ProfileStack,
-        navigationOptions: {
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({tintColor}) => (
-            <Feather name="user" color={tintColor} size={24} />
           )
         }
       },

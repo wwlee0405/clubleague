@@ -1,25 +1,40 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Button } from "native-base";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { Container, Content } from "native-base";
+import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 import TextInputField from "../components/form/TextInputField";
 
 class EditProfileScreen extends React.Component {
 
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Profile')}
+          title="submit"
+        >
+          <Feather name="check" size={30} style={{ paddingRight: 10 }} />
+        </TouchableOpacity>
+      ),
+    };
+  };
+
   render() {
     return (
       <Container style={styles.container}>
-
         <Content>
 
           <View style={styles.imgWrap}>
-            <Image
-              source={require('../data/ImgTest/cccc.jpg')}
-              style={styles.img}
-            />
+            <TouchableOpacity
+              onPress={() => alert("edit img")}
+            >
+              <Image
+                source={require('../data/ImgTest/cccc.jpg')}
+                style={styles.img}
+              />
+            </TouchableOpacity>
           </View>
-
 
           <View style={styles.textWrap}>
             <TextInputField labelText="Username" placeholder="Username" />
@@ -27,18 +42,7 @@ class EditProfileScreen extends React.Component {
             <TextInputField labelText="Area" placeholder="Area" />
             <TextInputField labelText="Position" placeholder="Position" />
             <TextInputField labelText="Mainclub" placeholder="Mainclub" />
-
-            <View style={{ paddingTop: 20 }}>
-              <Button
-                bordered dark
-                style={{ flex: 1, marginRight: 25, marginLeft: 25, justifyContent: 'center', height: 40 }}
-              >
-                <Text>Submit</Text>
-              </Button>
-            </View>
-
           </View>
-
 
         </Content>
       </Container>

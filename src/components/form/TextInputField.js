@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { PropTypes } from 'prop-types';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Animated, Easing } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import colors from '../../styles/colors';
 
 export default class InputField extends React.Component {

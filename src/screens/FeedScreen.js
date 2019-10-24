@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Item ,Input, Button } from "native-base";
 import colors from '../styles/colors';
@@ -7,12 +7,20 @@ import FeedCardComponent from "../components/FeedCardComponent";
 
 class FeedScreen extends React.Component {
 
-  static navigationOptions = {
-
-    tabBarIcon: ({tintColor}) => (
-      <MaterialCommunityIcons name="soccer-field" color={tintColor} size={24} />
-    )
-  }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
+      headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Clubleague</Text>,
+      headerRight: (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Writing')}
+          title="writing"
+        >
+          <Feather name="edit" size={30} style={{ paddingRight: 10 }} />
+        </TouchableOpacity>
+      ),
+    };
+  };
 
   render() {
     return (

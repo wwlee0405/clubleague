@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Header, Left, Right, Body } from "native-base";
+import { Container, Content, Header, Left, Right, Body, Button } from "native-base";
 import colors from '../styles/colors';
 
 import FeedCardComponent from "../components/FeedCardComponent";
@@ -18,13 +18,13 @@ var images = [
   require('../data/ImgTest/bbbb.jpg'),
   require('../data/ImgTest/cccc.jpg'),
   require('../data/ImgTest/dddd.jpg'),
-  require('../data/ImgTest/cccc.jpg'),
+  require('../data/ImgTest/eeee.png'),
+  require('../data/ImgTest/ffff.jpg'),
+  require('../data/ImgTest/gggg.jpg'),
   require('../data/ImgTest/aaaa.jpg'),
   require('../data/ImgTest/bbbb.jpg'),
   require('../data/ImgTest/cccc.jpg'),
-  require('../data/ImgTest/aaaa.jpg'),
-  require('../data/ImgTest/bbbb.jpg'),
-  require('../data/ImgTest/cccc.jpg'),
+  require('../data/ImgTest/eeee.png'),
 ]
 
 var {width,height} = Dimensions.get('window')
@@ -92,7 +92,13 @@ class DetailsScreen extends React.Component {
 
       return (
         <View>
-          <Text>this is the forth section</Text>
+          <Button
+            bordered dark
+            style={styles.editProfileButton}
+            onPress={() => this.props.navigation.navigate('EditProfile')}
+          >
+            <Text>Edit Profile</Text>
+          </Button>
         </View>
       )
     }
@@ -196,5 +202,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   }
 });
-
-/*backup*/

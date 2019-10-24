@@ -18,13 +18,13 @@ var images = [
   require('../data/ImgTest/bbbb.jpg'),
   require('../data/ImgTest/cccc.jpg'),
   require('../data/ImgTest/dddd.jpg'),
-  require('../data/ImgTest/cccc.jpg'),
+  require('../data/ImgTest/eeee.png'),
+  require('../data/ImgTest/ffff.jpg'),
+  require('../data/ImgTest/gggg.jpg'),
   require('../data/ImgTest/aaaa.jpg'),
   require('../data/ImgTest/bbbb.jpg'),
   require('../data/ImgTest/cccc.jpg'),
-  require('../data/ImgTest/aaaa.jpg'),
-  require('../data/ImgTest/bbbb.jpg'),
-  require('../data/ImgTest/cccc.jpg'),
+  require('../data/ImgTest/eeee.png'),
 ]
 
 var {width,height} = Dimensions.get('window')

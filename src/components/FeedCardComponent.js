@@ -31,7 +31,7 @@ class FeedCardComponent extends React.Component {
               <Thumbnail source={profileImages[this.props.profileImage]} />
             </TouchableOpacity>
             <Body>
-              <Text>{this.props.user}</Text>
+              <Text style={{ fontWeight: 'bold' }}>{this.props.user}</Text>
               <Text>{this.props.address}</Text>
             </Body>
           </Left>

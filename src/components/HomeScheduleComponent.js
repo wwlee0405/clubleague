@@ -1,28 +1,15 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image } from "react-native";
-import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image, Button } from "react-native";
 import colors from '../styles/colors';
 
-class NoticeScreen extends React.Component {
-
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
-      headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Clubleague</Text>,
-      headerRight: (
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Profile')}
-          title="profile"
-        >
-          <Feather name="user" size={30} style={{ paddingRight: 10 }} />
-        </TouchableOpacity>
-      ),
-    };
-  };
+class HomeScheduleComponent extends React.Component {
 
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.scheduleTopWrap}>
+          <Text style={styles.rightText}>My Schedule</Text>
+        </View>
         <ScrollView>
           <FlatList
             data={[
@@ -39,7 +26,8 @@ class NoticeScreen extends React.Component {
             ]}
             renderItem={({item}) =>
               <TouchableOpacity
-                onPress={() => alert("Article")}
+                onPress={() => alert("Detail for Schedule of Club")}
+                /*onPress={() => this.props.navigation.navigate('Details')}*/
               >
                 <View style={styles.noticeWrap}>
 
@@ -48,7 +36,7 @@ class NoticeScreen extends React.Component {
                       onPress={() => alert("Profole")}
                     >
                       <Image
-                        source={require('../data/ImgTest/cccc.jpg')}
+                        source={require('../data/ImgTest/eeee.png')}
                         style={styles.img}
                       />
                     </TouchableOpacity>
@@ -56,7 +44,7 @@ class NoticeScreen extends React.Component {
 
                   <View style={styles.bodyWrap}>
                     <Text style={styles.textTop}>{item.key}</Text>
-                    <Text style={styles.textBottom}>게임 요청을 합니다 . .</Text>
+                    <Text style={styles.textBottom}>Doing what you like will always keep you happy . .</Text>
                   </View>
 
                   <View style={styles.leftWrap}>
@@ -74,11 +62,19 @@ class NoticeScreen extends React.Component {
   }
 }
 
-export default NoticeScreen;
+export default HomeScheduleComponent;
 
 const styles = StyleSheet.create({
   container: {
    flex: 1,
+   paddingTop: 5,
+  },
+  scheduleTopWrap: {
+    height: 40,
+    paddingHorizontal: 7,
+  },
+  rightText: {
+    fontWeight: 'bold',
   },
   noticeWrap: {
     flex: 5,
