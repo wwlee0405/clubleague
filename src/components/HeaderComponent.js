@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Header, Left, Right, Body, Button } from "native-base";
 
+/*This is backup...This can be deleted.*/
+
 class HeaderComponent extends React.Component {
 
   render() {
