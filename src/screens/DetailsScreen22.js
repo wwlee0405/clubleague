@@ -6,6 +6,8 @@ import colors from '../styles/colors';
 
 import FeedCardComponent from "../components/FeedCardComponent";
 
+/*backup*/
+
 var images = [
   require('../data/ImgTest/aaaa.jpg'),
   require('../data/ImgTest/bbbb.jpg'),
