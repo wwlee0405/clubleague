@@ -12,6 +12,10 @@ import EditProfileScreen from "../screens/EditProfileScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import WritingScreen from "../screens/WritingScreen";
 
+import SettingScreen from "../screens/SettingScreen";
+import SettingMemberScreen from "../screens/SettingMemberScreen";
+import SettingManagementScreen from "../screens/SettingManagementScreen";
+
 class AppRoutes extends React.Component {
   render() {
     return (
@@ -26,6 +30,24 @@ const HomeStack = createStackNavigator({
     screen: DetailsScreen,
     navigationOptions: () => ({
       title: "Detail for clubhouse",
+    }),
+  },
+  Setting: {
+    screen: SettingScreen,
+    navigationOptions: () => ({
+      title: "Setting",
+    }),
+  },
+  SettingMember: {
+    screen: SettingMemberScreen,
+    navigationOptions: () => ({
+      title: "SettingMember",
+    }),
+  },
+  SettingManagement: {
+    screen: SettingManagementScreen,
+    navigationOptions: () => ({
+      title: "SettingManagement",
     }),
   },
   Profile: {
@@ -103,7 +125,7 @@ export default createAppContainer(
     },
     {
       tabBarOptions: {
-        activeTintColor: colors.green01,
+        activeTintColor: colors.yellowGreen,
         inactiveTintColor: colors.lightGrey,
         style: {
           showLabel: false,

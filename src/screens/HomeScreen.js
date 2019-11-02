@@ -4,7 +4,6 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Thumbnail } from "native-base";
 import colors from '../styles/colors';
 
-import ProfileScreen from "../screens/ProfileScreen";
 import HomeScheduleComponent from "../components/HomeScheduleComponent";
 
 class HomeScreen extends React.Component {
