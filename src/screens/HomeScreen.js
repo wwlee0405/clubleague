@@ -4,7 +4,7 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Thumbnail } from "native-base";
 import colors from '../styles/colors';
 
-import HomeScheduleComponent from "../components/HomeScheduleComponent";
+import FeedCardComponent from "../components/FeedCardComponent";
 
 class HomeScreen extends React.Component {
 
@@ -103,7 +103,11 @@ class HomeScreen extends React.Component {
 
         <Content>
 
-          <HomeScheduleComponent />
+          <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
+          <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
+          <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
+          <FeedCardComponent profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
+
 
         </Content>
       </Container>

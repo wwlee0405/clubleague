@@ -6,7 +6,6 @@ import colors from '../styles/colors';
 
 import FeedCardComponent from "./FeedCardComponent";
 
-
 class ClubHomeComponent extends React.Component {
 
   render() {
@@ -27,7 +26,6 @@ class ClubHomeComponent extends React.Component {
 
     return (
       <Content>
-
         <View>
           <Image
             source={images[this.props.imageSource]}

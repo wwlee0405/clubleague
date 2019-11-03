@@ -5,6 +5,8 @@ import { Container, Content, Item ,Input, Button } from "native-base";
 import colors from '../styles/colors';
 import FeedCardComponent from "../components/FeedCardComponent";
 
+import SearchInput from "../components/form/SearchInput";
+
 class FeedScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
@@ -26,18 +28,10 @@ class FeedScreen extends React.Component {
     return (
       <Container>
         <Content>
-          <View style={{ paddingTop: 10, paddingBottom: 10 }}>
-            <View style={{ flex: 1, paddingTop: 10, paddingLeft: 20, paddingRight: 20 }}>
-              <Item searchBar rounded style={{ paddingLeft: 20, paddingRight: 20 }}>
-                <Feather name="search" size={20} style={{ marginRight: 10 }} />
-                <Input placeholder="도시명, 클럽명, 경기일자" />
-                <Button transparent>
-                  <Text>Search</Text>
-                </Button>
-              </Item>
-            </View>
+          <View style={{ flex: 1, paddingTop: 250, paddingBottom: 300 }}>
+            <SearchInput placeholderText="종목명, 도시명, 클럽명" />
+            <SearchInput placeholderText="경기일자" />
           </View>
-
 
           <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
           <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
