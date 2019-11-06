@@ -56,10 +56,12 @@ class DetailsScreen extends React.Component {
       )
     }
     else if (this.state.activeIndex == 2) {
-
+      const { navigation } = this.props;
       return (
         <View>
-          <ClubPlayersComponent />
+          <ClubPlayersComponent
+            onPress={() => navigation.navigate('Profile')}
+          />
         </View>
       )
     }

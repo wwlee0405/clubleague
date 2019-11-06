@@ -6,6 +6,9 @@ import colors from '../styles/colors';
 class ClubPlayersComponent extends React.Component {
 
   render() {
+
+    const { onPress } = this.props;
+
     return (
       <View style={styles.clubPlayersSectionWrap}>
         <ScrollView>
@@ -40,7 +43,7 @@ class ClubPlayersComponent extends React.Component {
 
                 <View style={styles.playersLeftWrap}>
                   <TouchableOpacity
-                    onPress={() => alert("Profile")}
+                    onPress={onPress}
                   >
                     <Image
                       source={require('../data/ImgTest/dddd.jpg')}

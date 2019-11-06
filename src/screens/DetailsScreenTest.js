@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Dimensions
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
+
+/*Test .JS*/
+
 const { width } = Dimensions.get('window');
 
 class DetailsScreen extends React.Component {
