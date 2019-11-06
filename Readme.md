@@ -1,3 +1,3 @@
 # clubleague
 
-this is Sports App
+This is Sports App

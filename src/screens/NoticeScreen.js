@@ -21,6 +21,9 @@ class NoticeScreen extends React.Component {
   };
 
   render() {
+
+    const { navigation } = this.props;
+
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -45,7 +48,7 @@ class NoticeScreen extends React.Component {
 
                   <View style={styles.rightWrap}>
                     <TouchableOpacity
-                      onPress={() => alert("Profole")}
+                      onPress={() => navigation.navigate("Profile")}
                     >
                       <Image
                         source={require('../data/ImgTest/cccc.jpg')}

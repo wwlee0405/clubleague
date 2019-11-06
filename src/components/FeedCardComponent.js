@@ -10,6 +10,8 @@ class FeedCardComponent extends React.Component {
 
   render() {
 
+    const { onPress } = this.props;
+
     const profileImages = {
       "1": require('../data/ImgTest/eeee.png'),
       "2": require('../data/ImgTest/ffff.jpg'),
@@ -29,7 +31,7 @@ class FeedCardComponent extends React.Component {
         <View style={styles.profileWrap}>
           <TouchableOpacity
             style={styles.profileImgButton}
-            onPress={() => alert("Profole")}
+            onPress={onPress}
           >
             <Image
               source={profileImages[this.props.profileImage]}
@@ -94,10 +96,10 @@ class FeedCardComponent extends React.Component {
           <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.green01 }}>
             <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Soccer</Text>
           </View>
-          <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.blue }}>
+          <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.blue, marginLeft: 10 }}>
             <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Osaka</Text>
           </View>
-          <View style={{ width: null, height: 25, borderRadius: 20 , backgroundColor: colors.darkOrange }}>
+          <View style={{ width: null, height: 25, borderRadius: 20 , backgroundColor: colors.darkOrange, marginLeft: 10 }}>
             <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Oct 20, 2019</Text>
           </View>
         </View>

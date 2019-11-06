@@ -7,6 +7,9 @@ import colors from '../styles/colors';
 class ProfileScreen extends React.Component {
 
   render() {
+
+    const { navigation } = this.props;
+
     return (
       <Container style={styles.container}>
         <Content>
@@ -53,7 +56,7 @@ class ProfileScreen extends React.Component {
               <Button
                 bordered dark
                 style={styles.editProfileButton}
-                onPress={() => this.props.navigation.navigate('EditProfile')}
+                onPress={() => navigation.navigate('EditProfile')}
               >
                 <Text>Edit Profile</Text>
               </Button>

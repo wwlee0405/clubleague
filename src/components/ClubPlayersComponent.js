@@ -7,7 +7,7 @@ class ClubPlayersComponent extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.clubPlayersSectionWrap}>
         <ScrollView>
 
           <View>
@@ -24,7 +24,7 @@ class ClubPlayersComponent extends React.Component {
 
           <FlatList
             data={[
-              {key: 'Devin'},
+              {key: 'Messi'},
               {key: 'Dan'},
               {key: 'Dominic'},
               {key: 'Jackson'},
@@ -38,20 +38,20 @@ class ClubPlayersComponent extends React.Component {
             renderItem={({item}) =>
               <View style={styles.playersWrap}>
 
-                <View style={styles.rightWrap}>
+                <View style={styles.playersLeftWrap}>
                   <TouchableOpacity
-                    onPress={() => alert("Profole")}
+                    onPress={() => alert("Profile")}
                   >
                     <Image
-                      source={require('../data/ImgTest/cccc.jpg')}
-                      style={styles.img}
+                      source={require('../data/ImgTest/dddd.jpg')}
+                      style={styles.playersImg}
                     />
                   </TouchableOpacity>
                 </View>
 
-                <View style={styles.bodyWrap}>
-                  <Text style={styles.textTop}>{item.key}</Text>
-                  <Text style={styles.textBottom}>Seoul, Korea</Text>
+                <View style={styles.playersRightWrap}>
+                  <Text style={styles.playersRightTextTop}>{item.key}</Text>
+                  <Text style={styles.playersRightTextBottom}>Seoul, Korea</Text>
                 </View>
 
               </View>
@@ -66,7 +66,7 @@ class ClubPlayersComponent extends React.Component {
 export default ClubPlayersComponent;
 
 const styles = StyleSheet.create({
-  container: {
+  clubPlayersSectionWrap: {
    flex: 1,
   },
   playersWrap: {
@@ -75,23 +75,23 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
   },
-  rightWrap: {
+  playersLeftWrap: {
     alignItems: 'center',
     paddingLeft: 10,
   },
-  img: {
+  playersImg: {
     width: 70,
     height: 70,
     borderRadius: 100,
   },
-  bodyWrap: {
+  playersRightWrap: {
     paddingLeft: 20,
     justifyContent: 'center',
   },
-  textTop: {
+  playersRightTextTop: {
     fontWeight: 'bold',
   },
-  textBottom: {
+  playersRightTextBottom: {
     color: colors.darkGrey,
     fontSize: 14,
   },

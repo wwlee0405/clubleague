@@ -1,10 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Header, Left, Right, Body, Button } from "native-base";
+import { Container, Content } from "native-base";
 import colors from '../styles/colors';
 
-import FeedCardComponent from "../components/FeedCardComponent";
+import ClubHomeComponent from "../components/ClubHomeComponent";
+import ClubPlayersComponent from "../components/ClubPlayersComponent";
+import ClubSettingComponent from "../components/ClubSettingComponent";
 
 /*backup*/
 
@@ -67,18 +69,23 @@ class DetailsScreen extends React.Component {
 
     if (this.state.activeIndex == 0) {
       return (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-          {this.renderSectionOne()}
+        <View>
+          <ClubHomeComponent
+            imageSource="1"
+            profileImage="2"
+            clubName="F.C. Barcelona"
+            members="15"
+            leaderUser="Ernesto Valverde"
+            address="Barcelona"
+          />
         </View>
       )
     }
     else if (this.state.activeIndex == 1) {
 
       return (
-        <View>
-          <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
-          <FeedCardComponent profileImage="2" user="Yuna" address="Seoul, Korea" imageSource="2" hits="200"/>
-          <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+          {this.renderSectionOne()}
         </View>
       )
     }
@@ -86,7 +93,7 @@ class DetailsScreen extends React.Component {
 
       return (
         <View>
-          <Text>this is the third section</Text>
+          <ClubPlayersComponent />
         </View>
       )
     }
@@ -94,13 +101,34 @@ class DetailsScreen extends React.Component {
 
       return (
         <View>
-          <Button
-            bordered dark
-            style={styles.editProfileButton}
-            onPress={() => this.props.navigation.navigate('EditProfile')}
-          >
-            <Text>Edit Profile</Text>
-          </Button>
+
+          <View>
+            <TouchableOpacity
+              style={{ flex: 1, height: 50, justifyContent: 'center' }}
+              onPress={() => this.props.navigation.navigate('Setting')}
+            >
+              <Text style={{ fontSize: 15, paddingLeft: 20 }}>Club 기본 정보 관리</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View>
+            <TouchableOpacity
+              style={{ flex: 1, height: 50, justifyContent: 'center' }}
+              onPress={() => this.props.navigation.navigate('SettingMember')}
+            >
+              <Text style={{ fontSize: 15, paddingLeft: 20 }}>Member 활동 관리</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View>
+            <TouchableOpacity
+              style={{ flex: 1, height: 50, justifyContent: 'center' }}
+              onPress={() => this.props.navigation.navigate('SettingManagement')}
+            >
+              <Text style={{ fontSize: 15, paddingLeft: 20 }}>Management 설정</Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
       )
     }

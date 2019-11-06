@@ -10,6 +10,8 @@ class ClubHomeComponent extends React.Component {
 
   render() {
 
+    const { onPress, feedOnPress } = this.props;
+
     const profileImages = {
       "1": require('../data/ImgTest/1ars.jpg'),
       "2": require('../data/ImgTest/2bar.jpg'),
@@ -34,7 +36,7 @@ class ClubHomeComponent extends React.Component {
           <View style={styles.clubProfileWrap}>
             <TouchableOpacity
               style={styles.clubProfileImgButton}
-              onPress={() => alert("this is Club Profole => [DetailsScreen]")}
+              onPress={onPress}
             >
               <Image
                 source={profileImages[this.props.profileImage]}
@@ -78,7 +80,7 @@ class ClubHomeComponent extends React.Component {
         </View>
 
 
-        <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
+        <FeedCardComponent onPress={feedOnPress} profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
         <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
         <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
         <FeedCardComponent profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>

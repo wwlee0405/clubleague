@@ -24,6 +24,9 @@ class HomeScreen extends React.Component {
   };
 
   render() {
+
+    const { navigation } = this.props;
+
     return (
       <Container style={styles.container}>
 
@@ -50,7 +53,7 @@ class HomeScreen extends React.Component {
               }}
             >
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
+                onPress={() => navigation.navigate('Details')}
               >
                 <Thumbnail
                   style={styles.largeThumbnail}
@@ -58,55 +61,24 @@ class HomeScreen extends React.Component {
                 />
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
+                onPress={() => navigation.navigate('Details')}
               >
                 <Thumbnail
                   style={styles.largeThumbnail}
                   large source={require('../data/ImgTest/2bar.jpg')}
                 />
               </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/1ars.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/2bar.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/1ars.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/2bar.jpg')}
-                />
-              </TouchableOpacity>
+
             </ScrollView>
           </View>
         </View>
 
         <Content>
 
-          <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
-          <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
-          <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
-          <FeedCardComponent profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
+          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
+          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
+          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
+          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
 
 
         </Content>

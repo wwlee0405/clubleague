@@ -72,6 +72,12 @@ const FeedStack = createStackNavigator({
       title: "Writing",
     }),
   },
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: "Profile"
+    }),
+  },
 });
 
 const NoticeStack = createStackNavigator({

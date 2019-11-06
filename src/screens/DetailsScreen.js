@@ -4,32 +4,12 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content } from "native-base";
 import colors from '../styles/colors';
 
+
 import ClubHomeComponent from "../components/ClubHomeComponent";
+import ClubScheduleComponent from "../components/ClubScheduleComponent";
 import ClubPlayersComponent from "../components/ClubPlayersComponent";
 import ClubSettingComponent from "../components/ClubSettingComponent";
 
-var images = [
-  require('../data/ImgTest/aaaa.jpg'),
-  require('../data/ImgTest/bbbb.jpg'),
-  require('../data/ImgTest/cccc.jpg'),
-  require('../data/ImgTest/dddd.jpg'),
-  require('../data/ImgTest/eeee.png'),
-  require('../data/ImgTest/ffff.jpg'),
-  require('../data/ImgTest/gggg.jpg'),
-  require('../data/ImgTest/aaaa.jpg'),
-  require('../data/ImgTest/bbbb.jpg'),
-  require('../data/ImgTest/cccc.jpg'),
-  require('../data/ImgTest/dddd.jpg'),
-  require('../data/ImgTest/eeee.png'),
-  require('../data/ImgTest/ffff.jpg'),
-  require('../data/ImgTest/gggg.jpg'),
-  require('../data/ImgTest/aaaa.jpg'),
-  require('../data/ImgTest/bbbb.jpg'),
-  require('../data/ImgTest/cccc.jpg'),
-  require('../data/ImgTest/eeee.png'),
-]
-
-var {width,height} = Dimensions.get('window')
 
 class DetailsScreen extends React.Component {
 
@@ -47,28 +27,15 @@ class DetailsScreen extends React.Component {
     })
   }
 
-  renderSectionOne = () => {
-
-    return images.map((image, index) => {
-      return (
-        <View key={index} style={[{ width: (width) / 3 }, { height: (width) / 3 }, { marginBottom: 2 },
-          index % 3 !== 0 ? { paddingLeft: 2 } : { paddingLeft: 2 }
-        ]}>
-          <Image
-            style={{ flex: 1, width: undefined, height: undefined  }}
-            source={image}
-          />
-        </View>
-      )
-    })
-  }
-
   renderSection = () => {
 
     if (this.state.activeIndex == 0) {
+      const { navigation } = this.props;
       return (
-        <View style={{ }}>
+        <View>
           <ClubHomeComponent
+            onPress={() => navigation.navigate('EditProfile')}
+            feedOnPress={() => navigation.navigate('Profile')}
             imageSource="1"
             profileImage="2"
             clubName="F.C. Barcelona"
@@ -76,6 +43,7 @@ class DetailsScreen extends React.Component {
             leaderUser="Ernesto Valverde"
             address="Barcelona"
           />
+
         </View>
       )
     }
@@ -83,7 +51,7 @@ class DetailsScreen extends React.Component {
 
       return (
         <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-          {this.renderSectionOne()}
+          <ClubScheduleComponent />
         </View>
       )
     }
@@ -228,5 +196,5 @@ const styles = StyleSheet.create({
   clubTabButton: {
     flexDirection: 'row',
     alignItems: 'center',
-  }
+  },
 });
