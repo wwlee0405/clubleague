@@ -4,7 +4,7 @@ import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
 
-class ClubSettingComponent extends React.Component {
+class ClubSetting extends React.Component {
 
   render() {
     return (
@@ -42,7 +42,7 @@ class ClubSettingComponent extends React.Component {
   }
 }
 
-export default ClubSettingComponent;
+export default ClubSetting;
 
 const styles = StyleSheet.create({
   container: {

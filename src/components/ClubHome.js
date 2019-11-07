@@ -4,9 +4,9 @@ import { Container, Content } from "native-base";
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-import FeedCardComponent from "./FeedCardComponent";
+import FeedCard from './FeedCard';
 
-class ClubHomeComponent extends React.Component {
+class ClubHome extends React.Component {
 
   render() {
 
@@ -80,10 +80,10 @@ class ClubHomeComponent extends React.Component {
         </View>
 
 
-        <FeedCardComponent onPress={feedOnPress} profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
-        <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
-        <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
-        <FeedCardComponent profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
+        <FeedCard onPress={feedOnPress} profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
+        <FeedCard profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
+        <FeedCard profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
+        <FeedCard profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
 
 
 
@@ -92,7 +92,7 @@ class ClubHomeComponent extends React.Component {
   }
 }
 
-export default ClubHomeComponent;
+export default ClubHome;
 
 const styles = StyleSheet.create({
   clubImg: {

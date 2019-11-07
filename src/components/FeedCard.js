@@ -4,13 +4,13 @@ import { Card } from "native-base";
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-import CreateMatchBox from "../components/form/CreateMatchBox";
+import CreateMatchBox from './form/CreateMatchBox';
 
-class FeedCardComponent extends React.Component {
+class FeedCard extends React.Component {
 
   render() {
 
-    const { onPress } = this.props;
+    const { onPress, user, hits } = this.props;
 
     const profileImages = {
       "1": require('../data/ImgTest/eeee.png'),
@@ -39,7 +39,7 @@ class FeedCardComponent extends React.Component {
             />
           </TouchableOpacity>
           <View style={styles.profileTextWrap}>
-            <Text style={styles.profileUserText}>{this.props.user}</Text>
+            <Text style={styles.profileUserText}>{user}</Text>
             <Text>{this.props.address}</Text>
           </View>
         </View>
@@ -105,7 +105,7 @@ class FeedCardComponent extends React.Component {
         </View>
 
         <View style={{ flex: 1, paddingTop: 10, paddingLeft: 15 }}>
-          <Text style={{ fontSize: 12 }}><Text>{this.props.hits}</Text>  Hits</Text>
+          <Text style={{ fontSize: 12 }}><Text>{hits}</Text>  Hits</Text>
           <Text note style={{ color: 'grey', fontSize: 12 }}>PM 5 : 20, Jan 15, 2019</Text>
         </View>
 
@@ -127,7 +127,7 @@ class FeedCardComponent extends React.Component {
   }
 }
 
-export default FeedCardComponent;
+export default FeedCard;
 
 const styles = StyleSheet.create({
   profileWrap: {

@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, TextInput , TouchableOpacity, Dimensions } from
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-import SetSportBox from "../components/form/SetSportBox";
-import SetAddressBox from "../components/form/SetAddressBox";
-import SetDateBox from "../components/form/SetDateBox";
-import CreateMatchBox from "../components/form/CreateMatchBox";
+import SetSportBox from '../components/form/SetSportBox';
+import SetAddressBox from '../components/form/SetAddressBox';
+import SetDateBox from '../components/form/SetDateBox';
+import CreateMatchBox from '../components/form/CreateMatchBox';
 
 class WritingScreen extends React.Component {
 

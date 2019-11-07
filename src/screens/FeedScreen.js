@@ -4,7 +4,7 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content, Item ,Input } from "native-base";
 import colors from '../styles/colors';
 
-import FeedCardComponent from "../components/FeedCardComponent";
+import FeedCard from "../components/FeedCard";
 
 import SearchInput from "../components/form/SearchInput";
 import CreateMatchBox from "../components/form/CreateMatchBox";
@@ -39,10 +39,17 @@ class FeedScreen extends React.Component {
             <SearchInput placeholderText="경기일자" />
           </View>
 
-          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
-          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
-          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
-          <FeedCardComponent onPress={() => navigation.navigate("Profile")} profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
+          <FeedCardComponent
+            onPress={() => navigation.navigate("Profile")}
+            profileImage="1"
+            user="Sana"
+            address="Osaka, Japan"
+            imageSource="1"
+            hits="100"
+          />
+          <FeedCard onPress={() => navigation.navigate("Profile")} profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
+          <FeedCard onPress={() => navigation.navigate("Profile")} profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
+          <FeedCard onPress={() => navigation.navigate("Profile")} profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
 
         </Content>
       </Container>

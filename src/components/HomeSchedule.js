@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image, Button } from "react-native";
 import colors from '../styles/colors';
 
-class HomeScheduleComponent extends React.Component {
+class HomeSchedule extends React.Component {
 
   render() {
     return (
@@ -62,7 +62,7 @@ class HomeScheduleComponent extends React.Component {
   }
 }
 
-export default HomeScheduleComponent;
+export default HomeSchedule;
 
 const styles = StyleSheet.create({
   container: {

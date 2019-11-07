@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SectionList, TouchableOpacity } from "react-nat
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-class ClubScheduleComponent extends Component {
+class ClubSchedule extends Component {
   render() {
     return (
       <View style={styles.clubScheduleSectionList}>
@@ -35,7 +35,7 @@ class ClubScheduleComponent extends Component {
   }
 }
 
-export default ClubScheduleComponent;
+export default ClubSchedule;
 
 const styles = StyleSheet.create({
   clubScheduleSectionList: {

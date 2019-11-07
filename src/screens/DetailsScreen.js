@@ -5,10 +5,9 @@ import { Container, Content } from "native-base";
 import colors from '../styles/colors';
 
 
-import ClubHomeComponent from "../components/ClubHomeComponent";
-import ClubScheduleComponent from "../components/ClubScheduleComponent";
-import ClubPlayersComponent from "../components/ClubPlayersComponent";
-import ClubSettingComponent from "../components/ClubSettingComponent";
+import ClubHome from '../components/ClubHome';
+import ClubSchedule from '../components/ClubSchedule';
+import ClubPlayers from '../components/ClubPlayers';
 
 
 class DetailsScreen extends React.Component {
@@ -33,7 +32,7 @@ class DetailsScreen extends React.Component {
       const { navigation } = this.props;
       return (
         <View>
-          <ClubHomeComponent
+          <ClubHome
             onPress={() => navigation.navigate('EditProfile')}
             feedOnPress={() => navigation.navigate('Profile')}
             imageSource="1"
@@ -51,7 +50,7 @@ class DetailsScreen extends React.Component {
 
       return (
         <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-          <ClubScheduleComponent />
+          <ClubSchedule />
         </View>
       )
     }
@@ -59,7 +58,7 @@ class DetailsScreen extends React.Component {
       const { navigation } = this.props;
       return (
         <View>
-          <ClubPlayersComponent
+          <ClubPlayers
             onPress={() => navigation.navigate('Profile')}
           />
         </View>
