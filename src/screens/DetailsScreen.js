@@ -4,7 +4,6 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Content } from "native-base";
 import colors from '../styles/colors';
 
-
 import ClubHome from '../components/ClubHome';
 import ClubSchedule from '../components/ClubSchedule';
 import ClubPlayers from '../components/ClubPlayers';
@@ -34,13 +33,14 @@ class DetailsScreen extends React.Component {
         <View>
           <ClubHome
             onPress={() => navigation.navigate('EditProfile')}
-            feedOnPress={() => navigation.navigate('Profile')}
-            imageSource="1"
-            profileImage="2"
+            clubImg={require('../data/ImgTest/bbbb.jpg')}
+            clubProfileImg={require('../data/ImgTest/2bar.jpg')}
             clubName="F.C. Barcelona"
             members="15"
             leaderUser="Ernesto Valverde"
             address="Barcelona"
+
+            feedOnPress={() => navigation.navigate('Profile')}
           />
 
         </View>
@@ -166,11 +166,6 @@ class DetailsScreen extends React.Component {
           <View>
 
             {this.renderSection()}
-
-
-
-
-
 
           </View>
         </Content>

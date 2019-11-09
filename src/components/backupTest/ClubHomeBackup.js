@@ -10,22 +10,27 @@ class ClubHome extends React.Component {
 
   render() {
 
-    const {
-      onPress,
-      clubImg,
-      clubProfileImg,
-      clubName,
-      members,
-      leaderUser,
-      address,
-      feedOnPress
-    } = this.props;
+    const { onPress, feedOnPress } = this.props;
+
+    const profileImages = {
+      "1": require('../data/ImgTest/1ars.jpg'),
+      "2": require('../data/ImgTest/2bar.jpg'),
+      "3": require('../data/ImgTest/cccc.jpg'),
+      "4": require('../data/ImgTest/dddd.jpg')
+    }
+
+    const images = {
+      "1": require('../data/ImgTest/aaaa.jpg'),
+      "2": require('../data/ImgTest/bbbb.jpg'),
+      "3": require('../data/ImgTest/1ars.jpg'),
+      "4": require('../data/ImgTest/2bar.jpg')
+    }
 
     return (
       <Content>
         <View>
           <Image
-            source={clubImg}
+            source={images[this.props.imageSource]}
             style={styles.clubImg}
           />
           <View style={styles.clubProfileWrap}>
@@ -34,22 +39,22 @@ class ClubHome extends React.Component {
               onPress={onPress}
             >
               <Image
-                source={clubProfileImg}
+                source={profileImages[this.props.profileImage]}
                 style={styles.clubProfileImg}
               />
             </TouchableOpacity>
             <View style={styles.clubProfileTextWrap}>
               <View>
-                <Text style={styles.clubNameText}>{clubName}</Text>
+                <Text style={styles.clubNameText}>{this.props.clubName}</Text>
               </View>
               <View style={styles.clubProfileTeamInfoTextWrap}>
-                <Text style={styles.clubProfileTopInfoTextLeft}>Members <Text>{members}</Text></Text>
-                <Text style={styles.clubProfileTopInfoTextRight}>Leader <Text>{leaderUser}</Text></Text>
+                <Text style={styles.clubProfileTopInfoTextLeft}>Members <Text>{this.props.members}</Text></Text>
+                <Text style={styles.clubProfileTopInfoTextRight}>Leader <Text>{this.props.leaderUser}</Text></Text>
               </View>
               <View style={styles.clubProfileTeamInfoTextWrap}>
-                <Text style={styles.clubProfileBottomInfoTextLeft}>{address}</Text>
-                <Text style={{ fontSize: 14, paddingLeft: 20 }}>{address}</Text>
-                <Text style={{ fontSize: 14, paddingLeft: 20 }}>{address}</Text>
+                <Text style={styles.clubProfileBottomInfoTextLeft}>{this.props.address}</Text>
+                <Text style={{ fontSize: 14, paddingLeft: 20 }}>{this.props.address}</Text>
+                <Text style={{ fontSize: 14, paddingLeft: 20 }}>{this.props.address}</Text>
               </View>
             </View>
           </View>
@@ -75,10 +80,10 @@ class ClubHome extends React.Component {
         </View>
 
 
-        <FeedCard onPress={feedOnPress} profileImg={require('../data/ImgTest/eeee.png')} user="Sana" address="Osaka, Japan" bodyImg={require('../data/ImgTest/aaaa.jpg')} bodyText="이번주 02/17 매칭 초청합니다. 팀명:클럽하우스 유니폼:흰색, 매너:최고, 장소:수지체육공원" hits="100"/>
-        <FeedCard onPress={feedOnPress} profileImg={require('../data/ImgTest/ffff.jpg')} user="Cristiano Ronaldo" address="Lisbon, Portugal" bodyImg={require('../data/ImgTest/bbbb.jpg')} hits="200"/>
-        <FeedCard onPress={feedOnPress} profileImg={require('../data/ImgTest/cccc.jpg')} user="Mina" address="Hyogo, Japan" bodyImg={require('../data/ImgTest/1ars.jpg')} hits="300"/>
-        <FeedCard onPress={feedOnPress} profileImg={require('../data/ImgTest/dddd.jpg')} user="Lionel Messi" address="Buenos Aires, Argentina" bodyImg={require('../data/ImgTest/2bar.jpg')} hits="400"/>
+        <FeedCard onPress={feedOnPress} profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
+        <FeedCard profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
+        <FeedCard profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
+        <FeedCard profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
 
 
 

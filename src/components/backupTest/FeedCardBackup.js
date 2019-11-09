@@ -10,7 +10,21 @@ class FeedCard extends React.Component {
 
   render() {
 
-    const { onPress, profileImg, user, address, bodyImg, bodyText, hits } = this.props;
+    const { onPress, user, address, hits } = this.props;
+
+    const profileImages = {
+      "1": require('../data/ImgTest/eeee.png'),
+      "2": require('../data/ImgTest/ffff.jpg'),
+      "3": require('../data/ImgTest/cccc.jpg'),
+      "4": require('../data/ImgTest/dddd.jpg')
+    }
+
+    const images = {
+      "1": require('../data/ImgTest/aaaa.jpg'),
+      "2": require('../data/ImgTest/bbbb.jpg'),
+      "3": require('../data/ImgTest/1ars.jpg'),
+      "4": require('../data/ImgTest/2bar.jpg')
+    }
 
     return (
       <View>
@@ -20,7 +34,7 @@ class FeedCard extends React.Component {
             onPress={onPress}
           >
             <Image
-              source={profileImg}
+              source={profileImages[this.props.profileImage]}
               style={styles.profileImg}
             />
           </TouchableOpacity>
@@ -33,10 +47,16 @@ class FeedCard extends React.Component {
         <View>
           <Image
             style={styles.bodyImg}
-            source={bodyImg}
+            source={images[this.props.imageSource]}
           />
           <View style={styles.bodyText}>
-            <Text>{bodyText}</Text>
+            <Text>
+              이번주 02/17 매칭 초청합니다.
+              팀명:클럽하우스
+              유니폼:흰색
+              매너:최고
+              장소:수지체육공원
+            </Text>
           </View>
         </View>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import {
   createSwitchNavigator,
   createAppContainer
@@ -18,10 +18,6 @@ class WelcomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar
-          backgroundColor="#1e90ff"
-          barStyle="light-content"
-        />
         <Text style={styles.titleText}>Clubleague</Text>
         <View style={styles.btnContainer}>
           <TouchableOpacity

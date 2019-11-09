@@ -16,10 +16,6 @@ import EditProfileScreen from "../screens/EditProfileScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import WritingScreen from "../screens/WritingScreen";
 
-import SettingScreen from "../screens/SettingScreen";
-import SettingMemberScreen from "../screens/SettingMemberScreen";
-import SettingManagementScreen from "../screens/SettingManagementScreen";
-
 //Auth Screen
 
 export const HomeStack = createStackNavigator({
@@ -28,24 +24,6 @@ export const HomeStack = createStackNavigator({
     screen: DetailsScreen,
     navigationOptions: () => ({
       title: "Detail for clubhouse",
-    }),
-  },
-  Setting: {
-    screen: SettingScreen,
-    navigationOptions: () => ({
-      title: "Setting",
-    }),
-  },
-  SettingMember: {
-    screen: SettingMemberScreen,
-    navigationOptions: () => ({
-      title: "SettingMember",
-    }),
-  },
-  SettingManagement: {
-    screen: SettingManagementScreen,
-    navigationOptions: () => ({
-      title: "SettingManagement",
     }),
   },
   Profile: {

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import colors from '../../styles/colors';
 
-export default ({ onPress, profileImg, user, address }) => (
+export default ({
+  onPress,
+  profileImg,
+  user,
+  address 
+}) => (
   <View style={styles.playersWrap}>
 
     <View style={styles.playersLeftWrap}>
-      <TouchableOpacity
-        onPress={onPress}
-      >
+      <TouchableOpacity onPress={onPress}>
         <Image
           source={profileImg}
           style={styles.playersImg}

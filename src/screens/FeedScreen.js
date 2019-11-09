@@ -39,17 +39,20 @@ class FeedScreen extends React.Component {
             <SearchInput placeholderText="경기일자" />
           </View>
 
-          <FeedCardComponent
+          <FeedCard
             onPress={() => navigation.navigate("Profile")}
-            profileImage="1"
+            profileImg={require('../data/ImgTest/eeee.png')}
             user="Sana"
             address="Osaka, Japan"
-            imageSource="1"
+            bodyImg={require('../data/ImgTest/aaaa.jpg')}
+            bodyText="이번주 02/17 매칭 초청합니다. 팀명:클럽하우스 유니폼:흰색, 매너:최고, 장소:수지체육공원"
             hits="100"
           />
-          <FeedCard onPress={() => navigation.navigate("Profile")} profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
-          <FeedCard onPress={() => navigation.navigate("Profile")} profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
-          <FeedCard onPress={() => navigation.navigate("Profile")} profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
+          <FeedCard onPress={() => navigation.navigate("Profile")} profileImg={require('../data/ImgTest/ffff.jpg')} user="Cristiano Ronaldo" address="Lisbon, Portugal" bodyImg={require('../data/ImgTest/bbbb.jpg')} hits="200"/>
+          <FeedCard onPress={() => navigation.navigate("Profile")} profileImg={require('../data/ImgTest/cccc.jpg')} user="Mina" address="Hyogo, Japan" bodyImg={require('../data/ImgTest/1ars.jpg')} hits="300"/>
+          <FeedCard onPress={() => navigation.navigate("Profile")} profileImg={require('../data/ImgTest/dddd.jpg')} user="Lionel Messi" address="Buenos Aires, Argentina" bodyImg={require('../data/ImgTest/2bar.jpg')} hits="400"/>
+
+
 
         </Content>
       </Container>
