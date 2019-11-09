@@ -6,6 +6,8 @@ import colors from '../styles/colors';
 
 import CreateMatchBox from './form/CreateMatchBox';
 
+import FeedMatchBoxItem from './items/FeedMatchBoxItem';
+
 class FeedCard extends React.Component {
 
   render() {
@@ -40,34 +42,11 @@ class FeedCard extends React.Component {
           </View>
         </View>
 
-        <View style={{ flex: 1, alignItems: 'center' }}>
+        <View style={styles.matchBoxItemSection}>
 
-          <View style={{ flex: 1, flexDirection: 'row' }}>
-
-            <CreateMatchBox title="Home" borderLine={colors.darkGrey} labelColor={colors.darkGrey} />
-
-            <View style={{ alignItems: 'center', justifyContent: 'center', paddingLeft: 10 }}>
-              <Text><Text>10</Text> Entry</Text>
-            </View>
-          </View>
-
-          <View style={{ flex: 1, flexDirection: 'row' }}>
-
-            <CreateMatchBox title="Away" />
-
-            <View style={{ alignItems: 'center', justifyContent: 'center', paddingLeft: 10 }}>
-              <Text><Text>20</Text> Entry</Text>
-            </View>
-          </View>
-
-          <View style={{ flex: 1, flexDirection: 'row' }}>
-
-            <CreateMatchBox title="Away" />
-
-            <View style={{ alignItems: 'center', justifyContent: 'center', paddingLeft: 10 }}>
-              <Text><Text>22</Text> Entry</Text>
-            </View>
-          </View>
+          <FeedMatchBoxItem title="Home" onPress={() => alert("apply for match")} borderLine={colors.darkGrey} labelColor={colors.darkGrey} entry="20" />
+          <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="12"/>
+          <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="24"/>
 
         </View>
 
@@ -141,5 +120,9 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingLeft: 15,
     paddingRight: 15,
-  }
+  },
+  matchBoxItemSection: {
+    flex: 1,
+    alignItems: 'center',
+  },
 });
