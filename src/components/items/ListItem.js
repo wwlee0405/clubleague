@@ -6,51 +6,51 @@ export default ({
   onPress,
   profileImg,
   user,
-  address 
+  address
 }) => (
-  <View style={styles.playersWrap}>
+  <View style={styles.container}>
 
-    <View style={styles.playersLeftWrap}>
+    <View style={styles.leftWrap}>
       <TouchableOpacity onPress={onPress}>
         <Image
           source={profileImg}
-          style={styles.playersImg}
+          style={styles.img}
         />
       </TouchableOpacity>
     </View>
 
-    <View style={styles.playersRightWrap}>
-      <Text style={styles.playersRightTextTop}>{user}</Text>
-      <Text style={styles.playersRightTextBottom}>{address}</Text>
+    <View style={styles.rightWrap}>
+      <Text style={styles.rightTextTop}>{user}</Text>
+      <Text style={styles.rightTextBottom}>{address}</Text>
     </View>
 
   </View>
 );
 
 const styles = StyleSheet.create({
-  playersWrap: {
+  container: {
     flex: 1,
     flexDirection: 'row',
     paddingTop: 10,
     paddingBottom: 10,
   },
-  playersLeftWrap: {
+  leftWrap: {
     alignItems: 'center',
     paddingLeft: 10,
   },
-  playersImg: {
+  img: {
     width: 70,
     height: 70,
     borderRadius: 100,
   },
-  playersRightWrap: {
+  rightWrap: {
     paddingLeft: 20,
     justifyContent: 'center',
   },
-  playersRightTextTop: {
+  rightTextTop: {
     fontWeight: 'bold',
   },
-  playersRightTextBottom: {
+  rightTextBottom: {
     color: colors.darkGrey,
     fontSize: 14,
   },

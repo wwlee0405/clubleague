@@ -33,12 +33,12 @@ class WritingScreen extends React.Component {
 
         <View style={{ flex: 1, alignItems: 'center' }}>
           <SetSportBox />
-          <SetAddressBox homeAway="City" />
-          <SetDateBox homeAway="Date" />
-          <CreateMatchBox homeAway="Home" borderLine={colors.darkGrey} labelColor={colors.darkGrey} />
-          <CreateMatchBox homeAway="Away" />
-          <CreateMatchBox homeAway="Away" />
-          <CreateMatchBox homeAway="Away" />
+          <SetAddressBox title="City" />
+          <SetDateBox title="Date" />
+          <CreateMatchBox title="Home" onPress={() => alert("apply for match")} borderLine={colors.darkGrey} labelColor={colors.darkGrey} />
+          <CreateMatchBox title="Away" onPress={() => alert("apply for match")} />
+          <CreateMatchBox title="Away" onPress={() => alert("apply for match")} />
+          <CreateMatchBox title="Away" onPress={() => alert("apply for match")} />
         </View>
 
         <View style={{ flex: 1, flexDirection: 'row', paddingTop: 40 }}>

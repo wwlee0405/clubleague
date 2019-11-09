@@ -44,7 +44,7 @@ class FeedCard extends React.Component {
 
           <View style={{ flex: 1, flexDirection: 'row' }}>
 
-            <CreateMatchBox homeAway="Home" borderLine={colors.darkGrey} labelColor={colors.darkGrey} />
+            <CreateMatchBox title="Home" borderLine={colors.darkGrey} labelColor={colors.darkGrey} />
 
             <View style={{ alignItems: 'center', justifyContent: 'center', paddingLeft: 10 }}>
               <Text><Text>10</Text> Entry</Text>
@@ -53,7 +53,7 @@ class FeedCard extends React.Component {
 
           <View style={{ flex: 1, flexDirection: 'row' }}>
 
-            <CreateMatchBox homeAway="Away" />
+            <CreateMatchBox title="Away" />
 
             <View style={{ alignItems: 'center', justifyContent: 'center', paddingLeft: 10 }}>
               <Text><Text>20</Text> Entry</Text>
@@ -62,7 +62,7 @@ class FeedCard extends React.Component {
 
           <View style={{ flex: 1, flexDirection: 'row' }}>
 
-            <CreateMatchBox homeAway="Away" />
+            <CreateMatchBox title="Away" />
 
             <View style={{ alignItems: 'center', justifyContent: 'center', paddingLeft: 10 }}>
               <Text><Text>22</Text> Entry</Text>

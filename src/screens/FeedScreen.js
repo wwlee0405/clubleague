@@ -40,7 +40,7 @@ class FeedScreen extends React.Component {
           </View>
 
           <FeedCard
-            onPress={() => navigation.navigate("Profile")}
+            onPress={() => navigation.navigate('Profile')}
             profileImg={require('../data/ImgTest/eeee.png')}
             user="Sana"
             address="Osaka, Japan"
@@ -48,9 +48,9 @@ class FeedScreen extends React.Component {
             bodyText="이번주 02/17 매칭 초청합니다. 팀명:클럽하우스 유니폼:흰색, 매너:최고, 장소:수지체육공원"
             hits="100"
           />
-          <FeedCard onPress={() => navigation.navigate("Profile")} profileImg={require('../data/ImgTest/ffff.jpg')} user="Cristiano Ronaldo" address="Lisbon, Portugal" bodyImg={require('../data/ImgTest/bbbb.jpg')} hits="200"/>
-          <FeedCard onPress={() => navigation.navigate("Profile")} profileImg={require('../data/ImgTest/cccc.jpg')} user="Mina" address="Hyogo, Japan" bodyImg={require('../data/ImgTest/1ars.jpg')} hits="300"/>
-          <FeedCard onPress={() => navigation.navigate("Profile")} profileImg={require('../data/ImgTest/dddd.jpg')} user="Lionel Messi" address="Buenos Aires, Argentina" bodyImg={require('../data/ImgTest/2bar.jpg')} hits="400"/>
+          <FeedCard onPress={() => navigation.navigate('Profile')} profileImg={require('../data/ImgTest/ffff.jpg')} user="Cristiano Ronaldo" address="Lisbon, Portugal" bodyImg={require('../data/ImgTest/bbbb.jpg')} hits="200"/>
+          <FeedCard onPress={() => navigation.navigate('Profile')} profileImg={require('../data/ImgTest/cccc.jpg')} user="Mina" address="Hyogo, Japan" bodyImg={require('../data/ImgTest/1ars.jpg')} hits="300"/>
+          <FeedCard onPress={() => navigation.navigate('Profile')} profileImg={require('../data/ImgTest/dddd.jpg')} user="Lionel Messi" address="Buenos Aires, Argentina" bodyImg={require('../data/ImgTest/2bar.jpg')} hits="400"/>
 
 
 

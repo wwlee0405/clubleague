@@ -6,7 +6,7 @@ import colors from '../../styles/colors';
 export default class CreateMatchBox extends React.Component {
 
   render() {
-    const { homeAway, borderLine, labelColor } = this.props;
+    const { onPress, title, borderLine, labelColor } = this.props;
     const borderColor = borderLine || colors.yellow;
     const color = labelColor || colors.yellow;
 
@@ -14,10 +14,10 @@ export default class CreateMatchBox extends React.Component {
       <View style={styles.container}>
         <TouchableOpacity
           style={[{ borderColor }, styles.box]}
-          onPress={() => alert("apply for match")}
+          onPress={onPress}
         >
-          <Text style={[{ color }, styles.labelText]}>{homeAway}</Text>
-          <Text style={styles.userName}>Madrid</Text>
+          <Text style={[{ color }, styles.labelText]}>{title}</Text>
+          <Text style={styles.userName}>Barcelona</Text>
         </TouchableOpacity>
       </View>
     );
@@ -25,7 +25,7 @@ export default class CreateMatchBox extends React.Component {
 }
 
 CreateMatchBox.propTypes = {
-  homeAway: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   borderLine: PropTypes.string,
   labelColor: PropTypes.string,
 };

@@ -12,7 +12,7 @@ class SettingMemberScreen extends React.Component {
         <View>
           <TouchableOpacity
             style={{ flex: 1, height: 50, justifyContent: 'center' }}
-            onPress={() => alert("Setting")}
+            onPress={() => alert('Setting')}
           >
             <Text style={{ fontSize: 15, paddingLeft: 20 }}>Member 권한 설정</Text>
           </TouchableOpacity>
