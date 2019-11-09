@@ -4,7 +4,9 @@ import { Card } from "native-base";
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-import CreateMatchBox from './form/CreateMatchBox';
+import Test from './form/Test';
+import Testda from './form/Testda';
+import SetSportBox from './form/SetSportBox';
 
 import FeedMatchBoxItem from './items/FeedMatchBoxItem';
 
@@ -44,15 +46,25 @@ class FeedCard extends React.Component {
 
         <View style={styles.matchBoxItemSection}>
 
-          <FeedMatchBoxItem title="Home" onPress={() => alert("apply for match")} borderLine={colors.darkGrey} labelColor={colors.darkGrey} entry="20" />
-          <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="12"/>
+          <FeedMatchBoxItem
+            title="Home"
+            clubName="F.C. Barcelona"
+            onPress={() => alert("apply for match")}
+            borderLine={colors.darkGrey}
+            labelColor={colors.darkGrey}
+            entry="20"
+          />
+          <FeedMatchBoxItem title="Away" clubName="Arsenal" onPress={() => alert("apply for match")} entry="12"/>
           <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="24"/>
-
+          <Test text="djsfij" border='green' />
+          <Testda />
+          <SetSportBox />
         </View>
 
 
         <View style={{ flex: 1, flexDirection: 'row', paddingTop: 10, paddingLeft: 15, peddingRight: 15 }}>
           <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.green01 }}>
+            <Testda />
             <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Soccer</Text>
           </View>
           <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.blue, marginLeft: 10 }}>

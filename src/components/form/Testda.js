@@ -3,29 +3,31 @@ import { PropTypes } from 'prop-types';
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import colors from '../../styles/colors';
 
-export default class CreateMatchBox extends React.Component {
+export default class SetDateBox extends React.Component {
 
   render() {
-    const { onPress, title, clubName, borderLine, labelColor } = this.props;
-    const borderColor = borderLine || colors.yellow;
-    const color = labelColor || colors.yellow;
+    const { title, boxWidth, borderLine, labelColor } = this.props;
+    const width = boxWidth || 250;
+    const borderColor = borderLine || colors.darkOrange;
+    const color = labelColor || colors.darkOrange;
 
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          style={[{ borderColor }, styles.box]}
-          onPress={onPress}
+          style={[{ boxWidth, borderColor }, styles.box]}
+          onPress={() => alert("apply for match")}
         >
           <Text style={[{ color }, styles.labelText]}>{title}</Text>
-          <Text style={styles.clubName}>{clubName}</Text>
+          <Text style={styles.date}>Oct 20, 2020</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
 
-CreateMatchBox.propTypes = {
-  title: PropTypes.string.isRequired,
+SetDateBox.propTypes = {
+  title: PropTypes.string,
+  boxWidth: PropTypes.number,
   borderLine: PropTypes.string,
   labelColor: PropTypes.string,
 };
@@ -38,7 +40,6 @@ const styles = StyleSheet.create({
   box: {
     flex: 6,
     flexDirection: 'row',
-    width: 250,
     height: 45,
     borderRadius: 100,
     alignItems: 'center',
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     fontSize: 10,
   },
-  clubName: {
+  date: {
     flex: 5,
     paddingLeft: 5,
   },

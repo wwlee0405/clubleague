@@ -4,10 +4,10 @@ import colors from '../../styles/colors';
 
 import CreateMatchBox from '../form/CreateMatchBox';
 
-export default ({ title, onPress, borderLine, labelColor, entry }) => (
+export default ({ title, clubName, onPress, borderLine, labelColor, entry }) => (
   <View style={styles.container}>
 
-    <CreateMatchBox title={title} onPress={onPress} borderLine={borderLine} labelColor={labelColor} />
+    <CreateMatchBox title={title} clubName={clubName} onPress={onPress} borderLine={borderLine} labelColor={labelColor} />
 
     <View style={styles.rightSection}>
       <Text><Text>{entry}</Text> Entry</Text>
