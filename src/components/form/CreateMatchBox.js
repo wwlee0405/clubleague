@@ -25,7 +25,9 @@ export default class CreateMatchBox extends React.Component {
 }
 
 CreateMatchBox.propTypes = {
+  onPress: PropTypes.func,
   title: PropTypes.string.isRequired,
+  clubName: PropTypes.string,
   borderLine: PropTypes.string,
   labelColor: PropTypes.string,
 };
