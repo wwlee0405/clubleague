@@ -6,7 +6,7 @@ import colors from '../../styles/colors';
 export default class SetAddressBox extends React.Component {
 
   render() {
-    const { title, borderLine, labelColor } = this.props;
+    const { onPress, title, borderLine, labelColor } = this.props;
     const borderColor = borderLine || colors.blue;
     const color = labelColor || colors.blue;
 
@@ -14,7 +14,7 @@ export default class SetAddressBox extends React.Component {
       <View style={styles.container}>
         <TouchableOpacity
           style={[{ borderColor }, styles.box]}
-          onPress={() => alert("apply for match")}
+          onPress={onPress}
         >
           <Text style={[{ color }, styles.labelText]}>{title}</Text>
           <Text style={styles.address}>Madrid, Spain</Text>
@@ -25,6 +25,7 @@ export default class SetAddressBox extends React.Component {
 }
 
 SetAddressBox.propTypes = {
+  onPress: PropTypes.func,
   title: PropTypes.string.isRequired,
   borderLine: PropTypes.string,
   labelColor: PropTypes.string,
