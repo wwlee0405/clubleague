@@ -1,12 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView , TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, ScrollView , TouchableOpacity, Button } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content } from "native-base";
+import { Container, Content, Thumbnail } from "native-base";
 import colors from '../styles/colors';
-import Categories from '../components/home/Categories';
-import FeedCard from '../components/FeedCard';
 
-import categoriesList from '../data/categories';
+import FeedCard from '../components/FeedCard';
 
 class HomeScreen extends React.Component {
 
@@ -44,16 +42,36 @@ class HomeScreen extends React.Component {
               </TouchableOpacity>
             </View>
           </View>
-
           <View style={styles.clubContainerBottomWrap}>
-            <Categories
-              categories={categoriesList}
-              onPress={() => navigation.navigate('Details')}
-            />
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                alignItems: 'center',
+                paddingStart: 5,
+                paddingEnd: 5
+              }}
+            >
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Details')}
+              >
+                <Thumbnail
+                  style={styles.largeThumbnail}
+                  large source={require('../data/ImgTest/1ars.jpg')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Details')}
+              >
+                <Thumbnail
+                  style={styles.largeThumbnail}
+                  large source={require('../data/ImgTest/2bar.jpg')}
+                />
+              </TouchableOpacity>
+
+            </ScrollView>
           </View>
-
         </View>
-
 
         <Content>
 
@@ -85,11 +103,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   clubContainer: {
+    height: 150,
     borderBottomWidth: 1,
     borderColor: colors.lightGrey,
   },
   clubContainerTopWrap: {
-    height: 35,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -97,20 +116,23 @@ const styles = StyleSheet.create({
   },
   clubContainerRightText: {
     fontWeight: 'bold',
-    fontSize: 18,
   },
   clubContainerLeftButton: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   clubContainerLeftButtonIcon: {
-    fontSize: 18,
+    fontSize: 14,
   },
   clubContainerLeftText: {
     fontWeight: 'bold',
-    fontSize: 18,
   },
   clubContainerBottomWrap: {
-    height: 120
+    flex: 3,
+  },
+  largeThumbnail: {
+    marginHorizontal: 5,
+    borderColor: colors.pink,
+    borderWidth: 2,
   },
 });

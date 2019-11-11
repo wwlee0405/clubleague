@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   box: {
-    flex: 9,
+    display: 'flex',
     flexDirection: 'row',
     width: 340,
     height: 50,
@@ -46,6 +46,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: colors.lightGrey,
+    shadowColor: 'rgba(0,0,0,0.1)',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.7,
+    shadowRadius: 10,
   },
   icon: {
     flex: 1,
