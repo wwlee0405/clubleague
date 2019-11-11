@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import { Container, Content } from "native-base";
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 import TextInputField from "../components/form/TextInputField";
@@ -22,8 +21,11 @@ class EditProfileScreen extends React.Component {
 
   render() {
     return (
-      <Container style={styles.container}>
-        <Content>
+      <View style={styles.container}>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
 
           <View style={styles.imgWrap}>
             <TouchableOpacity
@@ -44,8 +46,8 @@ class EditProfileScreen extends React.Component {
             <TextInputField labelText="Mainclub" placeholder="Mainclub" />
           </View>
 
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
     );
   }
 }

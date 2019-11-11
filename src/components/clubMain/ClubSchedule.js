@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, SectionList, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons';
-import colors from '../styles/colors';
-import ScheduleSectionList from './items/ScheduleSectionList';
+import colors from '../../styles/colors';
+import ScheduleSectionList from '../items/ScheduleSectionList';
 
 class ClubSchedule extends Component {
   render() {
@@ -16,15 +16,17 @@ class ClubSchedule extends Component {
             {title: 'DEC 2019', data: ['05', '15', '17', '25', '27', '29', '30']},
           ]}
           renderItem={({item}) =>
-          <ScheduleSectionList
-            day={item}
-            week="WED"
-            title="Match"
-            time="18:00"
-            address="Barcelona, Spain"
-          />
-        }
-          renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+            <ScheduleSectionList
+              day={item}
+              week="WED"
+              title="Match"
+              time="18:00"
+              address="Barcelona, Spain"
+            />
+          }
+          renderSectionHeader={({section}) =>
+            <Text style={styles.sectionHeader}>{section.title}</Text>
+          }
           keyExtractor={(item, index) => index}
         />
       </View>
@@ -47,4 +49,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     backgroundColor: 'rgba(247,247,247,1.0)',
   },
-})
+});

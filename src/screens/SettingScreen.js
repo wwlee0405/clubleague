@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
@@ -14,7 +14,7 @@ class SettingScreen extends React.Component {
             style={styles.settingBtn}
             onPress={() => alert("Setting")}
           >
-            <Text style={styles.settingBtnText}>설정</Text>
+            <Text style={styles.settingBtnText}>club 기본 설정</Text>
           </TouchableOpacity>
         </View>
 

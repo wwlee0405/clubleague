@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView , TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content } from "native-base";
 import colors from '../styles/colors';
 import Categories from '../components/home/Categories';
 import FeedCard from '../components/FeedCard';
@@ -30,7 +29,7 @@ class HomeScreen extends React.Component {
     const { navigation } = this.props;
 
     return (
-      <Container style={styles.container}>
+      <View style={styles.container}>
 
         <View style={styles.clubContainer}>
           <View style={styles.clubContainerTopWrap}>
@@ -54,8 +53,10 @@ class HomeScreen extends React.Component {
 
         </View>
 
-
-        <Content>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
 
         <FeedCard
           onPress={() => navigation.navigate('Profile')}
@@ -70,8 +71,8 @@ class HomeScreen extends React.Component {
           <FeedCard onPress={() => navigation.navigate('Profile')} profileImg={require('../data/ImgTest/cccc.jpg')} user="Mina" address="Hyogo, Japan" bodyImg={require('../data/ImgTest/1ars.jpg')} hits="300"/>
 
 
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
 
     );
   }

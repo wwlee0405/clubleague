@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Button } from "native-base";
+import { Button } from "native-base";
 import colors from '../styles/colors';
 
 class ProfileScreen extends React.Component {
@@ -11,8 +11,11 @@ class ProfileScreen extends React.Component {
     const { navigation } = this.props;
 
     return (
-      <Container style={styles.container}>
-        <Content>
+      <View style={styles.container}>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
 
           <View style={styles.contantContainer}>
 
@@ -63,8 +66,8 @@ class ProfileScreen extends React.Component {
             </View>
           </View>
 
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
     );
   }
 }

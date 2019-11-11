@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image } from "react-native";
 import { Feather } from '@expo/vector-icons';
-import colors from '../styles/colors';
+import colors from '../../styles/colors';
 
 
 class ClubSetting extends React.Component {

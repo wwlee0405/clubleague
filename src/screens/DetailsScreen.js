@@ -1,12 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Dimensions } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content } from "native-base";
 import colors from '../styles/colors';
 
-import ClubHome from '../components/ClubHome';
-import ClubSchedule from '../components/ClubSchedule';
-import ClubPlayers from '../components/ClubPlayers';
+import ClubHome from '../components/clubMain/ClubHome';
+import ClubSchedule from '../components/clubMain/ClubSchedule';
+import ClubPlayers from '../components/clubMain/ClubPlayers';
 
 
 class DetailsScreen extends React.Component {
@@ -103,7 +102,7 @@ class DetailsScreen extends React.Component {
 
   render() {
     return (
-      <Container style={styles.container}>
+      <View style={styles.container}>
 
         <View style={styles.clubTab}>
           <TouchableOpacity
@@ -161,16 +160,19 @@ class DetailsScreen extends React.Component {
           </TouchableOpacity>
         </View>
 
-        <Content>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
 
           <View>
 
             {this.renderSection()}
 
           </View>
-        </Content>
+        </ScrollView>
 
-      </Container>
+      </View>
     );
   }
 }

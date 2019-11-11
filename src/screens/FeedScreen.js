@@ -1,14 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Item ,Input } from "native-base";
 import colors from '../styles/colors';
 
-import FeedCard from "../components/FeedCard";
-
 import SearchInput from "../components/form/SearchInput";
-import CreateMatchBox from "../components/form/CreateMatchBox";
-
+import FeedCard from "../components/FeedCard";
 
 class FeedScreen extends React.Component {
 
@@ -32,8 +28,11 @@ class FeedScreen extends React.Component {
     const { navigation } = this.props;
 
     return (
-      <Container>
-        <Content>
+      <View>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
           <View style={{ flex: 1, paddingTop: 250, paddingBottom: 300 }}>
             <SearchInput placeholderText="종목명, 도시명, 클럽명" />
             <SearchInput placeholderText="경기일자" />
@@ -53,9 +52,8 @@ class FeedScreen extends React.Component {
           <FeedCard onPress={() => navigation.navigate('Profile')} profileImg={require('../data/ImgTest/dddd.jpg')} user="Lionel Messi" address="Buenos Aires, Argentina" bodyImg={require('../data/ImgTest/2bar.jpg')} hits="400"/>
 
 
-
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
     );
   }
 }

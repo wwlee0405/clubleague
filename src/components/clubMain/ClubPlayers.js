@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image } from "react-native";
 import { Feather } from '@expo/vector-icons';
-import colors from '../styles/colors';
-import ListItem from './items/ListItem';
+import colors from '../../styles/colors';
+import ListItem from '../items/ListItem';
 
 class ClubPlayers extends React.Component {
 
@@ -42,7 +42,7 @@ class ClubPlayers extends React.Component {
             renderItem={({item}) =>
               <ListItem
                 onPress={onPress}
-                profileImg={require('../data/ImgTest/dddd.jpg')}
+                profileImg={require('../../data/ImgTest/dddd.jpg')}
                 user={item.key}
                 address="Seoul, Korea"
               />

@@ -30,8 +30,10 @@ class NoticeScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        <ScrollView>
-
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
           <NoticeListItem
             onPress={() => navigation.navigate('Feed')}
             noticeOnPress={() => navigation.navigate('Profile')}
@@ -40,10 +42,7 @@ class NoticeScreen extends React.Component {
             text="게임 요청을 합니다 . ."
             time="PM 3:43"
           />
-
-
-
-
+          
         </ScrollView>
       </View>
     );
