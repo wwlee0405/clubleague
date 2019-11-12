@@ -3,8 +3,9 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from "rea
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-import NoticeListItem from '../components/items/NoticeListItem';
 
+import NoticeCard from '../components/NoticeCard';
+import noticecard from '../data/noticecard';
 
 
 class NoticeScreen extends React.Component {
@@ -24,6 +25,25 @@ class NoticeScreen extends React.Component {
     };
   };
 
+  renderNoticeCard() {
+    const { onPress, noticeOnPress, navigation } = this.props;
+    return noticecard.map((noticecard, index) => {
+      return (
+        <View key={`noticecard-${index}`}>
+          <NoticeCard
+            key={`noticecard-item-${index}`}
+            onPress={() => navigation.navigate('Feed')}
+            noticeOnPress={() => navigation.navigate('Profile')}
+            profileImg={noticecard.profileImg}
+            user={noticecard.user}
+            text={noticecard.text}
+            time={noticecard.time}
+          />
+        </View>
+      );
+    });
+  }
+
   render() {
 
     const { navigation } = this.props;
@@ -34,15 +54,9 @@ class NoticeScreen extends React.Component {
           horizontal={false}
           showsVerticalScrollIndicator={false}
         >
-          <NoticeListItem
-            onPress={() => navigation.navigate('Feed')}
-            noticeOnPress={() => navigation.navigate('Profile')}
-            profileImg={require('../data/ImgTest/cccc.jpg')}
-            user="Mina"
-            text="게임 요청을 합니다 . ."
-            time="PM 3:43"
-          />
-          
+
+          {this.renderNoticeCard()}
+
         </ScrollView>
       </View>
     );

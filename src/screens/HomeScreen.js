@@ -3,9 +3,10 @@ import { StyleSheet, Text, View, ScrollView , TouchableOpacity } from "react-nat
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 import Categories from '../components/home/Categories';
-import FeedCard from '../components/FeedCard';
 
 import categoriesList from '../data/categories';
+import FeedCard from '../components/FeedCard';
+import feedcard from '../data/feedcard';
 
 class HomeScreen extends React.Component {
 
@@ -23,6 +24,26 @@ class HomeScreen extends React.Component {
       ),
     };
   };
+
+  renderFeedCard() {
+    const { onPress, navigation } = this.props;
+    return feedcard.map((feedcard, index) => {
+      return (
+        <View key={`feedcard-${index}`}>
+          <FeedCard
+            key={`feedcard-item-${index}`}
+            profileImg={feedcard.profileImg}
+            user={feedcard.user}
+            address={feedcard.address}
+            bodyImg={feedcard.bodyImg}
+            bodyText={feedcard.bodyText}
+            hits={feedcard.hits}
+            onPress={() => navigation.navigate('Profile')}
+          />
+        </View>
+      );
+    });
+  }
 
   render() {
 
@@ -58,18 +79,7 @@ class HomeScreen extends React.Component {
           showsVerticalScrollIndicator={false}
         >
 
-        <FeedCard
-          onPress={() => navigation.navigate('Profile')}
-          profileImg={require('../data/ImgTest/dddd.jpg')}
-          user="Lionel Messi"
-          address="Buenos Aires, Argentina"
-          bodyImg={require('../data/ImgTest/2bar.jpg')}
-          bodyText="이번주 02/17 매칭 초청합니다. 팀명:클럽하우스 유니폼:흰색, 매너:최고, 장소:수지체육공원"
-          hits="400"
-        />
-          <FeedCard onPress={() => navigation.navigate('Profile')} profileImg={require('../data/ImgTest/ffff.jpg')} user="Cristiano Ronaldo" address="Lisbon, Portugal" bodyImg={require('../data/ImgTest/bbbb.jpg')} hits="200"/>
-          <FeedCard onPress={() => navigation.navigate('Profile')} profileImg={require('../data/ImgTest/cccc.jpg')} user="Mina" address="Hyogo, Japan" bodyImg={require('../data/ImgTest/1ars.jpg')} hits="300"/>
-
+          {this.renderFeedCard()}
 
         </ScrollView>
       </View>

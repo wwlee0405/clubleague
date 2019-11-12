@@ -5,7 +5,6 @@ import {
 } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createDrawerNavigator } from 'react-navigation-drawer';
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
@@ -23,53 +22,80 @@ import SettingManagementScreen from "../screens/SettingManagementScreen";
 
 //Auth Screen
 
-//AuthStark
-
-const HomeStack = createStackNavigator({
+export const HomeStack = createStackNavigator({
   Home: HomeScreen,
   Details: {
     screen: DetailsScreen,
     navigationOptions: () => ({
-      title: 'Detail for clubhouse',
+      title: "Detail for clubhouse",
     }),
   },
   Setting: {
     screen: SettingScreen,
     navigationOptions: () => ({
-      title: 'Setting',
+      title: "Setting",
     }),
   },
   SettingMember: {
     screen: SettingMemberScreen,
     navigationOptions: () => ({
-      title: 'SettingMember',
+      title: "SettingMember",
     }),
   },
   SettingManagement: {
     screen: SettingManagementScreen,
     navigationOptions: () => ({
-      title: 'SettingManagement',
+      title: "SettingManagement",
+    }),
+  },
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: "Profile"
+    }),
+  },
+  EditProfile: {
+    screen: EditProfileScreen,
+    navigationOptions: () => ({
+      title: "Edit Profile",
     }),
   },
 });
 
-const FeedStack = createStackNavigator({
+export const FeedStack = createStackNavigator({
   Feed: FeedScreen,
   Writing: {
     screen: WritingScreen,
     navigationOptions: () => ({
-      title: 'Writing',
+      title: "Writing",
+    }),
+  },
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: "Profile"
     }),
   },
 });
 
-const NoticeStack = createStackNavigator({
+export const NoticeStack = createStackNavigator({
   Notice: NoticeScreen,
-
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: "Profile"
+    }),
+  },
+  EditProfile: {
+    screen: EditProfileScreen,
+    navigationOptions: () => ({
+      title: "Edit Profile",
+    }),
+  },
 });
 
 // React Navigation: Bottom Tab Navigator
-const BottomTab = createBottomTabNavigator(
+export default BottomTabNavigator = createBottomTabNavigator(
   {
     Home: {
       screen: HomeStack,
@@ -117,43 +143,42 @@ const BottomTab = createBottomTabNavigator(
   }
 );
 
-const ProfileStack = createStackNavigator({
-  Profile: {
-    screen: ProfileScreen,
-    navigationOptions: () => ({
-      title: 'Profile'
-    }),
-  },
-  EditProfile: {
-    screen: EditProfileScreen,
-    navigationOptions: () => ({
-      title: 'Edit Profile',
-    }),
-  },
-});
-
-const MainDrawer = createDrawerNavigator({
-  MainTabs: BottomTab,
-  Profile: ProfileStack,
-});
-
-const AppModalStack = createStackNavigator(
-  {
-    App: MainDrawer,
-    Profile: {
-      screen: ProfileScreen,
-    },
-  },
-  {
-    mode: 'modal',
-    headerMode: 'none',
-  }
+// React Navigation: Authentication Stack Navigator
+/*
+export const AuthNavigation = createStackNavigator(
+	{
+		AuthHome: AuthHome,
+		Signup: Signup,
+		Login: Login,
+		Confirm: Confirm
+	},
+	{
+		headerMode: "none"
+	}
 );
+*/
 
-const App = createSwitchNavigator({
-  AppRoutes: {
-    screen: AppModalStack
-  }
+// React Navigation: Application Stack Navigator
+export const AppStack = createStackNavigator({
+  BottomTabNavigator: BottomTabNavigator,
 });
 
-export default createAppContainer(App);
+// React Navigation: Switch Container
+export const AppContainer = createAppContainer(createSwitchNavigator(
+  {
+
+    AppStack: AppStack,
+  },
+    // Options
+  {
+    //initialRouteName: 'Auth',
+  }
+));
+
+class AppRoutes extends React.Component {
+  render() {
+    return (
+      <AppContainer />
+    );
+  }
+}

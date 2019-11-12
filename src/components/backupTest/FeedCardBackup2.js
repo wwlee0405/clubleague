@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { Card } from "native-base";
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
@@ -10,10 +10,12 @@ import SetSportBox from './form/SetSportBox';
 
 import FeedMatchBoxItem from './items/FeedMatchBoxItem';
 
-export default class FeedCard extends React.Component {
+class FeedCard extends React.Component {
 
   render() {
+
     const { onPress, profileImg, user, address, bodyImg, bodyText, hits } = this.props;
+
     return (
       <View>
         <View style={styles.profileWrap}>
@@ -95,6 +97,8 @@ export default class FeedCard extends React.Component {
     );
   }
 }
+
+export default FeedCard;
 
 const styles = StyleSheet.create({
   profileWrap: {

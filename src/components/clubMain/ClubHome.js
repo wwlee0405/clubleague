@@ -4,8 +4,29 @@ import { Feather } from '@expo/vector-icons';
 import colors from '../../styles/colors';
 
 import FeedCard from '../FeedCard';
+import feedcard from '../../data/feedcard';
 
 class ClubHome extends React.Component {
+
+  renderFeedCard() {
+    const { onPress, feedOnPress } = this.props;
+    return feedcard.map((feedcard, index) => {
+      return (
+        <View key={`feedcard-${index}`}>
+          <FeedCard
+            key={`feedcard-item-${index}`}
+            profileImg={feedcard.profileImg}
+            user={feedcard.user}
+            address={feedcard.address}
+            bodyImg={feedcard.bodyImg}
+            bodyText={feedcard.bodyText}
+            hits={feedcard.hits}
+            onPress={feedOnPress}
+          />
+        </View>
+      );
+    });
+  }
 
   render() {
 
@@ -16,8 +37,7 @@ class ClubHome extends React.Component {
       clubName,
       members,
       leaderUser,
-      address,
-      feedOnPress
+      address
     } = this.props;
 
     return (
@@ -73,13 +93,7 @@ class ClubHome extends React.Component {
           </TouchableOpacity>
         </View>
 
-
-        <FeedCard onPress={feedOnPress} profileImg={require('../../data/ImgTest/eeee.png')} user="Sana" address="Osaka, Japan" bodyImg={require('../../data/ImgTest/aaaa.jpg')} bodyText="이번주 02/17 매칭 초청합니다. 팀명:클럽하우스 유니폼:흰색, 매너:최고, 장소:수지체육공원" hits="100"/>
-        <FeedCard onPress={feedOnPress} profileImg={require('../../data/ImgTest/ffff.jpg')} user="Cristiano Ronaldo" address="Lisbon, Portugal" bodyImg={require('../../data/ImgTest/bbbb.jpg')} hits="200"/>
-        <FeedCard onPress={feedOnPress} profileImg={require('../../data/ImgTest/cccc.jpg')} user="Mina" address="Hyogo, Japan" bodyImg={require('../../data/ImgTest/1ars.jpg')} hits="300"/>
-        <FeedCard onPress={feedOnPress} profileImg={require('../../data/ImgTest/dddd.jpg')} user="Lionel Messi" address="Buenos Aires, Argentina" bodyImg={require('../../data/ImgTest/2bar.jpg')} hits="400"/>
-
-
+        {this.renderFeedCard()}
 
       </ScrollView>
     );
