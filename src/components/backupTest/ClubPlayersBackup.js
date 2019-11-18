@@ -4,8 +4,6 @@ import { Feather } from '@expo/vector-icons';
 import colors from '../../styles/colors';
 import ListItem from '../items/ListItem';
 
-import clubplayers from '../../data/clubplayers';
-
 class ClubPlayers extends React.Component {
 
   render() {
@@ -29,16 +27,26 @@ class ClubPlayers extends React.Component {
           </View>
 
           <FlatList
-            data={clubplayers}
+            data={[
+              {key: 'Messi'},
+              {key: 'Dan'},
+              {key: 'Dominic'},
+              {key: 'Jackson'},
+              {key: 'James'},
+              {key: 'Joel'},
+              {key: 'John'},
+              {key: 'Jillian'},
+              {key: 'Jimmy'},
+              {key: 'Julie'},
+            ]}
             renderItem={({item}) =>
               <ListItem
                 onPress={onPress}
-                profileImg={item.profileImg}
-                user={item.user}
-                address={item.address}
+                profileImg={require('../../data/ImgTest/dddd.jpg')}
+                user={item.key}
+                address="Seoul, Korea"
               />
             }
-            keyExtractor={(item, index) => index}
           />
         </ScrollView>
       </View>

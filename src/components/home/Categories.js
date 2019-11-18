@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, ScrollView , TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Text, ScrollView , TouchableOpacity, Image } from "react-native";
 import colors from '../../styles/colors';
 
 export default class Categories extends React.Component {
@@ -19,6 +19,7 @@ export default class Categories extends React.Component {
             style={styles.thumbnail}
             source={category.photo}
           />
+          <Text style={styles.clubName}>{category.clubName}</Text>
         </TouchableOpacity>
       );
     });
@@ -45,6 +46,10 @@ const styles = StyleSheet.create({
     width: 85,
     height: 85,
     borderRadius: 100,
+  },
+  clubName: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   scrollWrap: {
     alignItems: 'center',

@@ -7,6 +7,8 @@ import colors from '../styles/colors';
 import NoticeCard from '../components/NoticeCard';
 import noticecard from '../data/noticecard';
 
+import Testimda from '../components/form/Testimda';
+
 
 class NoticeScreen extends React.Component {
 
@@ -54,7 +56,7 @@ class NoticeScreen extends React.Component {
           horizontal={false}
           showsVerticalScrollIndicator={false}
         >
-
+          <Testimda />
           {this.renderNoticeCard()}
 
         </ScrollView>

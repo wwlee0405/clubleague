@@ -1,26 +1,32 @@
 const categoriesList = [
   {
     id: "1ars",
+    clubName: "Arsenal",
     photo: require('./ImgTest/1ars.jpg'),
   },
   {
     id: "2bar",
+    clubName: "Barcelona",
     photo: require('./ImgTest/2bar.jpg'),
   },
   {
     id: "tensuikaku",
+    clubName: "tensuikaku",
     photo: require('./ImgTest/aaaa.jpg'),
   },
   {
     id: "kiyomizu",
+    clubName: "kiyomizu",
     photo: require('./ImgTest/bbbb.jpg'),
   },
   {
     id: "mina",
+    clubName: "Twice",
     photo: require('./ImgTest/cccc.jpg'),
   },
   {
     id: "mesi",
+    clubName: "F.C. Barcelona",
     photo: require('./ImgTest/dddd.jpg'),
   }
 ];

@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import { StyleSheet, Text, View, TouchableOpacity, DatePickerAndroid } from "react-native";
 import colors from '../../styles/colors';
 
-export default class SetDateBox extends React.Component {
+export default class Testimda extends React.Component {
 
   state = {
     presetDate: new Date(2020, 4, 5),
@@ -33,29 +33,23 @@ export default class SetDateBox extends React.Component {
   };
 
   render() {
-    const { title, borderLine, labelColor } = this.props;
-    const borderColor = borderLine || colors.darkOrange;
-    const color = labelColor || colors.darkOrange;
 
     return (
-      <View style={styles.container}>
+      <View>
         <TouchableOpacity
-          style={[{ borderColor }, styles.box]}
           onPress={this.showPicker.bind(this, 'simple', {date: this.state.simpleDate})}
         >
-          <Text style={[{ color }, styles.labelText]}>{title}</Text>
-          <Text style={styles.date}>{this.state.simpleText}</Text>
+          <Text style={{ flex: 1, fontSize: 20 }}>{this.state.simpleText}</Text>
+        </TouchableOpacity><TouchableOpacity
+          onPress={this.showPicker.bind(this, 'spinner', {date: this.state.spinnerDate, mode: 'spinner'})}
+        >
+          <Text style={{ flex: 1, fontSize: 20 }}>{this.state.spinnerText}</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
 
-SetDateBox.propTypes = {
-  title: PropTypes.string.isRequired,
-  borderLine: PropTypes.string,
-  labelColor: PropTypes.string,
-};
 
 const styles = StyleSheet.create({
   container: {
