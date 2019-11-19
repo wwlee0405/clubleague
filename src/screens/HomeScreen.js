@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView , TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
-import Categories from '../components/home/Categories';
+import Categories from '../components/contents/Categories';
 
 import categoriesList from '../data/categories';
-import FeedCard from '../components/FeedCard';
+import FeedCard from '../components/contents/FeedCard';
 import feedcard from '../data/feedcard';
 
 class HomeScreen extends React.Component {

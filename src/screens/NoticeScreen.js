@@ -4,10 +4,10 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
 
-import NoticeCard from '../components/NoticeCard';
+import NoticeCard from '../components/contents/NoticeCard';
 import noticecard from '../data/noticecard';
 
-import Testimda from '../components/form/Testimda';
+import Testimda from '../components/backupTest/Testimda';
 
 
 class NoticeScreen extends React.Component {

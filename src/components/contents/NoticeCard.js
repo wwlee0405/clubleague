@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-import colors from '../styles/colors';
+import colors from '../../styles/colors';
 
 
 export default class NoticeCard extends React.Component {

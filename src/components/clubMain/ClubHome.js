@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from "rea
 import { Feather } from '@expo/vector-icons';
 import colors from '../../styles/colors';
 
-import FeedCard from '../FeedCard';
+import FeedCard from '../contents/FeedCard';
 import feedcard from '../../data/feedcard';
 
 class ClubHome extends React.Component {

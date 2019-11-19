@@ -14,6 +14,7 @@ export default class Categories extends React.Component {
       return(
         <TouchableOpacity
           onPress={onPress}
+          key={index}
         >
           <Image
             style={styles.thumbnail}

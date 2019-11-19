@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import colors from '../styles/colors';
+import colors from '../../styles/colors';
 
-import Testda from './form/Testda';
-import SetSportBox from './form/SetSportBox';
+import SetSportBox from '../form/SetSportBox';
 
-import FeedMatchBoxItem from './items/FeedMatchBoxItem';
+import FeedMatchBoxItem from '../items/FeedMatchBoxItem';
 
 export default class FeedCard extends React.Component {
 
@@ -54,21 +53,11 @@ export default class FeedCard extends React.Component {
           <FeedMatchBoxItem title="Away" clubName="Arsenal" onPress={() => alert("apply for match")} entry="12"/>
           <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="0"/>
 
-          <Testda />
-          <SetSportBox />
         </View>
 
 
         <View style={{ flex: 1, flexDirection: 'row', paddingTop: 10, paddingLeft: 15, peddingRight: 15 }}>
           <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.green01 }}>
-            <Testda
-              conPaddingTop={null}
-              boxFlex={null}
-              boxHeight={null}
-              boxWidth={null}
-              boxBorderWidth={null}
-              textPaddingLeft={null}
-            />
             <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Soccer</Text>
           </View>
           <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.blue, marginLeft: 10 }}>

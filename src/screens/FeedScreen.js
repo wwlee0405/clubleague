@@ -4,7 +4,7 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
 import SearchInput from '../components/form/SearchInput';
-import FeedCard from '../components/FeedCard';
+import FeedCard from '../components/contents/FeedCard';
 import feedcard from '../data/feedcard';
 
 class FeedScreen extends React.Component {

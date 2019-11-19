@@ -32,6 +32,7 @@ export default class SetDateBox extends React.Component {
   }
 }
 
+
 SetDateBox.propTypes = {
   title: PropTypes.string,
   conPaddingTop: PropTypes.number,
