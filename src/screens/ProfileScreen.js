@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Button } from "native-base";
 import colors from '../styles/colors';
@@ -56,13 +56,12 @@ class ProfileScreen extends React.Component {
             </View>
 
             <View style={styles.buttonWrap}>
-              <Button
-                bordered dark
+              <TouchableOpacity
                 style={styles.editProfileButton}
                 onPress={() => navigation.navigate('EditProfile')}
               >
                 <Text>Edit Profile</Text>
-              </Button>
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -117,7 +116,11 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 25,
     marginLeft: 25,
+    alignItems: 'center',
     justifyContent: 'center',
     height: 40,
+    borderWidth: 1,
+    borderColor: colors.black,
+    borderRadius: 8,
   }
 });

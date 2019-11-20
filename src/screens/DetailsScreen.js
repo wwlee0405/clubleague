@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Dimensions
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-import ClubHome from '../components/clubMain/ClubHome';
-import ClubSchedule from '../components/clubMain/ClubSchedule';
-import ClubPlayers from '../components/clubMain/ClubPlayers';
+import ClubHome from "../components/clubMain/ClubHome";
+import ClubSchedule from "../components/clubMain/ClubSchedule";
+import ClubPlayers from "../components/clubMain/ClubPlayers";
 
 
 class DetailsScreen extends React.Component {

@@ -4,8 +4,8 @@ import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
 
-import NoticeCard from '../components/contents/NoticeCard';
-import noticecard from '../data/noticecard';
+import NoticeCard from "../components/contents/NoticeCard";
+import noticecard from "../data/noticecard";
 
 import Testimda from '../components/backupTest/Testimda';
 

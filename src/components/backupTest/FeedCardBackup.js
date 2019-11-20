@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { PropTypes } from "prop-types";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import colors from '../../styles/colors';
 
-import SetSportBox from "../form/SetSportBox";
+import SetSportBox from '../form/SetSportBox';
 
-import FeedMatchBoxItem from "../items/FeedMatchBoxItem";
-import Reply from "../contents/Reply";
+import FeedMatchBoxItem from '../items/FeedMatchBoxItem';
 
 export default class FeedCard extends React.Component {
 
@@ -41,7 +40,7 @@ export default class FeedCard extends React.Component {
           </View>
         </View>
 
-        <View>
+        <View style={styles.matchBoxItemSection}>
 
           <FeedMatchBoxItem
             title="Home"
@@ -49,10 +48,10 @@ export default class FeedCard extends React.Component {
             onPress={() => alert("apply for match")}
             borderLine={colors.darkGrey}
             labelColor={colors.darkGrey}
-            entry="150"
+            entry="20"
           />
-          <FeedMatchBoxItem title="Away" clubName="Arsenal" onPress={() => alert("apply for match")} entry="50" />
-          <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="10" />
+          <FeedMatchBoxItem title="Away" clubName="Arsenal" onPress={() => alert("apply for match")} entry="12"/>
+          <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="0"/>
 
         </View>
 
@@ -85,14 +84,6 @@ export default class FeedCard extends React.Component {
           >
             <Feather name="share-2" size={30} />
           </TouchableOpacity>
-        </View>
-
-        <View style={styles.replySection}>
-          <Reply
-            profileImg={profileImg}
-            user={user}
-            onPress={onPress}
-          />
         </View>
 
       </View>
@@ -133,7 +124,8 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
   },
-  replySection: {
-    backgroundColor: colors.white01,
+  matchBoxItemSection: {
+    flex: 1,
+    alignItems: 'center',
   },
 });

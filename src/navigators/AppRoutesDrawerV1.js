@@ -14,7 +14,6 @@ import FeedScreen from "../screens/FeedScreen";
 import NoticeScreen from "../screens/NoticeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import EditProfileScreen from "../screens/EditProfileScreen";
-import NewClubScreen from "../screens/NewClubScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import WritingScreen from "../screens/WritingScreen";
 
@@ -28,12 +27,6 @@ import SettingManagementScreen from "../screens/SettingManagementScreen";
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
-  NewClub: {
-    screen: NewClubScreen,
-    navigationOptions: () => ({
-      title: 'New Club',
-    }),
-  },
   Details: {
     screen: DetailsScreen,
     navigationOptions: () => ({
@@ -58,18 +51,6 @@ const HomeStack = createStackNavigator({
       title: 'SettingManagement',
     }),
   },
-  Profile: {
-    screen: ProfileScreen,
-    navigationOptions: () => ({
-      title: 'Profile'
-    }),
-  },
-  EditProfile: {
-    screen: EditProfileScreen,
-    navigationOptions: () => ({
-      title: 'Edit Profile',
-    }),
-  },
 });
 
 const FeedStack = createStackNavigator({
@@ -84,18 +65,7 @@ const FeedStack = createStackNavigator({
 
 const NoticeStack = createStackNavigator({
   Notice: NoticeScreen,
-  Profile: {
-    screen: ProfileScreen,
-    navigationOptions: () => ({
-      title: 'Profile'
-    }),
-  },
-  EditProfile: {
-    screen: EditProfileScreen,
-    navigationOptions: () => ({
-      title: 'Edit Profile',
-    }),
-  },
+
 });
 
 // React Navigation: Bottom Tab Navigator
@@ -147,9 +117,42 @@ const BottomTab = createBottomTabNavigator(
   }
 );
 
+const ProfileStack = createStackNavigator({
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: 'Profile'
+    }),
+  },
+  EditProfile: {
+    screen: EditProfileScreen,
+    navigationOptions: () => ({
+      title: 'Edit Profile',
+    }),
+  },
+});
+
+const MainDrawer = createDrawerNavigator({
+  MainTabs: BottomTab,
+  Profile: ProfileStack,
+});
+
+const AppModalStack = createStackNavigator(
+  {
+    App: MainDrawer,
+    Profile: {
+      screen: ProfileScreen,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
+
 const App = createSwitchNavigator({
   AppRoutes: {
-    screen: BottomTab
+    screen: AppModalStack
   }
 });
 

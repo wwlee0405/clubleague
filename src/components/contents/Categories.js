@@ -16,11 +16,13 @@ export default class Categories extends React.Component {
           onPress={onPress}
           key={index}
         >
-          <Image
-            style={styles.thumbnail}
-            source={category.photo}
-          />
-          <Text style={styles.clubName}>{category.clubName}</Text>
+          <View style={styles.categoriesWrap}>
+            <Image
+              style={styles.thumbnail}
+              source={category.photo}
+            />
+            <Text style={styles.clubName}>{category.clubName}</Text>
+          </View>
         </TouchableOpacity>
       );
     });
@@ -40,6 +42,9 @@ export default class Categories extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  categoriesWrap: {
+    alignItems: 'center',
+  },
   thumbnail: {
     marginHorizontal: 5,
     borderColor: colors.pink,
@@ -49,8 +54,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   clubName: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    fontWeight: 'bold',
   },
   scrollWrap: {
     alignItems: 'center',

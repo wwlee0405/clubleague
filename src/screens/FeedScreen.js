@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "rea
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-import SearchInput from '../components/form/SearchInput';
-import FeedCard from '../components/contents/FeedCard';
-import feedcard from '../data/feedcard';
+import SearchInput from "../components/form/SearchInput";
+import FeedCard from "../components/contents/FeedCard";
+import feedcard from "../data/feedcard";
 
 class FeedScreen extends React.Component {
 

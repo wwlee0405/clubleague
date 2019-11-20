@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView , TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
-import Categories from '../components/contents/Categories';
+import Categories from "../components/contents/Categories";
 
-import categoriesList from '../data/categories';
-import FeedCard from '../components/contents/FeedCard';
-import feedcard from '../data/feedcard';
+import categoriesList from "../data/categories";
+import FeedCard from "../components/contents/FeedCard";
+import feedcard from "../data/feedcard";
 
 class HomeScreen extends React.Component {
 
@@ -57,7 +57,7 @@ class HomeScreen extends React.Component {
             <Text style={styles.clubContainerRightText}>Club</Text>
             <View>
               <TouchableOpacity
-                onPress={() => alert("New Club")}
+                onPress={() => navigation.navigate('NewClub')}
                 style={styles.clubContainerLeftButton}>
                 <Feather name="plus-circle" style={styles.clubContainerLeftButtonIcon} />
                 <Text style={styles.clubContainerLeftText}>New Club</Text>

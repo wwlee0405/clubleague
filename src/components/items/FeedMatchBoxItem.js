@@ -1,28 +1,68 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import React, { Component } from "react";
+import { PropTypes } from "prop-types";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import colors from '../../styles/colors';
 
-import CreateMatchBox from '../form/CreateMatchBox';
+export default class FeedMatchBoxItem extends React.Component {
 
-export default ({ title, clubName, onPress, borderLine, labelColor, entry }) => (
-  <View style={styles.container}>
+  render() {
+    const { onPress, title, clubName, borderLine, labelColor, entry } = this.props;
+    const borderColor = borderLine || colors.yellow;
+    const color = labelColor || colors.yellow;
 
-    <CreateMatchBox title={title} clubName={clubName} onPress={onPress} borderLine={borderLine} labelColor={labelColor} />
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={[{ borderColor }, styles.box]}
+          onPress={onPress}
+        >
+          <Text style={[{ color }, styles.labelText]}>{title}</Text>
+          <Text style={styles.clubName}>{clubName}</Text>
+        </TouchableOpacity>
 
-    <View style={styles.rightSection}>
-      <Text><Text>{entry}</Text> Entry</Text>
-    </View>
-  </View>
-);
+        <View style={{ paddingLeft: 10 }}>
+          <Text style={{ width: 60, justifyContent: 'center', alignItems: 'center' }}><Text>{entry}</Text> Entry</Text>
+        </View>
+
+        <View style={{ paddingLeft: 10 }}>
+          <TouchableOpacity style={{ width: 80, height: 40, borderRadius: 8, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.blue }}>
+            <Text style={{ color: colors.white, alignItems: 'center' }}>참석</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+}
+
+FeedMatchBoxItem.propTypes = {
+  onPress: PropTypes.func,
+  title: PropTypes.string.isRequired,
+  clubName: PropTypes.string,
+  borderLine: PropTypes.string,
+  labelColor: PropTypes.string,
+  entry: PropTypes.string,
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: 10,
+    paddingHorizontal: 15,
   },
-  rightSection: {
+  box: {
+    flexDirection: 'row',
+    width: 220,
+    height: 40,
+    borderRadius: 8,
     alignItems: 'center',
-    justifyContent: 'center',
+    borderWidth: 1,
+    paddingLeft: 10,
+  },
+  labelText: {
+    fontSize: 10,
+  },
+  clubName: {
     paddingLeft: 10,
   },
 });
