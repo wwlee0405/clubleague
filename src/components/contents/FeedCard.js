@@ -46,7 +46,6 @@ export default class FeedCard extends React.Component {
           <FeedMatchBoxItem
             title="Home"
             clubName="F.C. Barcelona"
-            onPress={() => alert("apply for match")}
             borderLine={colors.darkGrey}
             labelColor={colors.darkGrey}
             entry="150"
