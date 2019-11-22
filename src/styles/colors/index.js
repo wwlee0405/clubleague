@@ -3,6 +3,8 @@ export default {
   white: '#ffffff',
   white01: '#f8f8ff',
   white02: '#eae5e5',
+  white03: '#f5f5f5',
+  white04: '#fffafa',
   green01: '#34A853',
   blue: '#4285f4',
   darkOrange: '#d93900',

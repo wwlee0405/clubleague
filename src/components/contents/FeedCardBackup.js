@@ -44,14 +44,14 @@ export default class FeedCard extends React.Component {
         <View>
 
           <FeedMatchBoxItem
-            profileImg={profileImg}
             title="Home"
-            labelColor={colors.darkGrey}
             clubName="F.C. Barcelona"
-            entry="20"
+            borderLine={colors.darkGrey}
+            labelColor={colors.darkGrey}
+            entry="150"
           />
-          <FeedMatchBoxItem profileImg={profileImg} title="Away" clubName="Arsenal" entry="14" />
-          <FeedMatchBoxItem profileImg={profileImg} title="Away" entry=""/>
+          <FeedMatchBoxItem title="Away" clubName="Arsenal" onPress={() => alert("apply for match")} entry="50" />
+          <FeedMatchBoxItem title="Away" onPress={() => alert("apply for match")} entry="10" />
 
         </View>
 
