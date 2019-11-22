@@ -6,38 +6,54 @@ import colors from '../../styles/colors';
 export default class FeedMatchBoxItem extends React.Component {
 
   render() {
-    const { onPress, profileImg, title, labelColor, clubName, entry } = this.props;
+    const {
+      onPress,
+      clubDetailOnPress,
+      profileImg,
+      title,
+      labelColor,
+      clubName,
+      entry
+    } = this.props;
     const color = labelColor || colors.yellow;
     return (
-      <View style={{  }}>
+      <View style={styles.container}>
 
         <View style={styles.topContainer}>
-          <View style={{ flexDirection: 'row' }}>
-            <View>
-              <TouchableOpacity onPress={onPress}>
-                <Image
-                  source={profileImg}
-                  style={styles.img}
-                />
-              </TouchableOpacity>
-            </View>
+          <TouchableOpacity onPress={onPress}>
+            <View style={styles.topLeftWrap}>
+              <View>
+                <TouchableOpacity onPress={clubDetailOnPress}>
+                  <Image
+                    source={profileImg}
+                    style={styles.clubImg}
+                  />
+                </TouchableOpacity>
+              </View>
 
-            <View style={{ paddingLeft: 10 }}>
-              <Text style={[{ color }, styles.labelText]}>{title}</Text>
-              <Text style={styles.clubName}>{clubName}</Text>
+              <View style={styles.labelWrap}>
+                <Text style={[{ color }, styles.labelText]}>{title}</Text>
+                <Text style={styles.clubName}>{clubName}</Text>
+              </View>
             </View>
-          </View>
+          </TouchableOpacity>
 
-          <View style={{ paddingLeft: 10 }}>
-            <TouchableOpacity style={{ width: 80, height: 40, borderRadius: 8, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.blue }}>
-              <Text style={{ color: colors.white, alignItems: 'center' }}>참석</Text>
+          <View style={styles.topRightWrap}>
+            <TouchableOpacity style={styles.attendBtn}>
+              <Text style={styles.btnText}>참석</Text>
             </TouchableOpacity>
           </View>
         </View>
 
         <View style={styles.bottomContainer}>
-          <Text style={{ width: 60, justifyContent: 'center', alignItems: 'center' }}><Text>{entry}</Text> Entry</Text>
-          <View>
+          <Text style={styles.entryText}><Text>{entry}</Text> Entry</Text>
+          <View style={{ paddingRight: 3 }}>
+            <Image
+              source={profileImg}
+              style={styles.entryImg}
+            />
+          </View>
+          <View style={{ paddingRight: 3 }}>
             <Image
               source={profileImg}
               style={styles.entryImg}
@@ -52,32 +68,35 @@ export default class FeedMatchBoxItem extends React.Component {
 
 FeedMatchBoxItem.propTypes = {
   onPress: PropTypes.func,
+  clubDetailOnPress: PropTypes.func,
+  profileImg: PropTypes.number, 
   title: PropTypes.string.isRequired,
-
   labelColor: PropTypes.string,
   clubName: PropTypes.string,
   entry: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
+  container: {
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
   topContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingTop: 10,
     paddingHorizontal: 15,
   },
-  img: {
+  topLeftWrap: {
+    flexDirection: 'row',
+    width: 300,
+    height: 50,
+  },
+  clubImg: {
     width: 50,
     height: 50,
     borderRadius: 100,
   },
-  box: {
-    flexDirection: 'row',
-    width: 220,
-    height: 40,
-    borderRadius: 8,
-    alignItems: 'center',
-    borderWidth: 1,
+  labelWrap: {
     paddingLeft: 10,
   },
   labelText: {
@@ -87,14 +106,35 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
   },
+  topRightWrap: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  attendBtn: {
+    width: 80,
+    height: 40,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.blue,
+  },
+  btnText: {
+    color: colors.white,
+    alignItems: 'center',
+  },
   bottomContainer: {
     flexDirection: 'row',
     paddingTop: 5,
     paddingHorizontal: 15,
   },
+  entryText: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: 10,
+  },
   entryImg: {
     width: 25,
     height: 25,
     borderRadius: 100,
-  }
+  },
 });
