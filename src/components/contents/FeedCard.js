@@ -46,17 +46,13 @@ export default class FeedCard extends React.Component {
           <FeedMatchBoxItem
             profileImg={profileImg}
             title="Home"
-<<<<<<< HEAD
-=======
-            clubName="F.C. Barcelona"
-            borderLine={colors.darkGrey}
->>>>>>> b5b8cf2883e6d8488d94b539d8a7ca113da489a9
             labelColor={colors.darkGrey}
             clubName="F.C. Barcelona"
             entry="20"
           />
           <FeedMatchBoxItem profileImg={profileImg} title="Away" clubName="Arsenal" entry="14" />
           <FeedMatchBoxItem profileImg={profileImg} title="Away" entry=""/>
+
 
         </View>
 
