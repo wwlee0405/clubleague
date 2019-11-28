@@ -34,7 +34,7 @@ class NoticeScreen extends React.Component {
         <View key={`noticecard-${index}`}>
           <NoticeCard
             key={`noticecard-item-${index}`}
-            onPress={() => navigation.navigate('Feed')}
+            onPress={() => navigation.navigate('FeedCard')}
             noticeOnPress={() => navigation.navigate('Profile')}
             profileImg={noticecard.profileImg}
             user={noticecard.user}

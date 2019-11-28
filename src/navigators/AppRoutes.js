@@ -14,6 +14,7 @@ import FeedScreen from "../screens/FeedScreen";
 import NoticeScreen from "../screens/NoticeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import EditProfileScreen from "../screens/EditProfileScreen";
+import FeedCardDetailsScreen from "../screens/FeedCardDetailsScreen";
 import NewClubScreen from "../screens/NewClubScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import WritingScreen from "../screens/WritingScreen";
@@ -74,10 +75,28 @@ const HomeStack = createStackNavigator({
 
 const FeedStack = createStackNavigator({
   Feed: FeedScreen,
+  FeedCard: {
+    screen: FeedCardDetailsScreen,
+    navigationOptions: () => ({
+      title: 'FeedCard',
+    }),
+  },
   Writing: {
     screen: WritingScreen,
     navigationOptions: () => ({
       title: 'Writing',
+    }),
+  },
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: () => ({
+      title: 'Profile'
+    }),
+  },
+  EditProfile: {
+    screen: EditProfileScreen,
+    navigationOptions: () => ({
+      title: 'Edit Profile',
     }),
   },
 });

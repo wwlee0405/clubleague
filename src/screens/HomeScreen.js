@@ -38,7 +38,8 @@ class HomeScreen extends React.Component {
             bodyImg={feedcard.bodyImg}
             bodyText={feedcard.bodyText}
             hits={feedcard.hits}
-            onPress={() => navigation.navigate('Profile')}
+            onPress={() => navigation.navigate('FeedCard')}
+            profileOnPress={() => navigation.navigate('Profile')}
           />
         </View>
       );

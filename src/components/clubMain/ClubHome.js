@@ -9,7 +9,7 @@ import feedcard from '../../data/feedcard';
 class ClubHome extends React.Component {
 
   renderFeedCard() {
-    const { onPress, feedOnPress } = this.props;
+    const { onPress, feedOnPress, feedProfileOnPress } = this.props;
     return feedcard.map((feedcard, index) => {
       return (
         <View key={`feedcard-${index}`}>
@@ -22,6 +22,7 @@ class ClubHome extends React.Component {
             bodyText={feedcard.bodyText}
             hits={feedcard.hits}
             onPress={feedOnPress}
+            profileOnPress={feedProfileOnPress}
           />
         </View>
       );

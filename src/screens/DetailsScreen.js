@@ -39,7 +39,8 @@ class DetailsScreen extends React.Component {
             leaderUser="Ernesto Valverde"
             address="Barcelona"
 
-            feedOnPress={() => navigation.navigate('Profile')}
+            feedOnPress={() => navigation.navigate('FeedCard')}
+            feedProfileOnPress={() => navigation.navigate('Profile')}
           />
 
         </View>

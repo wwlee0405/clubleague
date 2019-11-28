@@ -7,18 +7,18 @@ import colors from '../../styles/colors';
 import SetSportBox from "../form/SetSportBox";
 
 import FeedMatchBoxItem from "../items/FeedMatchBoxItem";
-import Reply from "../contents/Reply";
+import Reply from "./Reply";
 
-export default class FeedCard extends React.Component {
+export default class FeedCardDetails extends React.Component {
 
   render() {
-    const { onPress, profileOnPress, profileImg, user, address, bodyImg, bodyText, hits } = this.props;
+    const { onPress, profileImg, user, address, bodyImg, bodyText, hits } = this.props;
     return (
-      <TouchableOpacity onPress={onPress}>
+      <View>
         <View style={styles.profileWrap}>
           <TouchableOpacity
             style={styles.profileImgButton}
-            onPress={profileOnPress}
+            onPress={onPress}
           >
             <Image
               source={profileImg}
@@ -96,7 +96,7 @@ export default class FeedCard extends React.Component {
           />
         </View>
 
-      </TouchableOpacity>
+      </View>
     );
   }
 }

@@ -29,7 +29,9 @@ class FeedScreen extends React.Component {
     const { onPress, navigation } = this.props;
     return feedcard.map((feedcard, index) => {
       return (
-        <View key={`feedcard-${index}`}>
+        <View
+          key={`feedcard-${index}`}
+        >
           <FeedCard
             key={`feedcard-item-${index}`}
             profileImg={feedcard.profileImg}
@@ -38,7 +40,8 @@ class FeedScreen extends React.Component {
             bodyImg={feedcard.bodyImg}
             bodyText={feedcard.bodyText}
             hits={feedcard.hits}
-            onPress={() => navigation.navigate('Profile')}
+            onPress={() => navigation.navigate('FeedCard')}
+            profileOnPress={() => navigation.navigate('Profile')}
           />
         </View>
       );
