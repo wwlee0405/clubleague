@@ -15,8 +15,8 @@ const categoriesList = [
     photo: require('./ImgTest/aaaa.jpg'),
   },
   {
-    id: "kiyomizu",
-    clubName: "kiyomizu",
+    id: "campnou",
+    clubName: "Camp Nou",
     photo: require('./ImgTest/bbbb.jpg'),
   },
   {

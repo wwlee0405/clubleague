@@ -7,25 +7,27 @@ export default class FeedMatchBoxItem extends React.Component {
 
   render() {
     const {
-      onPress,
-      clubDetailOnPress,
-      profileImg,
+      askMatchOnPress,
+      matchDetailsOnPress,
+      matchClubImg,
       title,
       labelColor,
       clubName,
-      entry
+      entryBtnOnPress,
+      entry,
+      entryProfileImg
     } = this.props;
     const color = labelColor || colors.yellow;
     return (
       <View style={styles.container}>
 
         <View style={styles.topContainer}>
-          <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={askMatchOnPress}>
             <View style={styles.topLeftWrap}>
               <View>
-                <TouchableOpacity onPress={clubDetailOnPress}>
+                <TouchableOpacity onPress={matchDetailsOnPress}>
                   <Image
-                    source={profileImg}
+                    source={matchClubImg}
                     style={styles.clubImg}
                   />
                 </TouchableOpacity>
@@ -39,7 +41,10 @@ export default class FeedMatchBoxItem extends React.Component {
           </TouchableOpacity>
 
           <View style={styles.topRightWrap}>
-            <TouchableOpacity style={styles.attendBtn}>
+            <TouchableOpacity
+              style={styles.attendBtn}
+              onPress={entryBtnOnPress}
+            >
               <Text style={styles.btnText}>참석</Text>
             </TouchableOpacity>
           </View>
@@ -49,13 +54,13 @@ export default class FeedMatchBoxItem extends React.Component {
           <Text style={styles.entryText}><Text>{entry}</Text> Entry</Text>
           <View style={{ paddingRight: 3 }}>
             <Image
-              source={profileImg}
+              source={entryProfileImg}
               style={styles.entryImg}
             />
           </View>
           <View style={{ paddingRight: 3 }}>
             <Image
-              source={profileImg}
+              source={entryProfileImg}
               style={styles.entryImg}
             />
           </View>
@@ -69,7 +74,7 @@ export default class FeedMatchBoxItem extends React.Component {
 FeedMatchBoxItem.propTypes = {
   onPress: PropTypes.func,
   clubDetailOnPress: PropTypes.func,
-  profileImg: PropTypes.number, 
+  profileImg: PropTypes.number,
   title: PropTypes.string.isRequired,
   labelColor: PropTypes.string,
   clubName: PropTypes.string,
@@ -92,8 +97,8 @@ const styles = StyleSheet.create({
     height: 50,
   },
   clubImg: {
-    width: 50,
-    height: 50,
+    width: 45,
+    height: 45,
     borderRadius: 100,
   },
   labelWrap: {

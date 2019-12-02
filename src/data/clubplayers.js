@@ -58,8 +58,8 @@ const clubplayers = [
   {
     id: 8,
     profileImg: require('./ImgTest/bbbb.jpg'),
-    user: 'Kiyomizu',
-    address: 'Kyoto, Japan',
+    user: 'Camp Nou',
+    address: 'Barcelona, Spain',
     text: '게임 요청을 합니다 . .',
     time: 'PM 4:00',
   },

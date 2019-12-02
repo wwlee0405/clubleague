@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   img: {
-    width: 70,
-    height: 70,
+    width: 60,
+    height: 60,
     borderRadius: 100,
   },
   rightWrap: {

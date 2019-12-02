@@ -71,6 +71,12 @@ const HomeStack = createStackNavigator({
       title: 'Edit Profile',
     }),
   },
+  FeedCard: {
+    screen: FeedCardDetailsScreen,
+    navigationOptions: () => ({
+      title: 'FeedCard',
+    }),
+  },
 });
 
 const FeedStack = createStackNavigator({
@@ -79,6 +85,12 @@ const FeedStack = createStackNavigator({
     screen: FeedCardDetailsScreen,
     navigationOptions: () => ({
       title: 'FeedCard',
+    }),
+  },
+  Details: {
+    screen: DetailsScreen,
+    navigationOptions: () => ({
+      title: 'Detail for clubhouse',
     }),
   },
   Writing: {

@@ -32,7 +32,7 @@ class DetailsScreen extends React.Component {
         <View>
           <ClubHome
             onPress={() => navigation.navigate('EditProfile')}
-            clubImg={require('../data/ImgTest/bbbb.jpg')}
+            clubImg={require('../data/ImgTest/aaaa.jpg')}
             clubProfileImg={require('../data/ImgTest/2bar.jpg')}
             clubName="F.C. Barcelona"
             members="15"

@@ -11,7 +11,7 @@ import FeedCardDetails from "../components/contents/FeedCardDetails";
 export default class FeedCardDetailsScreen extends React.Component {
 
   render() {
-    const { navigation, onPress, profileImg, user, address, bodyImg, bodyText, hits } = this.props;
+    const { navigation, onPress, profileImg, user, address, bodyImg, bodyText, matchDetailsOnPress, hits } = this.props;
     return (
       <ScrollView
         horizontal={false}
@@ -21,9 +21,10 @@ export default class FeedCardDetailsScreen extends React.Component {
           onPress={() => navigation.navigate('Profile')}
           profileImg={require('../data/ImgTest/dddd.jpg')}
           user="Lionel Messi"
-          address="'Buenos Aires, Argentina"
+          address="Buenos Aires, Argentina"
           bodyImg={require('../data/ImgTest/bbbb.jpg')}
-          bodyText="매치상대구합니다"
+          bodyText="캄프누에서 뛸 매치상대구합니다."
+          matchDetailsOnPress={() => navigation.navigate('Details')}
           hits="150"
         />
       </ScrollView>
