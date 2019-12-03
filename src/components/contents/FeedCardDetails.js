@@ -6,6 +6,7 @@ import colors from '../../styles/colors';
 
 import SetSportBox from "../form/SetSportBox";
 
+import FeedDateAddressSection from "../items/FeedDateAddressSection";
 import FeedMatchBoxItem from "../items/FeedMatchBoxItem";
 import Reply from "./Reply";
 
@@ -41,6 +42,19 @@ export default class FeedCardDetails extends React.Component {
           </View>
         </View>
 
+        <View>
+          <FeedDateAddressSection
+            icon="clock"
+            topText="Dec 29, 2019, SUN"
+            bottomText="PM 02:00 - PM 06:00"
+          />
+          <FeedDateAddressSection
+            icon="map-pin"
+            topText="양키스타디움"
+            bottomText="1 E 161 St, The Bronx, NY 10451 USA"
+          />
+        </View>
+
         <View style={{ backgroundColor: colors.grey01 }}>
 
           <FeedMatchBoxItem
@@ -57,20 +71,6 @@ export default class FeedCardDetails extends React.Component {
           <FeedMatchBoxItem askMatchOnPress={() => alert("매치팀 등록함")} matchDetailsOnPress={matchDetailsOnPress} matchClubImg={require('../../data/ImgTest/1ars.jpg')} title="Away" clubName="Arsenal" entry="14" entryProfileImg={require('../../data/ImgTest/ffff.jpg')} entryBtnOnPress={() => alert("엔트리등록")} />
           <FeedMatchBoxItem askMatchOnPress={() => alert("매치팀 등록함")} matchDetailsOnPress={matchDetailsOnPress} matchClubImg={profileImg} title="Away" entry="" entryBtnOnPress={() => alert("엔트리등록")} />
 
-
-        </View>
-
-
-        <View style={{ flex: 1, flexDirection: 'row', paddingTop: 10, paddingLeft: 15, peddingRight: 15 }}>
-          <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.green01 }}>
-            <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Soccer</Text>
-          </View>
-          <View style={{ width: null, height: 25, borderRadius: 100 , backgroundColor: colors.blue, marginLeft: 10 }}>
-            <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Osaka</Text>
-          </View>
-          <View style={{ width: null, height: 25, borderRadius: 20 , backgroundColor: colors.darkOrange, marginLeft: 10 }}>
-            <Text style={{ paddingLeft: 10, paddingRight: 10, color: colors.white }}>Oct 20, 2019</Text>
-          </View>
         </View>
 
         <View style={{ flex: 1, paddingTop: 10, paddingLeft: 15 }}>
@@ -138,6 +138,6 @@ const styles = StyleSheet.create({
     paddingRight: 15,
   },
   replySection: {
-    backgroundColor: colors.white03,
+    backgroundColor: colors.white,
   },
 });
