@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity, Image } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import colors from '../../styles/colors';
-import ListItem from '../items/ListItem';
+import ListItem from "../items/ListItem";
 
-import clubplayers from '../../data/clubplayers';
+import clubplayers from "../../data/clubplayers";
 
 class ClubPlayers extends React.Component {
 

@@ -15,6 +15,7 @@ import NoticeScreen from "../screens/NoticeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import EditProfileScreen from "../screens/EditProfileScreen";
 import FeedCardDetailsScreen from "../screens/FeedCardDetailsScreen";
+import EntryScreen from "../screens/EntryScreen";
 import NewClubScreen from "../screens/NewClubScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import WritingScreen from "../screens/WritingScreen";
@@ -85,6 +86,12 @@ const FeedStack = createStackNavigator({
     screen: FeedCardDetailsScreen,
     navigationOptions: () => ({
       title: 'FeedCard',
+    }),
+  },
+  Entry: {
+    screen: EntryScreen,
+    navigationOptions: () => ({
+      title: 'Entry',
     }),
   },
   Details: {

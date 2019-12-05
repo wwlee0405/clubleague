@@ -13,7 +13,7 @@ import Reply from "./Reply";
 export default class FeedCardDetails extends React.Component {
 
   render() {
-    const { onPress, profileImg, user, address, bodyImg, bodyText, askMatchOnPress, matchDetailsOnPress, hits } = this.props;
+    const { onPress, profileImg, user, address, bodyImg, bodyText, askMatchOnPress, matchDetailsOnPress, entryNavigationOnPress, hits } = this.props;
     return (
       <View>
         <View style={styles.profileWrap}>
@@ -66,10 +66,11 @@ export default class FeedCardDetails extends React.Component {
             clubName="F.C. Barcelona"
             entry="20"
             entryBtnOnPress={() => alert("엔트리등록")}
+            entryNavigationOnPress={entryNavigationOnPress}
             entryProfileImg={require('../../data/ImgTest/ffff.jpg')}
           />
-          <FeedMatchBoxItem askMatchOnPress={() => alert("매치팀 등록함")} matchDetailsOnPress={matchDetailsOnPress} matchClubImg={require('../../data/ImgTest/1ars.jpg')} title="Away" clubName="Arsenal" entry="14" entryProfileImg={require('../../data/ImgTest/ffff.jpg')} entryBtnOnPress={() => alert("엔트리등록")} />
-          <FeedMatchBoxItem askMatchOnPress={() => alert("매치팀 등록함")} matchDetailsOnPress={matchDetailsOnPress} matchClubImg={profileImg} title="Away" entry="" entryBtnOnPress={() => alert("엔트리등록")} />
+          <FeedMatchBoxItem askMatchOnPress={() => alert("매치팀 등록함")} matchDetailsOnPress={matchDetailsOnPress} matchClubImg={require('../../data/ImgTest/1ars.jpg')} title="Away" clubName="Arsenal" entry="14" entryProfileImg={require('../../data/ImgTest/ffff.jpg')} entryBtnOnPress={() => alert("엔트리등록")} entryNavigationOnPress={entryNavigationOnPress} />
+          <FeedMatchBoxItem askMatchOnPress={() => alert("매치팀 등록함")} matchDetailsOnPress={matchDetailsOnPress} matchClubImg={profileImg} title="Away" entry="" entryBtnOnPress={() => alert("엔트리등록")} entryNavigationOnPress={entryNavigationOnPress} />
 
         </View>
 

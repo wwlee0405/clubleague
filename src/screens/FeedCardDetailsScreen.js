@@ -25,6 +25,7 @@ export default class FeedCardDetailsScreen extends React.Component {
           bodyImg={require('../data/ImgTest/bbbb.jpg')}
           bodyText="캄프누에서 뛸 매치상대구합니다."
           matchDetailsOnPress={() => navigation.navigate('Details')}
+          entryNavigationOnPress={() => navigation.navigate('Entry')}
           hits="150"
         />
       </ScrollView>

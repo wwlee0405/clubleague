@@ -14,6 +14,7 @@ export default class FeedMatchBoxItem extends React.Component {
       labelColor,
       clubName,
       entryBtnOnPress,
+      entryNavigationOnPress,
       entry,
       entryProfileImg
     } = this.props;
@@ -50,21 +51,23 @@ export default class FeedMatchBoxItem extends React.Component {
           </View>
         </View>
 
-        <View style={styles.bottomContainer}>
-          <Text style={styles.entryText}><Text>{entry}</Text> Entry</Text>
-          <View style={{ paddingRight: 3 }}>
-            <Image
-              source={entryProfileImg}
-              style={styles.entryImg}
-            />
+        <TouchableOpacity onPress={entryNavigationOnPress}>
+          <View style={styles.bottomContainer}>
+            <Text style={styles.entryText}><Text>{entry}</Text> Entry</Text>
+            <View style={{ paddingRight: 3 }}>
+              <Image
+                source={entryProfileImg}
+                style={styles.entryImg}
+              />
+            </View>
+            <View style={{ paddingRight: 3 }}>
+              <Image
+                source={entryProfileImg}
+                style={styles.entryImg}
+              />
+            </View>
           </View>
-          <View style={{ paddingRight: 3 }}>
-            <Image
-              source={entryProfileImg}
-              style={styles.entryImg}
-            />
-          </View>
-        </View>
+        </TouchableOpacity>
 
       </View>
     );
@@ -78,6 +81,7 @@ FeedMatchBoxItem.propTypes = {
   title: PropTypes.string.isRequired,
   labelColor: PropTypes.string,
   clubName: PropTypes.string,
+  entryNavigationOnPress: PropTypes.func,
   entry: PropTypes.string,
 };
 

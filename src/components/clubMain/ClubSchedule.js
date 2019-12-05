@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, SectionList, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import colors from '../../styles/colors';
-import ScheduleSectionList from '../items/ScheduleSectionList';
+import ScheduleSectionList from "../items/ScheduleSectionList";
 
 class ClubSchedule extends Component {
   render() {
