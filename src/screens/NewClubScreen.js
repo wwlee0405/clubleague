@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView , TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Image } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
@@ -23,10 +23,27 @@ class NewClubScreen extends React.Component {
     return (
       <View style={styles.container}>
 
-        <Text>Input Club Name</Text>
-        <Text>사진추가</Text>
-        <Text>You can change club name and picture after you create it.</Text>
-        <Text>클럽이름과 사진은 개설 후에도 변경할 수 있습니다.</Text>
+        <View style={styles.inputSectionWrap}>
+          <TextInput style={styles.inputSection} placeholder="Input Club Name" />
+        </View>
+
+        <View style={styles.imgSectionWrap}>
+          <TouchableOpacity
+            onPress={() => alert("edit img")}
+          >
+            <View style={styles.imgSection}>
+              <Feather name="camera" size={40} style={{ paddingBottom: 5, color: colors.grey03 }} />
+              <Text style={{ color: colors.grey03 }}>사진추가</Text>
+            </View>
+            <Image
+              source={require('../data/ImgTest/cccc.jpg')}
+              style={styles.img}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <Text style={styles.notice}>You can change club name and picture after you create it.</Text>
+
       </View>
 
     );
@@ -41,5 +58,34 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  inputSectionWrap: {
+    paddingLeft: 50,
+    paddingRight: 50,
+    paddingBottom: 20,
+  },
+  inputSection: {
+    fontSize: 20,
+  },
+  imgSectionWrap: {
+    paddingBottom: 10
+  },
+  imgSection: {
+    width: 130,
+    height: 130,
+    borderRadius: 100,
+    backgroundColor: colors.grey01,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  img: {
+    width: 130,
+    height: 130,
+    borderRadius: 100,
+    backgroundColor: colors.lightGrey,
+  },
+  notice: {
+    fontSize: 13,
+    color: colors.grey03,
   },
 });
