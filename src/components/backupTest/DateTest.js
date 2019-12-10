@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import { StyleSheet, Text, View, TouchableOpacity, DatePickerAndroid } from "react-native";
 import colors from '../../styles/colors';
 
-export default class Testimda extends React.Component {
+export default class DateTest extends React.Component {
 
   state = {
     presetDate: new Date(2020, 4, 5),

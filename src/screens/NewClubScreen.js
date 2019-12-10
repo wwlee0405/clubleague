@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Image } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
-
+import SetSportInput from "../components/form/SetSportInput";
 
 class NewClubScreen extends React.Component {
 
@@ -13,7 +13,7 @@ class NewClubScreen extends React.Component {
           onPress={() => navigation.navigate('Home')}
           title="submit"
         >
-          <Feather name="check" size={30} style={{ paddingRight: 10 }} />
+          <Feather name="check" size={25} style={{ paddingRight: 10 }} />
         </TouchableOpacity>
       ),
     };
@@ -22,6 +22,8 @@ class NewClubScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+
+        <SetSportInput />
 
         <View style={styles.inputSectionWrap}>
           <TextInput style={styles.inputSection} placeholder="Input Club Name" />

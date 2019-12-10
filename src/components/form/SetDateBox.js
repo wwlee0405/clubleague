@@ -41,10 +41,10 @@ export default class SetDateBox extends React.Component {
       <View style={styles.container}>
         <TouchableOpacity
           style={[{ borderColor }, styles.box]}
-          onPress={this.showPicker.bind(this, 'simple', {date: this.state.simpleDate})}
+          onPress={this.showPicker.bind(this, 'spinner', {date: this.state.spinnerDate, mode: 'spinner' })}
         >
           <Text style={[{ color }, styles.labelText]}>{title}</Text>
-          <Text style={styles.date}>{this.state.simpleText}</Text>
+          <Text style={styles.date}>{this.state.spinnerText}</Text>
         </TouchableOpacity>
       </View>
     );

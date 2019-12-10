@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   thumbnail: {
     marginHorizontal: 5,
-    borderColor: colors.pink,
+    borderColor: colors.lightGrey,
     borderWidth: 2,
     width: 85,
     height: 85,

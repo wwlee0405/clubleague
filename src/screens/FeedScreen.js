@@ -18,7 +18,7 @@ class FeedScreen extends React.Component {
           onPress={() => navigation.navigate('Writing')}
           title="writing"
         >
-          <Feather name="edit" size={30} style={{ paddingRight: 10 }} />
+          <Feather name="edit" size={25} style={{ paddingRight: 10 }} />
         </TouchableOpacity>
       ),
     };

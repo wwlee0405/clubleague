@@ -17,7 +17,7 @@ class WritingScreen extends React.Component {
           onPress={() => navigation.navigate('Feed')}
           title="submit"
         >
-          <Feather name="check" size={30} style={{ paddingRight: 10 }} />
+          <Feather name="check" size={25} style={{ paddingRight: 10 }} />
         </TouchableOpacity>
       ),
     };

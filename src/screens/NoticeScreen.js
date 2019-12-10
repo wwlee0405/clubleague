@@ -3,12 +3,8 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from "rea
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
 
-
 import NoticeCard from "../components/contents/NoticeCard";
 import noticecard from "../data/noticecard";
-
-import Testimda from '../components/backupTest/Testimda';
-
 
 class NoticeScreen extends React.Component {
 
@@ -21,7 +17,7 @@ class NoticeScreen extends React.Component {
           onPress={() => navigation.navigate('Profile')}
           title="profile"
         >
-          <Feather name="user" size={30} style={{ paddingRight: 10 }} />
+          <Feather name="user" size={25} style={{ paddingRight: 10 }} />
         </TouchableOpacity>
       ),
     };
@@ -47,18 +43,14 @@ class NoticeScreen extends React.Component {
   }
 
   render() {
-
     const { navigation } = this.props;
-
     return (
       <View style={styles.container}>
         <ScrollView
           horizontal={false}
           showsVerticalScrollIndicator={false}
         >
-          <Testimda />
           {this.renderNoticeCard()}
-
         </ScrollView>
       </View>
     );

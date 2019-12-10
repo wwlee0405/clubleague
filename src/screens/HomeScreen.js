@@ -15,12 +15,20 @@ class HomeScreen extends React.Component {
       headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
       headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Clubleague</Text>,
       headerRight: (
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Profile')}
-          title="profile"
-        >
-          <Feather name="user" size={30} style={{ paddingRight: 10 }} />
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row' }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Notice')}
+            title="profile"
+          >
+            <Feather name="search" size={25} style={{ paddingRight: 20 }} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Profile')}
+            title="profile"
+          >
+            <Feather name="user" size={25} style={{ paddingRight: 10 }} />
+          </TouchableOpacity>
+        </View>
       ),
     };
   };
