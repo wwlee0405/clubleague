@@ -31,10 +31,11 @@ class DetailsScreen extends React.Component {
       return (
         <View>
           <ClubHome
-            onPress={() => navigation.navigate('EditProfile')}
+            onPress={() => navigation.navigate('Details')}
             clubImg={require('../data/ImgTest/aaaa.jpg')}
             clubProfileImg={require('../data/ImgTest/2bar.jpg')}
             clubName="F.C. Barcelona"
+            sports="Soccer"
             members="15"
             leaderUser="Ernesto Valverde"
             address="Barcelona"
@@ -65,6 +66,14 @@ class DetailsScreen extends React.Component {
       )
     }
     else if (this.state.activeIndex == 3) {
+      const { navigation } = this.props;
+      return (
+        <View>
+          <Text>Club Information Page~</Text>
+        </View>
+      )
+    }
+    else if (this.state.activeIndex == 4) {
 
       return (
         <View>
@@ -106,59 +115,79 @@ class DetailsScreen extends React.Component {
       <View style={styles.container}>
 
         <View style={styles.clubTab}>
-          <TouchableOpacity
-            onPress={() => this.segmentClicked(0)}
-            active={this.state.activeIndex == 0}
-            style={styles.clubTabButton}
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.scrollWrap}
           >
-            <Text
-              name="home"
-              size={15}
-              style={[this.state.activeIndex == 0 ? {} : { color: colors.lightGrey }]}
+            <TouchableOpacity
+              onPress={() => this.segmentClicked(0)}
+              active={this.state.activeIndex == 0}
+              style={styles.clubTabButton}
             >
-              Home
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.segmentClicked(1)}
-            active={this.state.activeIndex == 1}
-            style={styles.clubTabButton}
-          >
-            <Text
-              name="schedule"
-              size={15}
-              style={[this.state.activeIndex == 1 ? {} : { color: colors.lightGrey }]}
+              <Text
+                name="home"
+                size={15}
+                style={[this.state.activeIndex == 0 ? {} : { color: colors.lightGrey }]}
+              >
+                Home
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.segmentClicked(1)}
+              active={this.state.activeIndex == 1}
+              style={styles.clubTabButton}
             >
-              Schedule
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.segmentClicked(2)}
-            active={this.state.activeIndex == 2}
-            style={styles.clubTabButton}
-          >
-            <Text
-              name="players"
-              size={15}
-              style={[this.state.activeIndex == 2 ? {} : { color: colors.lightGrey }]}
+              <Text
+                name="schedule"
+                size={15}
+                style={[this.state.activeIndex == 1 ? {} : { color: colors.lightGrey }]}
+              >
+                Schedule
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.segmentClicked(2)}
+              active={this.state.activeIndex == 2}
+              style={styles.clubTabButton}
             >
-              Players
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            transparent
-            onPress={() => this.segmentClicked(3)}
-            active={this.state.activeIndex == 3}
-            style={styles.clubTabButton}
-          >
-            <Text
-              name="setting"
-              size={15}
-              style={[this.state.activeIndex == 3 ? {} : { color: colors.lightGrey }]}
+              <Text
+                name="players"
+                size={15}
+                style={[this.state.activeIndex == 2 ? {} : { color: colors.lightGrey }]}
+              >
+                Players
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              transparent
+              onPress={() => this.segmentClicked(3)}
+              active={this.state.activeIndex == 3}
+              style={styles.clubTabButton}
             >
-              Setting
-            </Text>
-          </TouchableOpacity>
+              <Text
+                name="setting"
+                size={15}
+                style={[this.state.activeIndex == 3 ? {} : { color: colors.lightGrey }]}
+              >
+                Info
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              transparent
+              onPress={() => this.segmentClicked(4)}
+              active={this.state.activeIndex == 4}
+              style={styles.clubTabButton}
+            >
+              <Text
+                name="setting"
+                size={15}
+                style={[this.state.activeIndex == 4 ? {} : { color: colors.lightGrey }]}
+              >
+                Setting
+              </Text>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
 
         <ScrollView
@@ -195,5 +224,7 @@ const styles = StyleSheet.create({
   clubTabButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
   },
 });

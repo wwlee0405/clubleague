@@ -36,6 +36,7 @@ class ClubHome extends React.Component {
       clubImg,
       clubProfileImg,
       clubName,
+      sports,
       members,
       leaderUser,
       address
@@ -62,6 +63,7 @@ class ClubHome extends React.Component {
               <View>
                 <Text style={styles.clubNameText}>{clubName}</Text>
               </View>
+              <Text>{sports}</Text>
               <View style={styles.clubProfileTeamInfoTextWrap}>
                 <Text style={styles.clubProfileTopInfoTextLeft}>Members <Text>{members}</Text></Text>
                 <Text style={styles.clubProfileTopInfoTextRight}>Leader <Text>{leaderUser}</Text></Text>

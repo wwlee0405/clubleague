@@ -17,6 +17,7 @@ import EditProfileScreen from "../screens/EditProfileScreen";
 import FeedCardDetailsScreen from "../screens/FeedCardDetailsScreen";
 import EntryScreen from "../screens/EntryScreen";
 import NewClubScreen from "../screens/NewClubScreen";
+import SearchClubScreen from "../screens/SearchClubScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import WritingScreen from "../screens/WritingScreen";
 
@@ -34,6 +35,12 @@ const HomeStack = createStackNavigator({
     screen: NewClubScreen,
     navigationOptions: () => ({
       title: 'New Club',
+    }),
+  },
+  SearchClub: {
+    screen: SearchClubScreen,
+    navigationOptions: () => ({
+      title: 'Search Club',
     }),
   },
   Details: {

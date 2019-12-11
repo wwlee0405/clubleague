@@ -17,7 +17,7 @@ class HomeScreen extends React.Component {
       headerRight: (
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Notice')}
+            onPress={() => navigation.navigate('SearchClub')}
             title="profile"
           >
             <Feather name="search" size={25} style={{ paddingRight: 20 }} />

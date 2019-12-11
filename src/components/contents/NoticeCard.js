@@ -11,7 +11,7 @@ export default class NoticeCard extends React.Component {
       <TouchableOpacity onPress={onPress}>
         <View style={styles.noticeWrap}>
 
-          <View style={styles.rightWrap}>
+          <View style={styles.leftWrap}>
             <TouchableOpacity onPress={noticeOnPress}>
               <Image
                 source={profileImg}
@@ -25,7 +25,7 @@ export default class NoticeCard extends React.Component {
             <Text style={styles.textBottom}>{text}</Text>
           </View>
 
-          <View style={styles.leftWrap}>
+          <View style={styles.rightWrap}>
             <Text style={styles.textTime}>{time}</Text>
           </View>
 
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
   },
-  rightWrap: {
+  leftWrap: {
     flex: 1,
     alignItems: 'center',
     paddingLeft: 10,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   textBottom: {
     color: colors.darkGrey,
   },
-  leftWrap: {
+  rightWrap: {
     flex: 1,
     paddingLeft: 10,
   },
