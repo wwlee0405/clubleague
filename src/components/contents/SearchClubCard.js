@@ -6,7 +6,7 @@ import colors from '../../styles/colors';
 export default class SearchClubCard extends React.Component {
 
   render() {
-    const { onPress, clubProfileImg, clubName, sports, members, leaderUser, address } = this.props;
+    const { onPress, clubProfileImg, clubName, clubInfo, sports, members, leaderUser, address } = this.props;
     return (
       <TouchableOpacity onPress={onPress}>
         <View style={styles.clubProfileWrap}>
@@ -22,15 +22,16 @@ export default class SearchClubCard extends React.Component {
             <View>
               <Text style={styles.clubNameText}>{clubName}</Text>
             </View>
-            <Text>{sports}</Text>
-            <View style={styles.clubProfileTeamInfoTextWrap}>
-              <Text style={styles.clubProfileTopInfoTextLeft}>Members  <Text style={styles.clubProfileTextData}>{members}</Text></Text>
-              <Text style={styles.clubProfileTopInfoTextRight}>Leader  <Text style={styles.clubProfileTextData}>{leaderUser}</Text></Text>
+            <View>
+              <Text style={{ fontSize: 12 }}>{clubInfo}</Text>
             </View>
             <View style={styles.clubProfileTeamInfoTextWrap}>
-              <Text style={styles.clubProfileBottomInfoTextLeft}>{address}</Text>
-              <Text style={{ fontSize: 14, paddingLeft: 20 }}>{address}</Text>
-              <Text style={{ fontSize: 14, paddingLeft: 20 }}>{address}</Text>
+              <Text style={styles.clubProfileTopInfoTextLeft}>{sports}</Text>
+              <Text style={styles.clubProfileTopInfoTextRight}>{address}</Text>
+            </View>
+            <View style={styles.clubProfileTeamInfoTextWrap}>
+              <Text style={styles.clubProfileBottomInfoTextLeft}>Members  <Text>{members}</Text></Text>
+              <Text style={styles.clubProfileBottomInfoTextRight}>Leader  <Text>{leaderUser}</Text></Text>
             </View>
           </View>
 
@@ -53,6 +54,8 @@ const styles = StyleSheet.create({
   },
   clubProfileImgWrap: {
     paddingRight: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   clubProfileImg: {
     width: 85,
@@ -65,24 +68,27 @@ const styles = StyleSheet.create({
   },
   clubNameText: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 18,
   },
   clubProfileTeamInfoTextWrap: {
     flexDirection: 'row',
   },
   clubProfileTopInfoTextLeft: {
     fontSize: 12,
-    color: colors.darkGrey,
+    color: colors.grey03,
   },
   clubProfileTopInfoTextRight: {
-    fontSize: 12,
     paddingLeft: 20,
-    color: colors.darkGrey,
-  },
-  clubProfileTextData: {
-    color: colors.black,
+    fontSize: 12,
+    color: colors.grey03,
   },
   clubProfileBottomInfoTextLeft: {
-    fontSize: 14,
+    fontSize: 12,
+    color: colors.grey03,
+  },
+  clubProfileBottomInfoTextRight: {
+    fontSize: 12,
+    paddingLeft: 20,
+    color: colors.grey03,
   },
 });
