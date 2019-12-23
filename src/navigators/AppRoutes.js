@@ -151,7 +151,7 @@ const BottomTab = createBottomTabNavigator(
       navigationOptions:{
         tabBarLabel: 'Home',
         tabBarIcon: ({tintColor}) => (
-          <Feather name="home" color={tintColor} size={24} />
+          <Feather name="home" color={tintColor} size={25} />
         )
       }
     },
@@ -160,7 +160,7 @@ const BottomTab = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Feed',
         tabBarIcon: ({tintColor}) => (
-          <MaterialCommunityIcons name="soccer-field" color={tintColor} size={24} />
+          <MaterialCommunityIcons name="soccer-field" color={tintColor} size={25} />
         )
       }
     },
@@ -169,18 +169,18 @@ const BottomTab = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Notice',
         tabBarIcon: ({tintColor}) => (
-          <Feather name="bell" color={tintColor} size={24} />
+          <Feather name="bell" color={tintColor} size={25} />
         )
       }
     },
   },
   {
     tabBarOptions: {
-      activeTintColor: colors.yellowGreen,
-      inactiveTintColor: colors.lightGrey,
+      activeTintColor: colors.emerald,
+      inactiveTintColor: colors.darkGrey,
+      showLabel: false,
+      showIcon: true,
       style: {
-        showLabel: false,
-        showIcon: true,
         backgroundColor: colors.white,
         borderTopWidth: 0,
         shadowOffset: {width:5, height:3},

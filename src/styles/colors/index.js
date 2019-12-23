@@ -6,6 +6,10 @@ export default {
   white03: '#f5f5f5',
   white04: '#fffafa',
   green01: '#34A853',
+  emerald: '#51c878',
+  sea: '#2e8b57',
+  sacramento: '#043927',
+
   blue: '#4285f4',
   darkOrange: '#d93900',
   darkGrey: '#696969',

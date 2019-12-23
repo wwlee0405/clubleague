@@ -39,6 +39,24 @@ class WritingScreen extends React.Component {
           <CreateMatchBox title="Away" />
           <CreateMatchBox title="Away" />
           <CreateMatchBox title="Away" />
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View>
+              <TouchableOpacity
+                style={{ width: 30, height: 30, borderRadius: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.green01 }}
+                onPress={() => alert("Awaybox increase")}
+              >
+                <Text style={{ color: colors.white }}>+</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ paddingLeft: 20 }}>
+              <TouchableOpacity
+                style={{ width: 30, height: 30, borderRadius: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.green01 }}
+                onPress={() => alert("Awaybox decrease")}
+              >
+                <Text style={{ color: colors.white }}>-</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
 
         <View style={{ flex: 1, flexDirection: 'row', paddingTop: 40 }}>
