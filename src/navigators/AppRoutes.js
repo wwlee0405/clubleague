@@ -41,6 +41,7 @@ const HomeStack = createStackNavigator({
     screen: SearchClubScreen,
     navigationOptions: () => ({
       title: 'Search Club',
+      headerTintColor: colors.sacramento,
     }),
   },
   Details: {
@@ -70,7 +71,11 @@ const HomeStack = createStackNavigator({
   Profile: {
     screen: ProfileScreen,
     navigationOptions: () => ({
-      title: 'Profile'
+      title: 'Profile',
+      headerTintColor: colors.sacramento,
+      headerStyle: {
+        backgroundColor: colors.emerald,
+      },
     }),
   },
   EditProfile: {
@@ -116,7 +121,7 @@ const FeedStack = createStackNavigator({
   Profile: {
     screen: ProfileScreen,
     navigationOptions: () => ({
-      title: 'Profile'
+      title: 'Profile',
     }),
   },
   EditProfile: {
@@ -177,7 +182,7 @@ const BottomTab = createBottomTabNavigator(
   {
     tabBarOptions: {
       activeTintColor: colors.emerald,
-      inactiveTintColor: colors.darkGrey,
+      inactiveTintColor: colors.lightGrey,
       showLabel: false,
       showIcon: true,
       style: {

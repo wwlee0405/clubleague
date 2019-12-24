@@ -60,7 +60,7 @@ class ProfileScreen extends React.Component {
                 style={styles.editProfileButton}
                 onPress={() => navigation.navigate('EditProfile')}
               >
-                <Text>Edit Profile</Text>
+                <Text style={styles.editProfileButtonText}>Edit Profile</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -120,7 +120,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 40,
     borderWidth: 1,
-    borderColor: colors.black,
+    borderColor: colors.emerald,
+    backgroundColor: colors.emerald,
     borderRadius: 8,
-  }
+  },
+  editProfileButtonText: {
+    color: colors.white,
+  },
 });

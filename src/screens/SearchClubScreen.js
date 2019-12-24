@@ -2,17 +2,22 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, Image } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../styles/colors';
-
 import SearchClubCard from "../components/contents/SearchClubCard";
-
 
 class SearchClubScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
+      headerStyle: {
+        backgroundColor: colors.emerald,
+      },
       headerTitle: (
         <View>
-          <TextInput style={styles.inputSection} placeholder="Search for club name, sport, reader name" />
+          <TextInput
+            style={styles.inputSection}
+            placeholder="Search for club name, sport, reader name"
+            placeholderTextColor= {colors.sacramento}
+          />
         </View>
       ),
     };
@@ -59,7 +64,6 @@ class SearchClubScreen extends React.Component {
 
         </ScrollView>
       </View>
-
     );
   }
 }
@@ -67,11 +71,12 @@ class SearchClubScreen extends React.Component {
 export default SearchClubScreen;
 
 const styles = StyleSheet.create({
+  inputSection: {
+    fontSize: 15,
+    color: colors.sacramento,
+  },
   container: {
     flex: 1,
     backgroundColor: colors.white,
-  },
-  inputSection: {
-    fontSize: 15,
   },
 });
