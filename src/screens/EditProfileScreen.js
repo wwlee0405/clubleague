@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import { Container, Content } from "native-base";
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import colors from '../styles/colors';
 import TextInputField from "../components/form/TextInputField";
@@ -14,7 +13,7 @@ class EditProfileScreen extends React.Component {
           onPress={() => navigation.navigate('Profile')}
           title="submit"
         >
-          <Feather name="check" size={30} style={{ paddingRight: 10 }} />
+          <Feather name="check" size={25} style={{ paddingRight: 10 }} />
         </TouchableOpacity>
       ),
     };
@@ -22,15 +21,18 @@ class EditProfileScreen extends React.Component {
 
   render() {
     return (
-      <Container style={styles.container}>
-        <Content>
+      <View style={styles.container}>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
 
           <View style={styles.imgWrap}>
             <TouchableOpacity
               onPress={() => alert("edit img")}
             >
               <Image
-                source={require('../data/ImgTest/cccc.jpg')}
+                source={require('../data/ImgTest/dddd.jpg')}
                 style={styles.img}
               />
             </TouchableOpacity>
@@ -44,8 +46,8 @@ class EditProfileScreen extends React.Component {
             <TextInputField labelText="Mainclub" placeholder="Mainclub" />
           </View>
 
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
     );
   }
 }

@@ -1,113 +1,100 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView , TouchableOpacity, Button } from "react-native";
+import { StyleSheet, Text, View, ScrollView , TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Thumbnail } from "native-base";
 import colors from '../styles/colors';
+import Categories from "../components/contents/Categories";
 
-import ProfileScreen from "../screens/ProfileScreen";
-import HomeScheduleComponent from "../components/HomeScheduleComponent";
+import categoriesList from "../data/categories";
+import FeedCard from "../components/contents/FeedCard";
+import feedcard from "../data/feedcard";
 
 class HomeScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
-      headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Clubleague</Text>,
+      headerStyle: {
+        backgroundColor: colors.white,
+      },
+      headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10, color: colors.sacramento }} />,
+      headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18, color: colors.sacramento }}>Clubleague</Text>,
       headerRight: (
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Profile')}
-          title="profile"
-        >
-          <Feather name="user" size={30} style={{ paddingRight: 10 }} />
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row' }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SearchClub')}
+            title="profile"
+          >
+            <Feather name="search" size={25} style={{ paddingRight: 20, color: colors.sacramento }} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Profile')}
+            title="profile"
+          >
+            <Feather name="user" size={25} style={{ paddingRight: 10, color: colors.sacramento }} />
+          </TouchableOpacity>
+        </View>
       ),
     };
   };
 
+  renderFeedCard() {
+    const { onPress, navigation } = this.props;
+    return feedcard.map((feedcard, index) => {
+      return (
+        <View key={`feedcard-${index}`}>
+          <FeedCard
+            key={`feedcard-item-${index}`}
+            profileImg={feedcard.profileImg}
+            user={feedcard.user}
+            address={feedcard.address}
+            bodyImg={feedcard.bodyImg}
+            bodyText={feedcard.bodyText}
+            hits={feedcard.hits}
+            onPress={() => navigation.navigate('FeedCard')}
+            profileOnPress={() => navigation.navigate('Profile')}
+          />
+        </View>
+      );
+    });
+  }
+
   render() {
+
+    const { navigation } = this.props;
+
     return (
-      <Container style={styles.container}>
+      <View style={styles.container}>
 
         <View style={styles.clubContainer}>
           <View style={styles.clubContainerTopWrap}>
             <Text style={styles.clubContainerRightText}>Club</Text>
             <View>
               <TouchableOpacity
-                onPress={() => alert("New Club")}
+                onPress={() => navigation.navigate('NewClub')}
                 style={styles.clubContainerLeftButton}>
                 <Feather name="plus-circle" style={styles.clubContainerLeftButtonIcon} />
                 <Text style={styles.clubContainerLeftText}>New Club</Text>
               </TouchableOpacity>
             </View>
           </View>
+
           <View style={styles.clubContainerBottomWrap}>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{
-                alignItems: 'center',
-                paddingStart: 5,
-                paddingEnd: 5
-              }}
-            >
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/1ars.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/2bar.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/1ars.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/2bar.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/1ars.jpg')}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Details')}
-              >
-                <Thumbnail
-                  style={styles.largeThumbnail}
-                  large source={require('../data/ImgTest/2bar.jpg')}
-                />
-              </TouchableOpacity>
-            </ScrollView>
+            <Categories
+              categories={categoriesList}
+              onPress={() => navigation.navigate('Details')}
+            />
           </View>
+
         </View>
 
-        <Content>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
 
-          <HomeScheduleComponent />
+          {this.renderFeedCard()}
 
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
 
     );
   }
@@ -121,12 +108,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   clubContainer: {
-    height: 150,
     borderBottomWidth: 1,
     borderColor: colors.lightGrey,
   },
   clubContainerTopWrap: {
-    flex: 1,
+    height: 35,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -134,23 +120,20 @@ const styles = StyleSheet.create({
   },
   clubContainerRightText: {
     fontWeight: 'bold',
+    fontSize: 18,
   },
   clubContainerLeftButton: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   clubContainerLeftButtonIcon: {
-    fontSize: 14,
+    fontSize: 18,
   },
   clubContainerLeftText: {
     fontWeight: 'bold',
+    fontSize: 18,
   },
   clubContainerBottomWrap: {
-    flex: 3,
-  },
-  largeThumbnail: {
-    marginHorizontal: 5,
-    borderColor: colors.pink,
-    borderWidth: 2,
+    height: 120
   },
 });

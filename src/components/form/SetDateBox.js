@@ -1,12 +1,39 @@
 import React, { Component } from "react";
-import { PropTypes } from 'prop-types';
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { PropTypes } from "prop-types";
+import { StyleSheet, Text, View, TouchableOpacity, DatePickerAndroid } from "react-native";
 import colors from '../../styles/colors';
 
 export default class SetDateBox extends React.Component {
 
+  state = {
+    presetDate: new Date(2020, 4, 5),
+    simpleDate: new Date(2020, 4, 5),
+    spinnerDate: new Date(2020, 4, 5),
+    calendarDate: new Date(2020, 4, 5),
+    defaultDate: new Date(2020, 4, 5),
+    simpleText: 'pick a date',
+    spinnerText: 'pick a date',
+  };
+
+  showPicker = async (stateKey, options) => {
+    try {
+      var newState = {};
+      const {action, year, month, day} = await DatePickerAndroid.open(options);
+      if (action === DatePickerAndroid.dismissedAction) {
+        newState[stateKey + 'Text'] = 'dismissed';
+      } else {
+        var date = new Date(year, month, day);
+        newState[stateKey + 'Text'] = date.toLocaleDateString();
+        newState[stateKey + 'Date'] = date;
+      }
+      this.setState(newState);
+    } catch ({code, message}) {
+      console.warn(`Cannot open date picker '${stateKey}': `, message);
+    }
+  };
+
   render() {
-    const { homeAway, borderLine, labelColor } = this.props;
+    const { title, borderLine, labelColor } = this.props;
     const borderColor = borderLine || colors.darkOrange;
     const color = labelColor || colors.darkOrange;
 
@@ -14,10 +41,10 @@ export default class SetDateBox extends React.Component {
       <View style={styles.container}>
         <TouchableOpacity
           style={[{ borderColor }, styles.box]}
-          onPress={() => alert("apply for match")}
+          onPress={this.showPicker.bind(this, 'spinner', {date: this.state.spinnerDate, mode: 'spinner' })}
         >
-          <Text style={[{ color }, styles.labelText]}>{homeAway}</Text>
-          <Text style={styles.userName}>Madrid</Text>
+          <Text style={[{ color }, styles.labelText]}>{title}</Text>
+          <Text style={styles.date}>{this.state.spinnerText}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -25,7 +52,7 @@ export default class SetDateBox extends React.Component {
 }
 
 SetDateBox.propTypes = {
-  homeAway: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   borderLine: PropTypes.string,
   labelColor: PropTypes.string,
 };
@@ -49,7 +76,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     fontSize: 10,
   },
-  userName: {
+  date: {
     flex: 5,
     paddingLeft: 5,
   },

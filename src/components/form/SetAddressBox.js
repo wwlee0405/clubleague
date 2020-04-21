@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { PropTypes } from 'prop-types';
+import { PropTypes } from "prop-types";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import colors from '../../styles/colors';
 
 export default class SetAddressBox extends React.Component {
 
   render() {
-    const { homeAway, borderLine, labelColor } = this.props;
+    const { onPress, title, borderLine, labelColor } = this.props;
     const borderColor = borderLine || colors.blue;
     const color = labelColor || colors.blue;
 
@@ -14,10 +14,10 @@ export default class SetAddressBox extends React.Component {
       <View style={styles.container}>
         <TouchableOpacity
           style={[{ borderColor }, styles.box]}
-          onPress={() => alert("apply for match")}
+          onPress={onPress}
         >
-          <Text style={[{ color }, styles.labelText]}>{homeAway}</Text>
-          <Text style={styles.userName}>Madrid</Text>
+          <Text style={[{ color }, styles.labelText]}>{title}</Text>
+          <Text style={styles.address}>Madrid, Spain</Text>
         </TouchableOpacity>
       </View>
     );
@@ -25,7 +25,8 @@ export default class SetAddressBox extends React.Component {
 }
 
 SetAddressBox.propTypes = {
-  homeAway: PropTypes.string.isRequired,
+  onPress: PropTypes.func,
+  title: PropTypes.string.isRequired,
   borderLine: PropTypes.string,
   labelColor: PropTypes.string,
 };
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     fontSize: 10,
   },
-  userName: {
+  address: {
     flex: 5,
     paddingLeft: 5,
   },

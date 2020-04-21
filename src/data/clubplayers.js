@@ -1,0 +1,77 @@
+const clubplayers = [
+  {
+    id: 1,
+    profileImg: require('./ImgTest/cccc.jpg'),
+    user: 'Son',
+    address: 'Seoul, Korea',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 3:43',
+  },
+  {
+    id: 2,
+    profileImg: require('./ImgTest/dddd.jpg'),
+    user: 'Lionel Messi',
+    address: 'Buenos Aires, Argentina',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 3:30',
+  },
+  {
+    id: 3,
+    profileImg: require('./ImgTest/ffff.jpg'),
+    user: 'Cristiano Ronaldo',
+    address: 'Lisbon, Portugal',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 6:40',
+  },
+  {
+    id: 4,
+    profileImg: require('./ImgTest/eeee.png'),
+    user: 'Sana',
+    address: 'Osaka, Japan',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 7:00',
+  },
+  {
+    id: 5,
+    profileImg: require('./ImgTest/gggg.jpg'),
+    user: 'Tzuyu',
+    address: 'Tainan, Taiwan',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 4:00',
+  },
+  {
+    id: 6,
+    profileImg: require('./ImgTest/1ars.jpg'),
+    user: 'Arsenal',
+    address: 'London, Uk',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 4:00',
+  },
+  {
+    id: 7,
+    profileImg: require('./ImgTest/2bar.jpg'),
+    user: 'FCBarcelona',
+    address: 'Barcelona, Spain',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 4:00',
+  },
+  {
+    id: 8,
+    profileImg: require('./ImgTest/bbbb.jpg'),
+    user: 'Camp Nou',
+    address: 'Barcelona, Spain',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 4:00',
+  },
+
+  {
+    id: 9,
+    profileImg: require('./ImgTest/aaaa.jpg'),
+    user: 'Real Madrid',
+    address: 'Madrid, Spain',
+    text: '게임 요청을 합니다 . .',
+    time: 'PM 4:00',
+  },
+];
+
+export default clubplayers;

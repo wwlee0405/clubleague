@@ -1,15 +1,21 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Button } from "native-base";
+import { Button } from "native-base";
 import colors from '../styles/colors';
 
 class ProfileScreen extends React.Component {
 
   render() {
+
+    const { navigation } = this.props;
+
     return (
-      <Container style={styles.container}>
-        <Content>
+      <View style={styles.container}>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
 
           <View style={styles.contantContainer}>
 
@@ -17,7 +23,7 @@ class ProfileScreen extends React.Component {
 
               <View style={styles.imgWrap}>
                 <Image
-                  source={require('../data/ImgTest/cccc.jpg')}
+                  source={require('../data/ImgTest/dddd.jpg')}
                   style={styles.img}
                 />
               </View>
@@ -30,11 +36,11 @@ class ProfileScreen extends React.Component {
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Name</Text>
-                    <Text style={styles.property}>Myoi Mina</Text>
+                    <Text style={styles.property}>Lionel Messi</Text>
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Area</Text>
-                    <Text style={styles.property}>Kobe, Japan</Text>
+                    <Text style={styles.property}>Barcelona, Spain</Text>
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Position</Text>
@@ -42,7 +48,7 @@ class ProfileScreen extends React.Component {
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Mainclub</Text>
-                    <Text style={styles.property}>Real Madrid</Text>
+                    <Text style={styles.property}>FC Barcelona</Text>
                   </View>
                 </View>
               </View>
@@ -50,18 +56,17 @@ class ProfileScreen extends React.Component {
             </View>
 
             <View style={styles.buttonWrap}>
-              <Button
-                bordered dark
+              <TouchableOpacity
                 style={styles.editProfileButton}
-                onPress={() => this.props.navigation.navigate('EditProfile')}
+                onPress={() => navigation.navigate('EditProfile')}
               >
-                <Text>Edit Profile</Text>
-              </Button>
+                <Text style={styles.editProfileButtonText}>Edit Profile</Text>
+              </TouchableOpacity>
             </View>
           </View>
 
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
     );
   }
 }
@@ -111,7 +116,15 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 25,
     marginLeft: 25,
+    alignItems: 'center',
     justifyContent: 'center',
     height: 40,
-  }
+    borderWidth: 1,
+    borderColor: colors.emerald,
+    backgroundColor: colors.emerald,
+    borderRadius: 8,
+  },
+  editProfileButtonText: {
+    color: colors.white,
+  },
 });

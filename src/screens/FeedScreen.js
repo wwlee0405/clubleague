@@ -1,51 +1,72 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
-import { Container, Content, Item ,Input, Button } from "native-base";
 import colors from '../styles/colors';
-import FeedCardComponent from "../components/FeedCardComponent";
+
+import SearchInput from "../components/form/SearchInput";
+import FeedCard from "../components/contents/FeedCard";
+import feedcard from "../data/feedcard";
 
 class FeedScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10 }} />,
-      headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Clubleague</Text>,
+      headerStyle: {
+        backgroundColor: colors.white,
+      },
+      headerLeft: <MaterialCommunityIcons name="soccer" size={30} style={{ paddingLeft: 10, color: colors.sacramento }} />,
+      headerTitle: <Text style={{ fontWeight: 'bold', fontSize: 18, color: colors.sacramento }}>Clubleague</Text>,
       headerRight: (
         <TouchableOpacity
           onPress={() => navigation.navigate('Writing')}
           title="writing"
         >
-          <Feather name="edit" size={30} style={{ paddingRight: 10 }} />
+          <Feather name="edit" size={25} style={{ paddingRight: 10, color: colors.sacramento }} />
         </TouchableOpacity>
       ),
     };
   };
 
+
+  renderFeedCard() {
+    const { onPress, navigation } = this.props;
+    return feedcard.map((feedcard, index) => {
+      return (
+        <View
+          key={`feedcard-${index}`}
+        >
+          <FeedCard
+            key={`feedcard-item-${index}`}
+            profileImg={feedcard.profileImg}
+            user={feedcard.user}
+            address={feedcard.address}
+            bodyImg={feedcard.bodyImg}
+            bodyText={feedcard.bodyText}
+            hits={feedcard.hits}
+            onPress={() => navigation.navigate('FeedCard')}
+            profileOnPress={() => navigation.navigate('Profile')}
+          />
+        </View>
+      );
+    });
+  }
+
   render() {
     return (
-      <Container>
-        <Content>
-          <View style={{ paddingTop: 10, paddingBottom: 10 }}>
-            <View style={{ flex: 1, paddingTop: 10, paddingLeft: 20, paddingRight: 20 }}>
-              <Item searchBar rounded style={{ paddingLeft: 20, paddingRight: 20 }}>
-                <Feather name="search" size={20} style={{ marginRight: 10 }} />
-                <Input placeholder="도시명, 클럽명, 경기일자" />
-                <Button transparent>
-                  <Text>Search</Text>
-                </Button>
-              </Item>
-            </View>
+      <View>
+        <ScrollView
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={{ flex: 1, paddingTop: 250, paddingBottom: 300 }}>
+            <SearchInput placeholderText="종목명, 도시명, 클럽명" />
+            <SearchInput placeholderText="경기일자" />
           </View>
 
+          {this.renderFeedCard()}
 
-          <FeedCardComponent profileImage="1" user="Sana" address="Osaka, Japan" imageSource="1" hits="100"/>
-          <FeedCardComponent profileImage="2" user="Cristiano Ronaldo" address="Lisbon, Portugal" imageSource="2" hits="200"/>
-          <FeedCardComponent profileImage="3" user="Mina" address="Hyogo, Japan" imageSource="3" hits="300"/>
-          <FeedCardComponent profileImage="4" user="Lionel Messi" address="Buenos Aires, Argentina" imageSource="4" hits="400"/>
-
-        </Content>
-      </Container>
+        </ScrollView>
+      </View>
     );
   }
 }
