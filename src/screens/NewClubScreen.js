@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   },
   inputSection: {
     fontSize: 20,
+    textAlign: 'center',
   },
   imgSectionWrap: {
     paddingBottom: 10

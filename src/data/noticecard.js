@@ -2,7 +2,7 @@ const noticecard = [
   {
     id: 1,
     profileImg: require('./ImgTest/cccc.jpg'),
-    user: 'Mina',
+    user: 'Son',
     text: '게임 요청을 합니다 . .',
     time: 'PM 3:43',
   },

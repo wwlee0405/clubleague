@@ -74,7 +74,7 @@ const HomeStack = createStackNavigator({
       title: 'Profile',
       headerTintColor: colors.sacramento,
       headerStyle: {
-        backgroundColor: colors.emerald,
+        backgroundColor: colors.white,
       },
     }),
   },
@@ -96,8 +96,9 @@ const FeedStack = createStackNavigator({
   Feed: FeedScreen,
   FeedCard: {
     screen: FeedCardDetailsScreen,
+    headerMode: 'none',
     navigationOptions: () => ({
-      title: 'FeedCard',
+      header: null,
     }),
   },
   Entry: {
@@ -175,6 +176,15 @@ const BottomTab = createBottomTabNavigator(
         tabBarLabel: 'Notice',
         tabBarIcon: ({tintColor}) => (
           <Feather name="bell" color={tintColor} size={25} />
+        )
+      }
+    },
+    Rank: {
+      screen: NoticeStack,
+      navigationOptions: {
+        tabBarLabel: 'Rank',
+        tabBarIcon: ({tintColor}) => (
+          <Feather name="grid" color={tintColor} size={25} />
         )
       }
     },

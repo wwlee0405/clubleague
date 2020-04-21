@@ -2,9 +2,9 @@ const feedcard = [
   {
     id: 1,
     profileImg: require('./ImgTest/cccc.jpg'),
-    user: 'Mina',
-    address: 'Hyogo, Japan',
-    bodyImg: require('./ImgTest/1ars.jpg'),
+    user: 'Son',
+    address: 'Seoul, Korea',
+    bodyImg: require('./ImgTest/bbbb.jpg'),
     bodyText: '이번주 02/17 매칭 초청합니다. 팀명:클럽하우스 유니폼:흰색, 매너:최고, 장소:수지체육공원',
     hits: 150,
   },

@@ -20,8 +20,8 @@ const categoriesList = [
     photo: require('./ImgTest/bbbb.jpg'),
   },
   {
-    id: "mina",
-    clubName: "Twice",
+    id: "son",
+    clubName: "FC Son",
     photo: require('./ImgTest/cccc.jpg'),
   },
   {

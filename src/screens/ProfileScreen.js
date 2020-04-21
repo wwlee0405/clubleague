@@ -23,7 +23,7 @@ class ProfileScreen extends React.Component {
 
               <View style={styles.imgWrap}>
                 <Image
-                  source={require('../data/ImgTest/cccc.jpg')}
+                  source={require('../data/ImgTest/dddd.jpg')}
                   style={styles.img}
                 />
               </View>
@@ -36,11 +36,11 @@ class ProfileScreen extends React.Component {
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Name</Text>
-                    <Text style={styles.property}>Myoi Mina</Text>
+                    <Text style={styles.property}>Lionel Messi</Text>
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Area</Text>
-                    <Text style={styles.property}>Kobe, Japan</Text>
+                    <Text style={styles.property}>Barcelona, Spain</Text>
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Position</Text>
@@ -48,7 +48,7 @@ class ProfileScreen extends React.Component {
                   </View>
                   <View>
                     <Text style={styles.nameTag}>Mainclub</Text>
-                    <Text style={styles.property}>Real Madrid</Text>
+                    <Text style={styles.property}>FC Barcelona</Text>
                   </View>
                 </View>
               </View>

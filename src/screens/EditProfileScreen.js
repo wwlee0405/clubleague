@@ -32,7 +32,7 @@ class EditProfileScreen extends React.Component {
               onPress={() => alert("edit img")}
             >
               <Image
-                source={require('../data/ImgTest/cccc.jpg')}
+                source={require('../data/ImgTest/dddd.jpg')}
                 style={styles.img}
               />
             </TouchableOpacity>

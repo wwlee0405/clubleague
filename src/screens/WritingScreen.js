@@ -35,11 +35,11 @@ class WritingScreen extends React.Component {
           <SetSportBox />
           <SetAddressBox title="City" onPress={() => alert("set place")} />
           <SetDateBox title="Date" />
+          <SetDateBox title="Time" />
           <CreateMatchBox title="Home" borderLine={colors.darkGrey} labelColor={colors.darkGrey} />
           <CreateMatchBox title="Away" />
           <CreateMatchBox title="Away" />
-          <CreateMatchBox title="Away" />
-          <View style={{ flex: 1, flexDirection: 'row' }}>
+          <View style={{ flex: 1, flexDirection: 'row', paddingTop: 5 }}>
             <View>
               <TouchableOpacity
                 style={{ width: 30, height: 30, borderRadius: 100, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.green01 }}
@@ -59,7 +59,7 @@ class WritingScreen extends React.Component {
           </View>
         </View>
 
-        <View style={{ flex: 1, flexDirection: 'row', paddingTop: 40 }}>
+        <View style={{ flex: 1, flexDirection: 'row', paddingTop: 70 }}>
           <View style={{ paddingLeft: 15 }}>
             <TouchableOpacity
               style={{ width: 100, height: 45, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1,}}
