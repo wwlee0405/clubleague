@@ -1,80 +1,63 @@
-import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from "react-native";
-import {
-  createSwitchNavigator,
-  createAppContainer
-} from "react-navigation";
-import AppRoutes from "./src/navigators/AppRoutes";
+import React, { useState, useEffect } from "react";
+import { Ionicons } from "@expo/vector-icons";
+import { AppLoading } from "expo";
+import { Asset } from "expo-asset";
+import * as Font from "expo-font";
+import { Text, View, AsyncStorage, TouchableOpacity } from "react-native";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { persistCache } from "apollo-cache-persist";
+import ApolloClient from "apollo-boost";
+import { ThemeProvider } from "styled-components";
+import { ApolloProvider } from "react-apollo-hooks";
+import apolloClientOptions from "./apollo";
+import styles from "./styles";
+import NavController from "./src/components/NavController";
+import { AuthProvider } from "./AuthContext";
 
-class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+export default function App() {
+  const [loaded, setLoaded] = useState(false);
+  const [client, setClient] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const preLoad = async () => {
+    try {
+      await Font.loadAsync({
+        ...Ionicons.font
+      });
+      await Asset.loadAsync([require("./assets/icon.png")]);
+      const cache = new InMemoryCache();
+      await persistCache({
+        cache,
+        storage: AsyncStorage
+      });
+      const client = new ApolloClient({
+        cache,
+        ...apolloClientOptions
+      });
+      const isLoggedIn = await AsyncStorage.getItem("isLoggedIn");
+      if (!isLoggedIn || isLoggedIn === "false") {
+        setIsLoggedIn(false);
+      } else {
+        setIsLoggedIn(true);
+      }
+      setLoaded(true);
+      setClient(client);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    preLoad();
+  }, []);
+
+  return loaded && client && isLoggedIn !== null ? (
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={styles}>
+        <AuthProvider isLoggedIn={isLoggedIn}>
+          <NavController />
+        </AuthProvider>
+      </ThemeProvider>
+    </ApolloProvider>
+  ) : (
+    <AppLoading />
+  );
 }
-
-export default App;
-
-class WelcomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <StatusBar
-          backgroundColor="#1e90ff"
-          barStyle="light-content"
-        />
-        <Text style={styles.titleText}>Clubleague</Text>
-        <View style={styles.btnContainer}>
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => this.props.navigation.navigate('Main')}
-          >
-            <Text style={styles.btnText}>Log In</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.userBtn}
-            onPress={() => alert("Sign up works")}
-          >
-            <Text style={styles.btnText}>Sign Up</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
-}
-
-const AppSwitchNavigator = createSwitchNavigator({
-  Welcome:{ screen: WelcomeScreen },
-  Main: AppRoutes
-});
-
-const AppContainer = createAppContainer(AppSwitchNavigator);
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  titleText: {
-    fontSize: 30,
-    fontWeight: "700",
-    marginBottom: 30,
-  },
-  btnContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "60%"
-  },
-  userBtn: {
-    backgroundColor: "#3897f0",
-    padding: 15,
-    width: "45%"
-  },
-  btnText: {
-    color: "white",
-    fontSize: 18,
-    textAlign: "center"
-  }
-});
